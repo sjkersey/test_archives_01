@@ -1,0 +1,95 @@
+[root@DE2c ~]# yum update
+Loaded plugins: fastestmirror, langpacks
+base                                                     | 3.6 kB     00:00     
+epel/x86_64/metalink                                     |  13 kB     00:00     
+epel                                                     | 4.3 kB     00:00     
+extras                                                   | 3.4 kB     00:00     
+jenkins                                                  | 2.9 kB     00:00     
+updates                                                  | 3.4 kB     00:00     
+virtualbox/7/x86_64/signature                            |  181 B     00:00     
+virtualbox/7/x86_64/signature                            | 1.1 kB     00:00 !!! 
+(1/2): epel/x86_64/updateinfo                              | 806 kB   00:00     
+(2/2): epel/x86_64/primary_db                              | 4.8 MB   00:00     
+Loading mirror speeds from cached hostfile
+ * base: repos-va.psychz.net
+ * epel: mirror.steadfast.net
+ * extras: mirror.cs.uwp.edu
+ * updates: mirror.cs.uwp.edu
+Resolving Dependencies
+--> Running transaction check
+---> Package dkms.noarch 0:2.3-4.20170313git974d838.el7 will be updated
+---> Package dkms.noarch 0:2.3-5.20170523git8c3065c.el7 will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package    Arch         Version                               Repository  Size
+================================================================================
+Updating:
+ dkms       noarch       2.3-5.20170523git8c3065c.el7          epel        78 k
+
+Transaction Summary
+================================================================================
+Upgrade  1 Package
+
+Total download size: 78 k
+Is this ok [y/d/N]: y  
+Downloading packages:
+No Presto metadata available for epel
+dkms-2.3-5.20170523git8c3065c.el7.noarch.rpm               |  78 kB   00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : dkms-2.3-5.20170523git8c3065c.el7.noarch                     1/2 
+  Cleanup    : dkms-2.3-4.20170313git974d838.el7.noarch                     2/2 
+  Verifying  : dkms-2.3-5.20170523git8c3065c.el7.noarch                     1/2 
+  Verifying  : dkms-2.3-4.20170313git974d838.el7.noarch                     2/2 
+
+Updated:
+  dkms.noarch 0:2.3-5.20170523git8c3065c.el7                                    
+
+Complete!
+[root@DE2c ~]# yum install python-pip
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: repos-va.psychz.net
+ * epel: mirror.cs.princeton.edu
+ * extras: mirror.cc.columbia.edu
+ * updates: mirror.atlanticmetro.net
+Resolving Dependencies
+--> Running transaction check
+---> Package python2-pip.noarch 0:8.1.2-5.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package              Arch            Version               Repository     Size
+================================================================================
+Installing:
+ python2-pip          noarch          8.1.2-5.el7           epel          1.7 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 1.7 M
+Installed size: 7.2 M
+Is this ok [y/d/N]: y
+Downloading packages:
+python2-pip-8.1.2-5.el7.noarch.rpm                         | 1.7 MB   00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : python2-pip-8.1.2-5.el7.noarch                               1/1 
+  Verifying  : python2-pip-8.1.2-5.el7.noarch                               1/1 
+
+Installed:
+  python2-pip.noarch 0:8.1.2-5.el7                                              
+
+Complete!
+[root@DE2c ~]# 
+

@@ -1,0 +1,77 @@
+[scott@DE2c ~]$ pip --version
+pip 8.1.2 from /usr/lib/python2.7/site-packages (python 2.7)
+[scott@DE2c ~]$ sudo pip install PyBOMBS
+[sudo] password for scott: 
+Collecting PyBOMBS
+  Downloading PyBOMBS-2.3.0.tar.gz (70kB)
+    100% |████████████████████████████████| 71kB 374kB/s 
+Requirement already satisfied (use --upgrade to upgrade): setuptools in /usr/lib/python2.7/site-packages (from PyBOMBS)
+Collecting PyYAML (from PyBOMBS)
+  Downloading PyYAML-3.12.tar.gz (253kB)
+    100% |████████████████████████████████| 256kB 1.0MB/s 
+Requirement already satisfied (use --upgrade to upgrade): requests in /usr/lib/python2.7/site-packages (from PyBOMBS)
+Requirement already satisfied (use --upgrade to upgrade): six in /usr/lib/python2.7/site-packages (from PyBOMBS)
+Collecting future (from PyBOMBS)
+  Downloading future-0.16.0.tar.gz (824kB)
+    100% |████████████████████████████████| 829kB 606kB/s 
+Installing collected packages: PyYAML, future, PyBOMBS
+  Running setup.py install for PyYAML ... done
+  Running setup.py install for future ... done
+  Running setup.py install for PyBOMBS ... done
+Successfully installed PyBOMBS-2.3.0 PyYAML-3.12 future-0.16.0
+You are using pip version 8.1.2, however version 9.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[scott@DE2c ~]$ 
+[scott@DE2c ~]$ 
+[scott@DE2c ~]$ pip install --upgrade pip
+Collecting pip
+  Downloading pip-9.0.1-py2.py3-none-any.whl (1.3MB)
+    100% |████████████████████████████████| 1.3MB 490kB/s 
+Installing collected packages: pip
+  Found existing installation: pip 8.1.2
+    Uninstalling pip-8.1.2:
+Exception:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/pip/basecommand.py", line 215, in main
+    status = self.run(options, args)
+  File "/usr/lib/python2.7/site-packages/pip/commands/install.py", line 326, in run
+    strip_file_prefix=options.strip_file_prefix,
+  File "/usr/lib/python2.7/site-packages/pip/req/req_set.py", line 736, in install
+    requirement.uninstall(auto_confirm=True)
+  File "/usr/lib/python2.7/site-packages/pip/req/req_install.py", line 742, in uninstall
+    paths_to_remove.remove(auto_confirm)
+  File "/usr/lib/python2.7/site-packages/pip/req/req_uninstall.py", line 115, in remove
+    renames(path, new_path)
+  File "/usr/lib/python2.7/site-packages/pip/utils/__init__.py", line 267, in renames
+    shutil.move(old, new)
+  File "/usr/lib64/python2.7/shutil.py", line 302, in move
+    os.unlink(src)
+OSError: [Errno 13] Permission denied: '/usr/bin/pip'
+You are using pip version 8.1.2, however version 9.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[scott@DE2c ~]$ 
+[scott@DE2c ~]$ 
+[scott@DE2c ~]$ 
+[scott@DE2c ~]$ 
+[scott@DE2c ~]$ sudo pip install --upgrade pip
+Collecting pip
+  Downloading pip-9.0.1-py2.py3-none-any.whl (1.3MB)
+    100% |████████████████████████████████| 1.3MB 489kB/s 
+Installing collected packages: pip
+  Found existing installation: pip 8.1.2
+    Uninstalling pip-8.1.2:
+      Successfully uninstalled pip-8.1.2
+Successfully installed pip-9.0.1
+[scott@DE2c ~]$ 
+[scott@DE2c ~]$ 
+[scott@DE2c ~]$ 
+[scott@DE2c ~]$ 
+[scott@DE2c ~]$ sudo pip install PyBOMBS
+Requirement already satisfied: PyBOMBS in /usr/lib/python2.7/site-packages
+Requirement already satisfied: setuptools in /usr/lib/python2.7/site-packages (from PyBOMBS)
+Requirement already satisfied: PyYAML in /usr/lib64/python2.7/site-packages (from PyBOMBS)
+Requirement already satisfied: requests in /usr/lib/python2.7/site-packages (from PyBOMBS)
+Requirement already satisfied: six in /usr/lib/python2.7/site-packages (from PyBOMBS)
+Requirement already satisfied: future in /usr/lib/python2.7/site-packages (from PyBOMBS)
+[scott@DE2c ~]$ 
+
