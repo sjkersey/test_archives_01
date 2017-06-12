@@ -56,7 +56,28 @@ drwxr-xr-x. 4 root root      34 Jun 12 16:15 ..
 -rw-rw-r--. 1 root jenkins 1404 Jun 12 16:28 Jenkins_triggers.log
 -rwxrwxr-x. 1 root jenkins  423 Jun 12 16:25 test_Jenkins_trigger.sh
 
+-may also use links to a git sourced controled file:
+example
+https://superuser.com/questions/303040/how-do-file-permissions-apply-to-symlinks
 
+$ mkdir dir && touch dir/file{1,2} /tmp/file3 && ln -s {/tmp,dir}/file3
+$ ls -l dir/* /tmp/file3
+-rw-r--r-- 1 user group  0 2011-06-27 22:02 /tmp/file3
+-rw-r--r-- 1 user group  0 2011-06-27 22:02 dir/file1
+-rw-r--r-- 1 user group  0 2011-06-27 22:02 dir/file2
+lrwxrwxrwx 1 user group 10 2011-06-27 22:02 dir/file3 -> /tmp/file3
+
+$ chmod -R 777 dir && ls -l dir/* /tmp/file3
+-rw-r--r-- 1 user group  0 2011-06-27 22:02 /tmp/file3
+-rwxrwxrwx 1 user group  0 2011-06-27 22:02 dir/file1
+-rwxrwxrwx 1 user group  0 2011-06-27 22:02 dir/file2
+lrwxrwxrwx 1 user group 10 2011-06-27 22:02 dir/file3 -> /tmp/file3
+
+$ chmod 700 dir/* && ls -l dir/* /tmp/file3
+-rwx------ 1 user group  0 2011-06-27 22:02 /tmp/file3
+-rwx------ 1 user group  0 2011-06-27 22:02 dir/file1
+-rwx------ 1 user group  0 2011-06-27 22:02 dir/file2
+lrwxrwxrwx 1 user group 10 2011-06-27 22:02 dir/file3 -> /tmp/file3
 
 
 
