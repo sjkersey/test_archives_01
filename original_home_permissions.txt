@@ -33,3 +33,30 @@ drwxr-xr-x.  2 scott jenkins    6 May 29 15:53 Videos
 also needed to allow jenkins group to read write execute :
 [scott@DE2c ~]$ chmod -R g+rwx .
 
+
+for security 
+
+sudo mkdir /home/jenkins
+
+then 
+sudo chown -R :jenkins /home/jenkins
+
+moved test_Jenkins_trigger.sh and Jenkins_triggers.log to /home/jenkins 
+then 
+sudo chown -R :scott /home/scott
+
+then
+[scott@DE2c jenkins]$ sudo chmod 664 Jenkins_triggers.log
+
+so
+[scott@DE2c jenkins]$ ls -al
+total 8
+drwxrwxr-x. 2 root jenkins   65 Jun 12 16:17 .
+drwxr-xr-x. 4 root root      34 Jun 12 16:15 ..
+-rw-rw-r--. 1 root jenkins 1404 Jun 12 16:28 Jenkins_triggers.log
+-rwxrwxr-x. 1 root jenkins  423 Jun 12 16:25 test_Jenkins_trigger.sh
+
+
+
+
+
