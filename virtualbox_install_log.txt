@@ -1,0 +1,1938 @@
+[scott@DE2c ~]$ pwd
+/home/scott
+[scott@DE2c ~]$ su -
+Password: 
+Last login: Wed May 31 12:11:47 EDT 2017 on pts/1
+ABRT has detected 1 problem(s). For more info run: abrt-cli list --since 1496247107
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# cd /etc/yum.repos.d/
+[root@DE2c yum.repos.d]# wget http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
+--2017-06-07 12:13:07--  http://download.virtualbox.org/virtualbox/rpm/rhel/virtualbox.repo
+Resolving download.virtualbox.org (download.virtualbox.org)... 65.200.22.88, 65.200.22.83
+Connecting to download.virtualbox.org (download.virtualbox.org)|65.200.22.88|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 259 [text/plain]
+Saving to: ‘virtualbox.repo’
+
+100%[==================================>] 259         --.-K/s   in 0s      
+
+2017-06-07 12:13:12 (25.3 MB/s) - ‘virtualbox.repo’ saved [259/259]
+
+[root@DE2c yum.repos.d]# yum update
+Loaded plugins: fastestmirror, langpacks
+base                                                 | 3.6 kB     00:00     
+extras                                               | 3.4 kB     00:00     
+jenkins                                              | 2.9 kB     00:00     
+updates                                              | 3.4 kB     00:00     
+virtualbox/7/x86_64/signature                        |  181 B     00:00     
+Retrieving key from https://www.virtualbox.org/download/oracle_vbox.asc
+Importing GPG key 0x98AB5139:
+ Userid     : "Oracle Corporation (VirtualBox archive signing key) <info@virtualbox.org>"
+ Fingerprint: 7b0f ab3a 13b9 0743 5925 d9c9 5442 2a4b 98ab 5139
+ From       : https://www.virtualbox.org/download/oracle_vbox.asc
+Is this ok [y/N]: y
+virtualbox/7/x86_64/signature                        | 1.1 kB     00:41 !!! 
+(1/2): virtualbox/7/x86_64/primary                     | 7.7 kB   00:00     
+(2/2): updates/7/x86_64/primary_db                     | 5.6 MB   00:03     
+Loading mirror speeds from cached hostfile
+ * base: mirror.umd.edu
+ * extras: mirror.linux.duke.edu
+ * updates: centos.blazar.mx
+virtualbox                                                            39/39
+Resolving Dependencies
+--> Running transaction check
+---> Package NetworkManager.x86_64 1:1.4.0-12.el7 will be updated
+---> Package NetworkManager.x86_64 1:1.4.0-20.el7_3 will be an update
+---> Package NetworkManager-adsl.x86_64 1:1.4.0-12.el7 will be updated
+---> Package NetworkManager-adsl.x86_64 1:1.4.0-20.el7_3 will be an update
+---> Package NetworkManager-glib.x86_64 1:1.4.0-12.el7 will be updated
+---> Package NetworkManager-glib.x86_64 1:1.4.0-20.el7_3 will be an update
+---> Package NetworkManager-libnm.x86_64 1:1.4.0-12.el7 will be updated
+---> Package NetworkManager-libnm.x86_64 1:1.4.0-20.el7_3 will be an update
+---> Package NetworkManager-team.x86_64 1:1.4.0-12.el7 will be updated
+---> Package NetworkManager-team.x86_64 1:1.4.0-20.el7_3 will be an update
+---> Package NetworkManager-tui.x86_64 1:1.4.0-12.el7 will be updated
+---> Package NetworkManager-tui.x86_64 1:1.4.0-20.el7_3 will be an update
+---> Package NetworkManager-wifi.x86_64 1:1.4.0-12.el7 will be updated
+---> Package NetworkManager-wifi.x86_64 1:1.4.0-20.el7_3 will be an update
+---> Package accountsservice.x86_64 0:0.6.35-12.el7 will be updated
+---> Package accountsservice.x86_64 0:0.6.35-14.el7_3 will be an update
+---> Package accountsservice-libs.x86_64 0:0.6.35-12.el7 will be updated
+---> Package accountsservice-libs.x86_64 0:0.6.35-14.el7_3 will be an update
+---> Package audit.x86_64 0:2.6.5-3.el7 will be updated
+---> Package audit.x86_64 0:2.6.5-3.el7_3.1 will be an update
+---> Package audit-libs.x86_64 0:2.6.5-3.el7 will be updated
+---> Package audit-libs.x86_64 0:2.6.5-3.el7_3.1 will be an update
+---> Package audit-libs-python.x86_64 0:2.6.5-3.el7 will be updated
+---> Package audit-libs-python.x86_64 0:2.6.5-3.el7_3.1 will be an update
+---> Package autocorr-en.noarch 1:5.0.6.2-3.el7 will be updated
+---> Package autocorr-en.noarch 1:5.0.6.2-5.el7_3.1 will be an update
+---> Package bash.x86_64 0:4.2.46-20.el7_2 will be updated
+---> Package bash.x86_64 0:4.2.46-21.el7_3 will be an update
+---> Package bind-libs.x86_64 32:9.9.4-37.el7 will be updated
+---> Package bind-libs.x86_64 32:9.9.4-38.el7_3.3 will be an update
+---> Package bind-libs-lite.x86_64 32:9.9.4-37.el7 will be updated
+---> Package bind-libs-lite.x86_64 32:9.9.4-38.el7_3.3 will be an update
+---> Package bind-license.noarch 32:9.9.4-37.el7 will be updated
+---> Package bind-license.noarch 32:9.9.4-38.el7_3.3 will be an update
+---> Package bind-utils.x86_64 32:9.9.4-37.el7 will be updated
+---> Package bind-utils.x86_64 32:9.9.4-38.el7_3.3 will be an update
+---> Package ca-certificates.noarch 0:2015.2.6-73.el7 will be updated
+---> Package ca-certificates.noarch 0:2017.2.11-70.1.el7_3 will be an update
+---> Package chrony.x86_64 0:2.1.1-3.el7.centos will be updated
+---> Package chrony.x86_64 0:2.1.1-4.el7.centos will be an update
+---> Package device-mapper.x86_64 7:1.02.135-1.el7 will be updated
+---> Package device-mapper.x86_64 7:1.02.135-1.el7_3.4 will be an update
+---> Package device-mapper-event.x86_64 7:1.02.135-1.el7 will be updated
+---> Package device-mapper-event.x86_64 7:1.02.135-1.el7_3.4 will be an update
+---> Package device-mapper-event-libs.x86_64 7:1.02.135-1.el7 will be updated
+---> Package device-mapper-event-libs.x86_64 7:1.02.135-1.el7_3.4 will be an update
+---> Package device-mapper-libs.x86_64 7:1.02.135-1.el7 will be updated
+---> Package device-mapper-libs.x86_64 7:1.02.135-1.el7_3.4 will be an update
+---> Package device-mapper-multipath.x86_64 0:0.4.9-99.el7 will be updated
+---> Package device-mapper-multipath.x86_64 0:0.4.9-99.el7_3.3 will be an update
+---> Package device-mapper-multipath-libs.x86_64 0:0.4.9-99.el7 will be updated
+---> Package device-mapper-multipath-libs.x86_64 0:0.4.9-99.el7_3.3 will be an update
+---> Package dmidecode.x86_64 1:3.0-2.el7 will be updated
+---> Package dmidecode.x86_64 1:3.0-2.1.el7_3 will be an update
+---> Package dracut.x86_64 0:033-463.el7 will be updated
+---> Package dracut.x86_64 0:033-463.el7_3.1 will be an update
+---> Package dracut-config-rescue.x86_64 0:033-463.el7 will be updated
+---> Package dracut-config-rescue.x86_64 0:033-463.el7_3.1 will be an update
+---> Package dracut-network.x86_64 0:033-463.el7 will be updated
+---> Package dracut-network.x86_64 0:033-463.el7_3.1 will be an update
+---> Package emacs-filesystem.noarch 1:24.3-18.el7 will be updated
+---> Package emacs-filesystem.noarch 1:24.3-19.el7_3 will be an update
+---> Package expat.x86_64 0:2.1.0-8.el7 will be updated
+---> Package expat.x86_64 0:2.1.0-10.el7_3 will be an update
+---> Package fcoe-utils.x86_64 0:1.0.31-1.git5dfd3e4.el7 will be updated
+---> Package fcoe-utils.x86_64 0:1.0.31-1.git5dfd3e4.el7_3.1 will be an update
+---> Package firefox.x86_64 0:45.4.0-1.el7.centos will be updated
+---> Package firefox.x86_64 0:52.1.0-2.el7.centos will be an update
+---> Package firewall-config.noarch 0:0.4.3.2-8.el7 will be updated
+---> Package firewall-config.noarch 0:0.4.3.2-8.1.el7_3.3 will be an update
+---> Package firewalld.noarch 0:0.4.3.2-8.el7 will be updated
+---> Package firewalld.noarch 0:0.4.3.2-8.1.el7_3.3 will be an update
+---> Package firewalld-filesystem.noarch 0:0.4.3.2-8.el7 will be updated
+---> Package firewalld-filesystem.noarch 0:0.4.3.2-8.1.el7_3.3 will be an update
+---> Package gdm.x86_64 1:3.14.2-19.el7 will be updated
+---> Package gdm.x86_64 1:3.14.2-20.el7_3 will be an update
+---> Package ghostscript.x86_64 0:9.07-20.el7 will be updated
+---> Package ghostscript.x86_64 0:9.07-20.el7_3.5 will be an update
+---> Package ghostscript-cups.x86_64 0:9.07-20.el7 will be updated
+---> Package ghostscript-cups.x86_64 0:9.07-20.el7_3.5 will be an update
+---> Package glibc.x86_64 0:2.17-157.el7 will be updated
+---> Package glibc.x86_64 0:2.17-157.el7_3.2 will be an update
+---> Package glibc-common.x86_64 0:2.17-157.el7 will be updated
+---> Package glibc-common.x86_64 0:2.17-157.el7_3.2 will be an update
+---> Package glibc-devel.x86_64 0:2.17-157.el7 will be updated
+---> Package glibc-devel.x86_64 0:2.17-157.el7_3.2 will be an update
+---> Package glibc-headers.x86_64 0:2.17-157.el7 will be updated
+---> Package glibc-headers.x86_64 0:2.17-157.el7_3.2 will be an update
+---> Package grubby.x86_64 0:8.28-18.el7 will be updated
+---> Package grubby.x86_64 0:8.28-21.el7_3 will be an update
+---> Package gstreamer-plugins-bad-free.x86_64 0:0.10.23-20.el7 will be updated
+---> Package gstreamer-plugins-bad-free.x86_64 0:0.10.23-22.el7_3 will be an update
+---> Package gstreamer-plugins-good.x86_64 0:0.10.31-11.el7 will be updated
+---> Package gstreamer-plugins-good.x86_64 0:0.10.31-12.el7_3 will be an update
+---> Package gstreamer1-plugins-bad-free.x86_64 0:1.4.5-4.el7 will be updated
+---> Package gstreamer1-plugins-bad-free.x86_64 0:1.4.5-6.el7_3 will be an update
+---> Package gstreamer1-plugins-good.x86_64 0:1.4.5-2.el7 will be updated
+---> Package gstreamer1-plugins-good.x86_64 0:1.4.5-3.el7_3 will be an update
+---> Package gtk3.x86_64 0:3.14.13-20.el7 will be updated
+---> Package gtk3.x86_64 0:3.14.13-20.el7_3.1 will be an update
+---> Package gtk3-immodule-xim.x86_64 0:3.14.13-20.el7 will be updated
+---> Package gtk3-immodule-xim.x86_64 0:3.14.13-20.el7_3.1 will be an update
+---> Package httpd.x86_64 0:2.4.6-45.el7.centos will be updated
+---> Package httpd.x86_64 0:2.4.6-45.el7.centos.4 will be an update
+---> Package httpd-manual.noarch 0:2.4.6-45.el7.centos will be updated
+---> Package httpd-manual.noarch 0:2.4.6-45.el7.centos.4 will be an update
+---> Package httpd-tools.x86_64 0:2.4.6-45.el7.centos will be updated
+---> Package httpd-tools.x86_64 0:2.4.6-45.el7.centos.4 will be an update
+---> Package initscripts.x86_64 0:9.49.37-1.el7 will be updated
+---> Package initscripts.x86_64 0:9.49.37-1.el7_3.1 will be an update
+---> Package ipa-client.x86_64 0:4.4.0-12.el7.centos will be updated
+---> Package ipa-client.x86_64 0:4.4.0-14.el7.centos.7 will be an update
+---> Package ipa-client-common.noarch 0:4.4.0-12.el7.centos will be updated
+---> Package ipa-client-common.noarch 0:4.4.0-14.el7.centos.7 will be an update
+---> Package ipa-common.noarch 0:4.4.0-12.el7.centos will be updated
+---> Package ipa-common.noarch 0:4.4.0-14.el7.centos.7 will be an update
+---> Package irqbalance.x86_64 3:1.0.7-6.el7 will be updated
+---> Package irqbalance.x86_64 3:1.0.7-6.el7_3.1 will be an update
+---> Package jasper-libs.x86_64 0:1.900.1-29.el7 will be updated
+---> Package jasper-libs.x86_64 0:1.900.1-30.el7_3 will be an update
+---> Package java-1.7.0-openjdk.x86_64 1:1.7.0.111-2.6.7.8.el7 will be updated
+---> Package java-1.7.0-openjdk.x86_64 1:1.7.0.141-2.6.10.1.el7_3 will be an update
+---> Package java-1.7.0-openjdk-headless.x86_64 1:1.7.0.111-2.6.7.8.el7 will be updated
+---> Package java-1.7.0-openjdk-headless.x86_64 1:1.7.0.141-2.6.10.1.el7_3 will be an update
+---> Package java-1.8.0-openjdk.x86_64 1:1.8.0.102-4.b14.el7 will be updated
+---> Package java-1.8.0-openjdk.x86_64 1:1.8.0.131-3.b12.el7_3 will be an update
+---> Package java-1.8.0-openjdk-headless.x86_64 1:1.8.0.102-4.b14.el7 will be updated
+---> Package java-1.8.0-openjdk-headless.x86_64 1:1.8.0.131-3.b12.el7_3 will be an update
+---> Package kernel.x86_64 0:3.10.0-514.21.1.el7 will be installed
+---> Package kernel-headers.x86_64 0:3.10.0-514.el7 will be updated
+---> Package kernel-headers.x86_64 0:3.10.0-514.21.1.el7 will be an update
+---> Package kernel-tools.x86_64 0:3.10.0-514.el7 will be updated
+---> Package kernel-tools.x86_64 0:3.10.0-514.21.1.el7 will be an update
+---> Package kernel-tools-libs.x86_64 0:3.10.0-514.el7 will be updated
+---> Package kernel-tools-libs.x86_64 0:3.10.0-514.21.1.el7 will be an update
+---> Package kpartx.x86_64 0:0.4.9-99.el7 will be updated
+---> Package kpartx.x86_64 0:0.4.9-99.el7_3.3 will be an update
+---> Package krb5-libs.x86_64 0:1.14.1-26.el7 will be updated
+---> Package krb5-libs.x86_64 0:1.14.1-27.el7_3 will be an update
+---> Package krb5-workstation.x86_64 0:1.14.1-26.el7 will be updated
+---> Package krb5-workstation.x86_64 0:1.14.1-27.el7_3 will be an update
+---> Package libblkid.x86_64 0:2.23.2-33.el7 will be updated
+---> Package libblkid.x86_64 0:2.23.2-33.el7_3.2 will be an update
+---> Package libgcrypt.x86_64 0:1.5.3-12.el7_1.1 will be updated
+---> Package libgcrypt.x86_64 0:1.5.3-13.el7_3.1 will be an update
+---> Package libgudev1.x86_64 0:219-30.el7 will be updated
+---> Package libgudev1.x86_64 0:219-30.el7_3.9 will be an update
+---> Package libguestfs.x86_64 1:1.32.7-3.el7.centos will be updated
+---> Package libguestfs.x86_64 1:1.32.7-3.el7.centos.2 will be an update
+---> Package libipa_hbac.x86_64 0:1.14.0-43.el7 will be updated
+---> Package libipa_hbac.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package libkadm5.x86_64 0:1.14.1-26.el7 will be updated
+---> Package libkadm5.x86_64 0:1.14.1-27.el7_3 will be an update
+---> Package libmount.x86_64 0:2.23.2-33.el7 will be updated
+---> Package libmount.x86_64 0:2.23.2-33.el7_3.2 will be an update
+---> Package libnetfilter_conntrack.x86_64 0:1.0.4-2.el7 will be updated
+---> Package libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3 will be an update
+---> Package libnl3.x86_64 0:3.2.28-2.el7 will be updated
+---> Package libnl3.x86_64 0:3.2.28-3.el7_3 will be an update
+---> Package libnl3-cli.x86_64 0:3.2.28-2.el7 will be updated
+---> Package libnl3-cli.x86_64 0:3.2.28-3.el7_3 will be an update
+---> Package libpciaccess.x86_64 0:0.13.4-2.el7 will be updated
+---> Package libpciaccess.x86_64 0:0.13.4-3.el7_3 will be an update
+---> Package libreoffice-calc.x86_64 1:5.0.6.2-3.el7 will be updated
+---> Package libreoffice-calc.x86_64 1:5.0.6.2-5.el7_3.1 will be an update
+---> Package libreoffice-core.x86_64 1:5.0.6.2-3.el7 will be updated
+---> Package libreoffice-core.x86_64 1:5.0.6.2-5.el7_3.1 will be an update
+---> Package libreoffice-draw.x86_64 1:5.0.6.2-3.el7 will be updated
+---> Package libreoffice-draw.x86_64 1:5.0.6.2-5.el7_3.1 will be an update
+---> Package libreoffice-graphicfilter.x86_64 1:5.0.6.2-3.el7 will be updated
+---> Package libreoffice-graphicfilter.x86_64 1:5.0.6.2-5.el7_3.1 will be an update
+---> Package libreoffice-impress.x86_64 1:5.0.6.2-3.el7 will be updated
+---> Package libreoffice-impress.x86_64 1:5.0.6.2-5.el7_3.1 will be an update
+---> Package libreoffice-langpack-en.x86_64 1:5.0.6.2-3.el7 will be updated
+---> Package libreoffice-langpack-en.x86_64 1:5.0.6.2-5.el7_3.1 will be an update
+---> Package libreoffice-opensymbol-fonts.noarch 1:5.0.6.2-3.el7 will be updated
+---> Package libreoffice-opensymbol-fonts.noarch 1:5.0.6.2-5.el7_3.1 will be an update
+---> Package libreoffice-pdfimport.x86_64 1:5.0.6.2-3.el7 will be updated
+---> Package libreoffice-pdfimport.x86_64 1:5.0.6.2-5.el7_3.1 will be an update
+---> Package libreoffice-pyuno.x86_64 1:5.0.6.2-3.el7 will be updated
+---> Package libreoffice-pyuno.x86_64 1:5.0.6.2-5.el7_3.1 will be an update
+---> Package libreoffice-ure.x86_64 1:5.0.6.2-3.el7 will be updated
+---> Package libreoffice-ure.x86_64 1:5.0.6.2-5.el7_3.1 will be an update
+---> Package libreoffice-writer.x86_64 1:5.0.6.2-3.el7 will be updated
+---> Package libreoffice-writer.x86_64 1:5.0.6.2-5.el7_3.1 will be an update
+---> Package libsemanage.x86_64 0:2.5-4.el7 will be updated
+---> Package libsemanage.x86_64 0:2.5-5.1.el7_3 will be an update
+---> Package libsemanage-python.x86_64 0:2.5-4.el7 will be updated
+---> Package libsemanage-python.x86_64 0:2.5-5.1.el7_3 will be an update
+---> Package libsmbclient.x86_64 0:4.4.4-9.el7 will be updated
+---> Package libsmbclient.x86_64 0:4.4.4-14.el7_3 will be an update
+---> Package libsss_autofs.x86_64 0:1.14.0-43.el7 will be updated
+---> Package libsss_autofs.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package libsss_idmap.x86_64 0:1.14.0-43.el7 will be updated
+---> Package libsss_idmap.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package libsss_nss_idmap.x86_64 0:1.14.0-43.el7 will be updated
+---> Package libsss_nss_idmap.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package libsss_sudo.x86_64 0:1.14.0-43.el7 will be updated
+---> Package libsss_sudo.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package libtiff.x86_64 0:4.0.3-25.el7_2 will be updated
+---> Package libtiff.x86_64 0:4.0.3-27.el7_3 will be an update
+---> Package libtirpc.x86_64 0:0.2.4-0.8.el7 will be updated
+---> Package libtirpc.x86_64 0:0.2.4-0.8.el7_3 will be an update
+---> Package libtool-ltdl.x86_64 0:2.4.2-21.el7_2 will be updated
+---> Package libtool-ltdl.x86_64 0:2.4.2-22.el7_3 will be an update
+---> Package libuuid.x86_64 0:2.23.2-33.el7 will be updated
+---> Package libuuid.x86_64 0:2.23.2-33.el7_3.2 will be an update
+---> Package libvirt.x86_64 0:2.0.0-10.el7 will be updated
+---> Package libvirt.x86_64 0:2.0.0-10.el7_3.9 will be an update
+---> Package libvirt-client.x86_64 0:2.0.0-10.el7 will be updated
+---> Package libvirt-client.x86_64 0:2.0.0-10.el7_3.9 will be an update
+---> Package libvirt-daemon.x86_64 0:2.0.0-10.el7 will be updated
+---> Package libvirt-daemon.x86_64 0:2.0.0-10.el7_3.9 will be an update
+---> Package libvirt-daemon-config-network.x86_64 0:2.0.0-10.el7 will be updated
+---> Package libvirt-daemon-config-network.x86_64 0:2.0.0-10.el7_3.9 will be an update
+---> Package libvirt-daemon-config-nwfilter.x86_64 0:2.0.0-10.el7 will be updated
+---> Package libvirt-daemon-config-nwfilter.x86_64 0:2.0.0-10.el7_3.9 will be an update
+---> Package libvirt-daemon-driver-interface.x86_64 0:2.0.0-10.el7 will be updated
+---> Package libvirt-daemon-driver-interface.x86_64 0:2.0.0-10.el7_3.9 will be an update
+---> Package libvirt-daemon-driver-lxc.x86_64 0:2.0.0-10.el7 will be updated
+---> Package libvirt-daemon-driver-lxc.x86_64 0:2.0.0-10.el7_3.9 will be an update
+---> Package libvirt-daemon-driver-network.x86_64 0:2.0.0-10.el7 will be updated
+---> Package libvirt-daemon-driver-network.x86_64 0:2.0.0-10.el7_3.9 will be an update
+---> Package libvirt-daemon-driver-nodedev.x86_64 0:2.0.0-10.el7 will be updated
+---> Package libvirt-daemon-driver-nodedev.x86_64 0:2.0.0-10.el7_3.9 will be an update
+---> Package libvirt-daemon-driver-nwfilter.x86_64 0:2.0.0-10.el7 will be updated
+---> Package libvirt-daemon-driver-nwfilter.x86_64 0:2.0.0-10.el7_3.9 will be an update
+---> Package libvirt-daemon-driver-qemu.x86_64 0:2.0.0-10.el7 will be updated
+---> Package libvirt-daemon-driver-qemu.x86_64 0:2.0.0-10.el7_3.9 will be an update
+---> Package libvirt-daemon-driver-secret.x86_64 0:2.0.0-10.el7 will be updated
+---> Package libvirt-daemon-driver-secret.x86_64 0:2.0.0-10.el7_3.9 will be an update
+---> Package libvirt-daemon-driver-storage.x86_64 0:2.0.0-10.el7 will be updated
+---> Package libvirt-daemon-driver-storage.x86_64 0:2.0.0-10.el7_3.9 will be an update
+---> Package libvirt-daemon-kvm.x86_64 0:2.0.0-10.el7 will be updated
+---> Package libvirt-daemon-kvm.x86_64 0:2.0.0-10.el7_3.9 will be an update
+---> Package libwbclient.x86_64 0:4.4.4-9.el7 will be updated
+---> Package libwbclient.x86_64 0:4.4.4-14.el7_3 will be an update
+---> Package lvm2.x86_64 7:2.02.166-1.el7 will be updated
+---> Package lvm2.x86_64 7:2.02.166-1.el7_3.4 will be an update
+---> Package lvm2-libs.x86_64 7:2.02.166-1.el7 will be updated
+---> Package lvm2-libs.x86_64 7:2.02.166-1.el7_3.4 will be an update
+---> Package mdadm.x86_64 0:3.4-14.el7 will be updated
+---> Package mdadm.x86_64 0:3.4-14.el7_3.1 will be an update
+---> Package microcode_ctl.x86_64 2:2.1-16.el7 will be updated
+---> Package microcode_ctl.x86_64 2:2.1-16.3.el7_3 will be an update
+---> Package mod_ssl.x86_64 1:2.4.6-45.el7.centos will be updated
+---> Package mod_ssl.x86_64 1:2.4.6-45.el7.centos.4 will be an update
+---> Package net-snmp-libs.x86_64 1:5.7.2-24.el7_2.1 will be updated
+---> Package net-snmp-libs.x86_64 1:5.7.2-24.el7_3.2 will be an update
+---> Package nfs-utils.x86_64 1:1.3.0-0.33.el7 will be updated
+---> Package nfs-utils.x86_64 1:1.3.0-0.33.el7_3 will be an update
+---> Package nspr.x86_64 0:4.11.0-1.el7_2 will be updated
+---> Package nspr.x86_64 0:4.13.1-1.0.el7_3 will be an update
+---> Package nss.x86_64 0:3.21.0-17.el7 will be updated
+---> Package nss.x86_64 0:3.28.4-1.2.el7_3 will be an update
+---> Package nss-sysinit.x86_64 0:3.21.0-17.el7 will be updated
+---> Package nss-sysinit.x86_64 0:3.28.4-1.2.el7_3 will be an update
+---> Package nss-tools.x86_64 0:3.21.0-17.el7 will be updated
+---> Package nss-tools.x86_64 0:3.28.4-1.2.el7_3 will be an update
+---> Package nss-util.x86_64 0:3.21.0-2.2.el7_2 will be updated
+---> Package nss-util.x86_64 0:3.28.4-1.0.el7_3 will be an update
+---> Package ntp.x86_64 0:4.2.6p5-25.el7.centos will be updated
+---> Package ntp.x86_64 0:4.2.6p5-25.el7.centos.2 will be an update
+---> Package ntpdate.x86_64 0:4.2.6p5-25.el7.centos will be updated
+---> Package ntpdate.x86_64 0:4.2.6p5-25.el7.centos.2 will be an update
+---> Package open-vm-tools.x86_64 0:10.0.5-2.el7 will be updated
+---> Package open-vm-tools.x86_64 0:10.0.5-4.el7_3 will be an update
+---> Package open-vm-tools-desktop.x86_64 0:10.0.5-2.el7 will be updated
+---> Package open-vm-tools-desktop.x86_64 0:10.0.5-4.el7_3 will be an update
+---> Package openjpeg-libs.x86_64 0:1.5.1-10.el7 will be updated
+---> Package openjpeg-libs.x86_64 0:1.5.1-16.el7_3 will be an update
+---> Package openssh.x86_64 0:6.6.1p1-31.el7 will be updated
+---> Package openssh.x86_64 0:6.6.1p1-35.el7_3 will be an update
+---> Package openssh-clients.x86_64 0:6.6.1p1-31.el7 will be updated
+---> Package openssh-clients.x86_64 0:6.6.1p1-35.el7_3 will be an update
+---> Package openssh-server.x86_64 0:6.6.1p1-31.el7 will be updated
+---> Package openssh-server.x86_64 0:6.6.1p1-35.el7_3 will be an update
+---> Package openssl.x86_64 1:1.0.1e-60.el7 will be updated
+---> Package openssl.x86_64 1:1.0.1e-60.el7_3.1 will be an update
+---> Package openssl-libs.x86_64 1:1.0.1e-60.el7 will be updated
+---> Package openssl-libs.x86_64 1:1.0.1e-60.el7_3.1 will be an update
+---> Package oprofile.x86_64 0:0.9.9-20.el7 will be updated
+---> Package oprofile.x86_64 0:0.9.9-21.el7_3 will be an update
+---> Package perf.x86_64 0:3.10.0-514.el7 will be updated
+---> Package perf.x86_64 0:3.10.0-514.21.1.el7 will be an update
+---> Package policycoreutils.x86_64 0:2.5-8.el7 will be updated
+---> Package policycoreutils.x86_64 0:2.5-11.el7_3 will be an update
+---> Package policycoreutils-python.x86_64 0:2.5-8.el7 will be updated
+---> Package policycoreutils-python.x86_64 0:2.5-11.el7_3 will be an update
+---> Package polkit.x86_64 0:0.112-9.el7 will be updated
+---> Package polkit.x86_64 0:0.112-12.el7_3 will be an update
+---> Package pulseaudio.x86_64 0:6.0-8.el7 will be updated
+---> Package pulseaudio.x86_64 0:6.0-9.el7_3 will be an update
+---> Package pulseaudio-gdm-hooks.x86_64 0:6.0-8.el7 will be updated
+---> Package pulseaudio-gdm-hooks.x86_64 0:6.0-9.el7_3 will be an update
+---> Package pulseaudio-libs.x86_64 0:6.0-8.el7 will be updated
+---> Package pulseaudio-libs.x86_64 0:6.0-9.el7_3 will be an update
+---> Package pulseaudio-libs-glib2.x86_64 0:6.0-8.el7 will be updated
+---> Package pulseaudio-libs-glib2.x86_64 0:6.0-9.el7_3 will be an update
+---> Package pulseaudio-module-bluetooth.x86_64 0:6.0-8.el7 will be updated
+---> Package pulseaudio-module-bluetooth.x86_64 0:6.0-9.el7_3 will be an update
+---> Package pulseaudio-module-x11.x86_64 0:6.0-8.el7 will be updated
+---> Package pulseaudio-module-x11.x86_64 0:6.0-9.el7_3 will be an update
+---> Package pulseaudio-utils.x86_64 0:6.0-8.el7 will be updated
+---> Package pulseaudio-utils.x86_64 0:6.0-9.el7_3 will be an update
+---> Package python-firewall.noarch 0:0.4.3.2-8.el7 will be updated
+---> Package python-firewall.noarch 0:0.4.3.2-8.1.el7_3.3 will be an update
+---> Package python-libipa_hbac.x86_64 0:1.14.0-43.el7 will be updated
+---> Package python-libipa_hbac.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package python-perf.x86_64 0:3.10.0-514.el7 will be updated
+---> Package python-perf.x86_64 0:3.10.0-514.21.1.el7 will be an update
+---> Package python-sss-murmur.x86_64 0:1.14.0-43.el7 will be updated
+---> Package python-sss-murmur.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package python-sssdconfig.noarch 0:1.14.0-43.el7 will be updated
+---> Package python-sssdconfig.noarch 0:1.14.0-43.el7_3.14 will be an update
+---> Package python2-ipaclient.noarch 0:4.4.0-12.el7.centos will be updated
+---> Package python2-ipaclient.noarch 0:4.4.0-14.el7.centos.7 will be an update
+---> Package python2-ipalib.noarch 0:4.4.0-12.el7.centos will be updated
+---> Package python2-ipalib.noarch 0:4.4.0-14.el7.centos.7 will be an update
+---> Package qemu-img.x86_64 10:1.5.3-126.el7 will be updated
+---> Package qemu-img.x86_64 10:1.5.3-126.el7_3.6 will be an update
+---> Package qemu-kvm.x86_64 10:1.5.3-126.el7 will be updated
+---> Package qemu-kvm.x86_64 10:1.5.3-126.el7_3.6 will be an update
+---> Package qemu-kvm-common.x86_64 10:1.5.3-126.el7 will be updated
+---> Package qemu-kvm-common.x86_64 10:1.5.3-126.el7_3.6 will be an update
+---> Package rdma.noarch 0:7.3_4.7_rc2-5.el7 will be updated
+---> Package rdma.noarch 0:7.3_4.7_rc2-6.el7_3 will be an update
+---> Package rpcbind.x86_64 0:0.2.0-38.el7 will be updated
+---> Package rpcbind.x86_64 0:0.2.0-38.el7_3 will be an update
+---> Package samba-client.x86_64 0:4.4.4-9.el7 will be updated
+---> Package samba-client.x86_64 0:4.4.4-14.el7_3 will be an update
+---> Package samba-client-libs.x86_64 0:4.4.4-9.el7 will be updated
+---> Package samba-client-libs.x86_64 0:4.4.4-14.el7_3 will be an update
+---> Package samba-common.noarch 0:4.4.4-9.el7 will be updated
+---> Package samba-common.noarch 0:4.4.4-14.el7_3 will be an update
+---> Package samba-common-libs.x86_64 0:4.4.4-9.el7 will be updated
+---> Package samba-common-libs.x86_64 0:4.4.4-14.el7_3 will be an update
+---> Package samba-libs.x86_64 0:4.4.4-9.el7 will be updated
+---> Package samba-libs.x86_64 0:4.4.4-14.el7_3 will be an update
+---> Package seabios-bin.noarch 0:1.9.1-5.el7 will be updated
+---> Package seabios-bin.noarch 0:1.9.1-5.el7_3.3 will be an update
+---> Package seavgabios-bin.noarch 0:1.9.1-5.el7 will be updated
+---> Package seavgabios-bin.noarch 0:1.9.1-5.el7_3.3 will be an update
+---> Package selinux-policy.noarch 0:3.13.1-102.el7 will be updated
+---> Package selinux-policy.noarch 0:3.13.1-102.el7_3.16 will be an update
+---> Package selinux-policy-targeted.noarch 0:3.13.1-102.el7 will be updated
+---> Package selinux-policy-targeted.noarch 0:3.13.1-102.el7_3.16 will be an update
+---> Package sos.noarch 0:3.3-4.el7.centos will be updated
+---> Package sos.noarch 0:3.3-5.el7.centos will be an update
+---> Package spice-glib.x86_64 0:0.31-6.el7 will be updated
+---> Package spice-glib.x86_64 0:0.31-6.el7_3.2 will be an update
+---> Package spice-gtk3.x86_64 0:0.31-6.el7 will be updated
+---> Package spice-gtk3.x86_64 0:0.31-6.el7_3.2 will be an update
+---> Package spice-server.x86_64 0:0.12.4-19.el7 will be updated
+---> Package spice-server.x86_64 0:0.12.4-20.el7_3 will be an update
+---> Package sssd.x86_64 0:1.14.0-43.el7 will be updated
+---> Package sssd.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package sssd-ad.x86_64 0:1.14.0-43.el7 will be updated
+---> Package sssd-ad.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package sssd-client.x86_64 0:1.14.0-43.el7 will be updated
+---> Package sssd-client.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package sssd-common.x86_64 0:1.14.0-43.el7 will be updated
+---> Package sssd-common.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package sssd-common-pac.x86_64 0:1.14.0-43.el7 will be updated
+---> Package sssd-common-pac.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package sssd-ipa.x86_64 0:1.14.0-43.el7 will be updated
+---> Package sssd-ipa.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package sssd-krb5.x86_64 0:1.14.0-43.el7 will be updated
+---> Package sssd-krb5.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package sssd-krb5-common.x86_64 0:1.14.0-43.el7 will be updated
+---> Package sssd-krb5-common.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package sssd-ldap.x86_64 0:1.14.0-43.el7 will be updated
+---> Package sssd-ldap.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package sssd-proxy.x86_64 0:1.14.0-43.el7 will be updated
+---> Package sssd-proxy.x86_64 0:1.14.0-43.el7_3.14 will be an update
+---> Package sudo.x86_64 0:1.8.6p7-20.el7 will be updated
+---> Package sudo.x86_64 0:1.8.6p7-22.el7_3 will be an update
+---> Package systemd.x86_64 0:219-30.el7 will be updated
+---> Package systemd.x86_64 0:219-30.el7_3.9 will be an update
+---> Package systemd-libs.x86_64 0:219-30.el7 will be updated
+---> Package systemd-libs.x86_64 0:219-30.el7_3.9 will be an update
+---> Package systemd-python.x86_64 0:219-30.el7 will be updated
+---> Package systemd-python.x86_64 0:219-30.el7_3.9 will be an update
+---> Package systemd-sysv.x86_64 0:219-30.el7 will be updated
+---> Package systemd-sysv.x86_64 0:219-30.el7_3.9 will be an update
+---> Package tcsh.x86_64 0:6.18.01-13.el7 will be updated
+---> Package tcsh.x86_64 0:6.18.01-13.el7_3.1 will be an update
+---> Package tuned.noarch 0:2.7.1-3.el7 will be updated
+---> Package tuned.noarch 0:2.7.1-3.el7_3.2 will be an update
+---> Package tzdata.noarch 0:2016g-2.el7 will be updated
+---> Package tzdata.noarch 0:2017b-1.el7 will be an update
+---> Package tzdata-java.noarch 0:2016g-2.el7 will be updated
+---> Package tzdata-java.noarch 0:2017b-1.el7 will be an update
+---> Package util-linux.x86_64 0:2.23.2-33.el7 will be updated
+---> Package util-linux.x86_64 0:2.23.2-33.el7_3.2 will be an update
+---> Package vim-common.x86_64 2:7.4.160-1.el7 will be updated
+---> Package vim-common.x86_64 2:7.4.160-1.el7_3.1 will be an update
+---> Package vim-enhanced.x86_64 2:7.4.160-1.el7 will be updated
+---> Package vim-enhanced.x86_64 2:7.4.160-1.el7_3.1 will be an update
+---> Package vim-filesystem.x86_64 2:7.4.160-1.el7 will be updated
+---> Package vim-filesystem.x86_64 2:7.4.160-1.el7_3.1 will be an update
+---> Package vim-minimal.x86_64 2:7.4.160-1.el7 will be updated
+---> Package vim-minimal.x86_64 2:7.4.160-1.el7_3.1 will be an update
+---> Package wpa_supplicant.x86_64 1:2.0-20.el7 will be updated
+---> Package wpa_supplicant.x86_64 1:2.0-21.el7_3 will be an update
+---> Package xfsprogs.x86_64 0:4.5.0-8.el7 will be updated
+---> Package xfsprogs.x86_64 0:4.5.0-9.el7_3 will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+============================================================================
+ Package                       Arch   Version                 Repository
+                                                                       Size
+============================================================================
+Installing:
+ kernel                        x86_64 3.10.0-514.21.1.el7     updates  37 M
+Updating:
+ NetworkManager                x86_64 1:1.4.0-20.el7_3        updates 2.5 M
+ NetworkManager-adsl           x86_64 1:1.4.0-20.el7_3        updates 146 k
+ NetworkManager-glib           x86_64 1:1.4.0-20.el7_3        updates 385 k
+ NetworkManager-libnm          x86_64 1:1.4.0-20.el7_3        updates 443 k
+ NetworkManager-team           x86_64 1:1.4.0-20.el7_3        updates 147 k
+ NetworkManager-tui            x86_64 1:1.4.0-20.el7_3        updates 224 k
+ NetworkManager-wifi           x86_64 1:1.4.0-20.el7_3        updates 176 k
+ accountsservice               x86_64 0.6.35-14.el7_3         updates  90 k
+ accountsservice-libs          x86_64 0.6.35-14.el7_3         updates  77 k
+ audit                         x86_64 2.6.5-3.el7_3.1         updates 233 k
+ audit-libs                    x86_64 2.6.5-3.el7_3.1         updates  85 k
+ audit-libs-python             x86_64 2.6.5-3.el7_3.1         updates  70 k
+ autocorr-en                   noarch 1:5.0.6.2-5.el7_3.1     updates 178 k
+ bash                          x86_64 4.2.46-21.el7_3         updates 1.0 M
+ bind-libs                     x86_64 32:9.9.4-38.el7_3.3     updates 1.0 M
+ bind-libs-lite                x86_64 32:9.9.4-38.el7_3.3     updates 730 k
+ bind-license                  noarch 32:9.9.4-38.el7_3.3     updates  83 k
+ bind-utils                    x86_64 32:9.9.4-38.el7_3.3     updates 202 k
+ ca-certificates               noarch 2017.2.11-70.1.el7_3    updates 443 k
+ chrony                        x86_64 2.1.1-4.el7.centos      updates 281 k
+ device-mapper                 x86_64 7:1.02.135-1.el7_3.4    updates 269 k
+ device-mapper-event           x86_64 7:1.02.135-1.el7_3.4    updates 178 k
+ device-mapper-event-libs      x86_64 7:1.02.135-1.el7_3.4    updates 177 k
+ device-mapper-libs            x86_64 7:1.02.135-1.el7_3.4    updates 333 k
+ device-mapper-multipath       x86_64 0.4.9-99.el7_3.3        updates 129 k
+ device-mapper-multipath-libs  x86_64 0.4.9-99.el7_3.3        updates 241 k
+ dmidecode                     x86_64 1:3.0-2.1.el7_3         updates  83 k
+ dracut                        x86_64 033-463.el7_3.1         updates 317 k
+ dracut-config-rescue          x86_64 033-463.el7_3.1         updates  54 k
+ dracut-network                x86_64 033-463.el7_3.1         updates  96 k
+ emacs-filesystem              noarch 1:24.3-19.el7_3         updates  58 k
+ expat                         x86_64 2.1.0-10.el7_3          updates  81 k
+ fcoe-utils                    x86_64 1.0.31-1.git5dfd3e4.el7_3.1
+                                                              updates 119 k
+ firefox                       x86_64 52.1.0-2.el7.centos     updates  83 M
+ firewall-config               noarch 0.4.3.2-8.1.el7_3.3     updates 126 k
+ firewalld                     noarch 0.4.3.2-8.1.el7_3.3     updates 386 k
+ firewalld-filesystem          noarch 0.4.3.2-8.1.el7_3.3     updates  45 k
+ gdm                           x86_64 1:3.14.2-20.el7_3       updates 719 k
+ ghostscript                   x86_64 9.07-20.el7_3.5         updates 4.3 M
+ ghostscript-cups              x86_64 9.07-20.el7_3.5         updates  56 k
+ glibc                         x86_64 2.17-157.el7_3.2        updates 3.6 M
+ glibc-common                  x86_64 2.17-157.el7_3.2        updates  11 M
+ glibc-devel                   x86_64 2.17-157.el7_3.2        updates 1.1 M
+ glibc-headers                 x86_64 2.17-157.el7_3.2        updates 669 k
+ grubby                        x86_64 8.28-21.el7_3           updates  70 k
+ gstreamer-plugins-bad-free    x86_64 0.10.23-22.el7_3        updates 1.4 M
+ gstreamer-plugins-good        x86_64 0.10.31-12.el7_3        updates 1.5 M
+ gstreamer1-plugins-bad-free   x86_64 1.4.5-6.el7_3           updates 1.4 M
+ gstreamer1-plugins-good       x86_64 1.4.5-3.el7_3           updates 1.8 M
+ gtk3                          x86_64 3.14.13-20.el7_3.1      updates 3.8 M
+ gtk3-immodule-xim             x86_64 3.14.13-20.el7_3.1      updates  29 k
+ httpd                         x86_64 2.4.6-45.el7.centos.4   updates 2.7 M
+ httpd-manual                  noarch 2.4.6-45.el7.centos.4   updates 1.3 M
+ httpd-tools                   x86_64 2.4.6-45.el7.centos.4   updates  84 k
+ initscripts                   x86_64 9.49.37-1.el7_3.1       updates 432 k
+ ipa-client                    x86_64 4.4.0-14.el7.centos.7   updates 230 k
+ ipa-client-common             noarch 4.4.0-14.el7.centos.7   updates 124 k
+ ipa-common                    noarch 4.4.0-14.el7.centos.7   updates 441 k
+ irqbalance                    x86_64 3:1.0.7-6.el7_3.1       updates  44 k
+ jasper-libs                   x86_64 1.900.1-30.el7_3        updates 150 k
+ java-1.7.0-openjdk            x86_64 1:1.7.0.141-2.6.10.1.el7_3
+                                                              updates 231 k
+ java-1.7.0-openjdk-headless   x86_64 1:1.7.0.141-2.6.10.1.el7_3
+                                                              updates  25 M
+ java-1.8.0-openjdk            x86_64 1:1.8.0.131-3.b12.el7_3 updates 233 k
+ java-1.8.0-openjdk-headless   x86_64 1:1.8.0.131-3.b12.el7_3 updates  31 M
+ kernel-headers                x86_64 3.10.0-514.21.1.el7     updates 4.8 M
+ kernel-tools                  x86_64 3.10.0-514.21.1.el7     updates 4.0 M
+ kernel-tools-libs             x86_64 3.10.0-514.21.1.el7     updates 3.9 M
+ kpartx                        x86_64 0.4.9-99.el7_3.3        updates  68 k
+ krb5-libs                     x86_64 1.14.1-27.el7_3         updates 740 k
+ krb5-workstation              x86_64 1.14.1-27.el7_3         updates 772 k
+ libblkid                      x86_64 2.23.2-33.el7_3.2       updates 170 k
+ libgcrypt                     x86_64 1.5.3-13.el7_3.1        updates 263 k
+ libgudev1                     x86_64 219-30.el7_3.9          updates  77 k
+ libguestfs                    x86_64 1:1.32.7-3.el7.centos.2 updates 1.8 M
+ libipa_hbac                   x86_64 1.14.0-43.el7_3.14      updates 115 k
+ libkadm5                      x86_64 1.14.1-27.el7_3         updates 173 k
+ libmount                      x86_64 2.23.2-33.el7_3.2       updates 172 k
+ libnetfilter_conntrack        x86_64 1.0.6-1.el7_3           updates  55 k
+ libnl3                        x86_64 3.2.28-3.el7_3          updates 278 k
+ libnl3-cli                    x86_64 3.2.28-3.el7_3          updates 160 k
+ libpciaccess                  x86_64 0.13.4-3.el7_3          updates  26 k
+ libreoffice-calc              x86_64 1:5.0.6.2-5.el7_3.1     updates 8.5 M
+ libreoffice-core              x86_64 1:5.0.6.2-5.el7_3.1     updates  73 M
+ libreoffice-draw              x86_64 1:5.0.6.2-5.el7_3.1     updates 657 k
+ libreoffice-graphicfilter     x86_64 1:5.0.6.2-5.el7_3.1     updates 426 k
+ libreoffice-impress           x86_64 1:5.0.6.2-5.el7_3.1     updates 1.3 M
+ libreoffice-langpack-en       x86_64 1:5.0.6.2-5.el7_3.1     updates  46 k
+ libreoffice-opensymbol-fonts  noarch 1:5.0.6.2-5.el7_3.1     updates 220 k
+ libreoffice-pdfimport         x86_64 1:5.0.6.2-5.el7_3.1     updates 256 k
+ libreoffice-pyuno             x86_64 1:5.0.6.2-5.el7_3.1     updates 488 k
+ libreoffice-ure               x86_64 1:5.0.6.2-5.el7_3.1     updates 2.5 M
+ libreoffice-writer            x86_64 1:5.0.6.2-5.el7_3.1     updates 4.2 M
+ libsemanage                   x86_64 2.5-5.1.el7_3           updates 144 k
+ libsemanage-python            x86_64 2.5-5.1.el7_3           updates 104 k
+ libsmbclient                  x86_64 4.4.4-14.el7_3          updates 126 k
+ libsss_autofs                 x86_64 1.14.0-43.el7_3.14      updates 118 k
+ libsss_idmap                  x86_64 1.14.0-43.el7_3.14      updates 120 k
+ libsss_nss_idmap              x86_64 1.14.0-43.el7_3.14      updates 118 k
+ libsss_sudo                   x86_64 1.14.0-43.el7_3.14      updates 116 k
+ libtiff                       x86_64 4.0.3-27.el7_3          updates 170 k
+ libtirpc                      x86_64 0.2.4-0.8.el7_3         updates  88 k
+ libtool-ltdl                  x86_64 2.4.2-22.el7_3          updates  49 k
+ libuuid                       x86_64 2.23.2-33.el7_3.2       updates  76 k
+ libvirt                       x86_64 2.0.0-10.el7_3.9        updates 142 k
+ libvirt-client                x86_64 2.0.0-10.el7_3.9        updates 4.3 M
+ libvirt-daemon                x86_64 2.0.0-10.el7_3.9        updates 725 k
+ libvirt-daemon-config-network x86_64 2.0.0-10.el7_3.9        updates 143 k
+ libvirt-daemon-config-nwfilter
+                               x86_64 2.0.0-10.el7_3.9        updates 145 k
+ libvirt-daemon-driver-interface
+                               x86_64 2.0.0-10.el7_3.9        updates 186 k
+ libvirt-daemon-driver-lxc     x86_64 2.0.0-10.el7_3.9        updates 810 k
+ libvirt-daemon-driver-network x86_64 2.0.0-10.el7_3.9        updates 341 k
+ libvirt-daemon-driver-nodedev x86_64 2.0.0-10.el7_3.9        updates 185 k
+ libvirt-daemon-driver-nwfilter
+                               x86_64 2.0.0-10.el7_3.9        updates 209 k
+ libvirt-daemon-driver-qemu    x86_64 2.0.0-10.el7_3.9        updates 621 k
+ libvirt-daemon-driver-secret  x86_64 2.0.0-10.el7_3.9        updates 175 k
+ libvirt-daemon-driver-storage x86_64 2.0.0-10.el7_3.9        updates 379 k
+ libvirt-daemon-kvm            x86_64 2.0.0-10.el7_3.9        updates 141 k
+ libwbclient                   x86_64 4.4.4-14.el7_3          updates 100 k
+ lvm2                          x86_64 7:2.02.166-1.el7_3.4    updates 1.1 M
+ lvm2-libs                     x86_64 7:2.02.166-1.el7_3.4    updates 986 k
+ mdadm                         x86_64 3.4-14.el7_3.1          updates 415 k
+ microcode_ctl                 x86_64 2:2.1-16.3.el7_3        updates 745 k
+ mod_ssl                       x86_64 1:2.4.6-45.el7.centos.4 updates 105 k
+ net-snmp-libs                 x86_64 1:5.7.2-24.el7_3.2      updates 747 k
+ nfs-utils                     x86_64 1:1.3.0-0.33.el7_3      updates 377 k
+ nspr                          x86_64 4.13.1-1.0.el7_3        updates 126 k
+ nss                           x86_64 3.28.4-1.2.el7_3        updates 872 k
+ nss-sysinit                   x86_64 3.28.4-1.2.el7_3        updates  58 k
+ nss-tools                     x86_64 3.28.4-1.2.el7_3        updates 496 k
+ nss-util                      x86_64 3.28.4-1.0.el7_3        updates  73 k
+ ntp                           x86_64 4.2.6p5-25.el7.centos.2 updates 547 k
+ ntpdate                       x86_64 4.2.6p5-25.el7.centos.2 updates  86 k
+ open-vm-tools                 x86_64 10.0.5-4.el7_3          updates 516 k
+ open-vm-tools-desktop         x86_64 10.0.5-4.el7_3          updates 162 k
+ openjpeg-libs                 x86_64 1.5.1-16.el7_3          updates  86 k
+ openssh                       x86_64 6.6.1p1-35.el7_3        updates 438 k
+ openssh-clients               x86_64 6.6.1p1-35.el7_3        updates 642 k
+ openssh-server                x86_64 6.6.1p1-35.el7_3        updates 440 k
+ openssl                       x86_64 1:1.0.1e-60.el7_3.1     updates 713 k
+ openssl-libs                  x86_64 1:1.0.1e-60.el7_3.1     updates 959 k
+ oprofile                      x86_64 0.9.9-21.el7_3          updates 2.0 M
+ perf                          x86_64 3.10.0-514.21.1.el7     updates 5.1 M
+ policycoreutils               x86_64 2.5-11.el7_3            updates 841 k
+ policycoreutils-python        x86_64 2.5-11.el7_3            updates 445 k
+ polkit                        x86_64 0.112-12.el7_3          updates 167 k
+ pulseaudio                    x86_64 6.0-9.el7_3             updates 890 k
+ pulseaudio-gdm-hooks          x86_64 6.0-9.el7_3             updates  20 k
+ pulseaudio-libs               x86_64 6.0-9.el7_3             updates 581 k
+ pulseaudio-libs-glib2         x86_64 6.0-9.el7_3             updates  27 k
+ pulseaudio-module-bluetooth   x86_64 6.0-9.el7_3             updates  68 k
+ pulseaudio-module-x11         x86_64 6.0-9.el7_3             updates  38 k
+ pulseaudio-utils              x86_64 6.0-9.el7_3             updates  76 k
+ python-firewall               noarch 0.4.3.2-8.1.el7_3.3     updates 301 k
+ python-libipa_hbac            x86_64 1.14.0-43.el7_3.14      updates 108 k
+ python-perf                   x86_64 3.10.0-514.21.1.el7     updates 4.0 M
+ python-sss-murmur             x86_64 1.14.0-43.el7_3.14      updates  98 k
+ python-sssdconfig             noarch 1.14.0-43.el7_3.14      updates 140 k
+ python2-ipaclient             noarch 4.4.0-14.el7.centos.7   updates 540 k
+ python2-ipalib                noarch 4.4.0-14.el7.centos.7   updates 654 k
+ qemu-img                      x86_64 10:1.5.3-126.el7_3.6    updates 672 k
+ qemu-kvm                      x86_64 10:1.5.3-126.el7_3.6    updates 1.9 M
+ qemu-kvm-common               x86_64 10:1.5.3-126.el7_3.6    updates 406 k
+ rdma                          noarch 7.3_4.7_rc2-6.el7_3     updates  30 k
+ rpcbind                       x86_64 0.2.0-38.el7_3          updates  59 k
+ samba-client                  x86_64 4.4.4-14.el7_3          updates 547 k
+ samba-client-libs             x86_64 4.4.4-14.el7_3          updates 4.6 M
+ samba-common                  noarch 4.4.4-14.el7_3          updates 191 k
+ samba-common-libs             x86_64 4.4.4-14.el7_3          updates 161 k
+ samba-libs                    x86_64 4.4.4-14.el7_3          updates 260 k
+ seabios-bin                   noarch 1.9.1-5.el7_3.3         updates  99 k
+ seavgabios-bin                noarch 1.9.1-5.el7_3.3         updates  36 k
+ selinux-policy                noarch 3.13.1-102.el7_3.16     updates 414 k
+ selinux-policy-targeted       noarch 3.13.1-102.el7_3.16     updates 6.4 M
+ sos                           noarch 3.3-5.el7.centos        updates 357 k
+ spice-glib                    x86_64 0.31-6.el7_3.2          updates 361 k
+ spice-gtk3                    x86_64 0.31-6.el7_3.2          updates  54 k
+ spice-server                  x86_64 0.12.4-20.el7_3         updates 382 k
+ sssd                          x86_64 1.14.0-43.el7_3.14      updates 107 k
+ sssd-ad                       x86_64 1.14.0-43.el7_3.14      updates 225 k
+ sssd-client                   x86_64 1.14.0-43.el7_3.14      updates 172 k
+ sssd-common                   x86_64 1.14.0-43.el7_3.14      updates 1.2 M
+ sssd-common-pac               x86_64 1.14.0-43.el7_3.14      updates 151 k
+ sssd-ipa                      x86_64 1.14.0-43.el7_3.14      updates 297 k
+ sssd-krb5                     x86_64 1.14.0-43.el7_3.14      updates 145 k
+ sssd-krb5-common              x86_64 1.14.0-43.el7_3.14      updates 173 k
+ sssd-ldap                     x86_64 1.14.0-43.el7_3.14      updates 213 k
+ sssd-proxy                    x86_64 1.14.0-43.el7_3.14      updates 141 k
+ sudo                          x86_64 1.8.6p7-22.el7_3        updates 735 k
+ systemd                       x86_64 219-30.el7_3.9          updates 5.2 M
+ systemd-libs                  x86_64 219-30.el7_3.9          updates 369 k
+ systemd-python                x86_64 219-30.el7_3.9          updates 110 k
+ systemd-sysv                  x86_64 219-30.el7_3.9          updates  64 k
+ tcsh                          x86_64 6.18.01-13.el7_3.1      updates 338 k
+ tuned                         noarch 2.7.1-3.el7_3.2         updates 210 k
+ tzdata                        noarch 2017b-1.el7             updates 443 k
+ tzdata-java                   noarch 2017b-1.el7             updates 183 k
+ util-linux                    x86_64 2.23.2-33.el7_3.2       updates 1.9 M
+ vim-common                    x86_64 2:7.4.160-1.el7_3.1     updates 5.9 M
+ vim-enhanced                  x86_64 2:7.4.160-1.el7_3.1     updates 1.0 M
+ vim-filesystem                x86_64 2:7.4.160-1.el7_3.1     updates 9.7 k
+ vim-minimal                   x86_64 2:7.4.160-1.el7_3.1     updates 436 k
+ wpa_supplicant                x86_64 1:2.0-21.el7_3          updates 788 k
+ xfsprogs                      x86_64 4.5.0-9.el7_3           updates 895 k
+
+Transaction Summary
+============================================================================
+Install    1 Package
+Upgrade  203 Packages
+
+Total size: 410 M
+Total download size: 2.1 M
+Is this ok [y/d/N]: y
+Downloading packages:
+updates/7/x86_64/prestodelta                           | 777 kB   00:01     
+Delta RPMs reduced 1.6 M of updates to 628 k (60% saved)
+(1/4): sudo-1.8.6p7-20.el7_1.8.6p7-22.el7_3.x86_64.drp | 270 kB   00:00     
+(2/4): nss-3.21.0-17.el7_3.28.4-1.2.el7_3.x86_64.drpm  | 359 kB   00:00     
+(3/4): nss-sysinit-3.28.4-1.2.el7_3.x86_64.rpm         |  58 kB   00:03     
+nss-tools-3.28.4-1.2.el7_3.x86 FAILED                                          
+http://lug.mtu.edu/centos/7.3.1611/updates/x86_64/Packages/nss-tools-3.28.4-1.2.el7_3.x86_64.rpm: [Errno 14] HTTP Error 404 - Not Found
+Trying other mirror.
+To address this issue please refer to the below knowledge base article 
+
+https://access.redhat.com/articles/1320623
+
+If above article doesn't help to resolve this issue please create a bug on https://bugs.centos.org/
+
+(4/4): nss-tools-3.28.4-1.2.el7_3.x86_64.rpm           | 496 kB   00:00     
+----------------------------------------------------------------------------
+Total                                          130 kB/s | 1.2 MB  00:09     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : ipa-common-4.4.0-14.el7.centos.7.noarch                1/407 
+  Updating   : tzdata-java-2017b-1.el7.noarch                         2/407 
+  Updating   : ipa-client-common-4.4.0-14.el7.centos.7.noarch         3/407 
+  Updating   : 32:bind-license-9.9.4-38.el7_3.3.noarch                4/407 
+  Updating   : 1:autocorr-en-5.0.6.2-5.el7_3.1.noarch                 5/407 
+  Updating   : python-sssdconfig-1.14.0-43.el7_3.14.noarch            6/407 
+  Updating   : 2:vim-filesystem-7.4.160-1.el7_3.1.x86_64              7/407 
+  Updating   : python-firewall-0.4.3.2-8.1.el7_3.3.noarch             8/407 
+  Updating   : firewalld-filesystem-0.4.3.2-8.1.el7_3.3.noarch        9/407 
+  Updating   : seavgabios-bin-1.9.1-5.el7_3.3.noarch                 10/407 
+  Updating   : kernel-headers-3.10.0-514.21.1.el7.x86_64             11/407 
+  Updating   : seabios-bin-1.9.1-5.el7_3.3.noarch                    12/407 
+  Updating   : tzdata-2017b-1.el7.noarch                             13/407 
+  Updating   : bash-4.2.46-21.el7_3.x86_64                           14/407 
+  Updating   : glibc-2.17-157.el7_3.2.x86_64                         15/407 
+warning: /etc/nsswitch.conf created as /etc/nsswitch.conf.rpmnew
+  Updating   : glibc-common-2.17-157.el7_3.2.x86_64                  16/407 
+  Updating   : nspr-4.13.1-1.0.el7_3.x86_64                          17/407 
+  Updating   : nss-util-3.28.4-1.0.el7_3.x86_64                      18/407 
+  Updating   : nss-3.28.4-1.2.el7_3.x86_64                           19/407 
+  Updating   : nss-sysinit-3.28.4-1.2.el7_3.x86_64                   20/407 
+  Updating   : audit-libs-2.6.5-3.el7_3.1.x86_64                     21/407 
+  Updating   : libuuid-2.23.2-33.el7_3.2.x86_64                      22/407 
+  Updating   : libnl3-3.2.28-3.el7_3.x86_64                          23/407 
+  Updating   : libblkid-2.23.2-33.el7_3.2.x86_64                     24/407 
+  Updating   : libsss_idmap-1.14.0-43.el7_3.14.x86_64                25/407 
+  Updating   : libsemanage-2.5-5.1.el7_3.x86_64                      26/407 
+  Updating   : libgcrypt-1.5.3-13.el7_3.1.x86_64                     27/407 
+  Updating   : systemd-libs-219-30.el7_3.9.x86_64                    28/407 
+  Updating   : pulseaudio-libs-6.0-9.el7_3.x86_64                    29/407 
+  Updating   : libgudev1-219-30.el7_3.9.x86_64                       30/407 
+  Updating   : 10:qemu-img-1.5.3-126.el7_3.6.x86_64                  31/407 
+  Updating   : gtk3-3.14.13-20.el7_3.1.x86_64                        32/407 
+  Updating   : expat-2.1.0-10.el7_3.x86_64                           33/407 
+  Updating   : 1:NetworkManager-libnm-1.4.0-20.el7_3.x86_64          34/407 
+  Updating   : libmount-2.23.2-33.el7_3.2.x86_64                     35/407 
+  Updating   : systemd-219-30.el7_3.9.x86_64                         36/407 
+  Updating   : util-linux-2.23.2-33.el7_3.2.x86_64                   37/407 
+  Updating   : policycoreutils-2.5-11.el7_3.x86_64                   38/407 
+  Updating   : polkit-0.112-12.el7_3.x86_64                          39/407 
+  Updating   : systemd-sysv-219-30.el7_3.9.x86_64                    40/407 
+  Updating   : 7:device-mapper-libs-1.02.135-1.el7_3.4.x86_64        41/407 
+  Updating   : 7:device-mapper-1.02.135-1.el7_3.4.x86_64             42/407 
+  Updating   : samba-common-4.4.4-14.el7_3.noarch                    43/407 
+  Updating   : 7:device-mapper-event-libs-1.02.135-1.el7_3.4.x86_    44/407 
+  Updating   : libvirt-client-2.0.0-10.el7_3.9.x86_64                45/407 
+  Updating   : kpartx-0.4.9-99.el7_3.3.x86_64                        46/407 
+  Updating   : dracut-033-463.el7_3.1.x86_64                         47/407 
+  Updating   : initscripts-9.49.37-1.el7_3.1.x86_64                  48/407 
+  Updating   : ca-certificates-2017.2.11-70.1.el7_3.noarch           49/407 
+  Updating   : krb5-libs-1.14.1-27.el7_3.x86_64                      50/407 
+  Updating   : 1:openssl-libs-1.0.1e-60.el7_3.1.x86_64               51/407 
+  Updating   : libwbclient-4.4.4-14.el7_3.x86_64                     52/407 
+  Updating   : samba-client-libs-4.4.4-14.el7_3.x86_64               53/407 
+  Updating   : 1:java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.1.e    54/407 
+warning: /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.141-2.6.10.1.el7_3.x86_64/jre/lib/security/java.security created as /usr/lib/jvm/java-1.7.0-openjdk-1.7.0.141-2.6.10.1.el7_3.x86_64/jre/lib/security/java.security.rpmnew
+  Updating   : 1:libreoffice-ure-5.0.6.2-5.el7_3.1.x86_64            55/407 
+  Updating   : libsmbclient-4.4.4-14.el7_3.x86_64                    56/407 
+  Updating   : openssh-6.6.1p1-35.el7_3.x86_64                       57/407 
+  Updating   : 1:wpa_supplicant-2.0-21.el7_3.x86_64                  58/407 
+  Updating   : 1:NetworkManager-1.4.0-20.el7_3.x86_64                59/407 
+  Updating   : libtirpc-0.2.4-0.8.el7_3.x86_64                       60/407 
+  Updating   : accountsservice-0.6.35-14.el7_3.x86_64                61/407 
+  Updating   : selinux-policy-3.13.1-102.el7_3.16.noarch             62/407 
+  Updating   : pulseaudio-libs-glib2-6.0-9.el7_3.x86_64              63/407 
+  Updating   : libpciaccess-0.13.4-3.el7_3.x86_64                    64/407 
+  Updating   : libipa_hbac-1.14.0-43.el7_3.14.x86_64                 65/407 
+  Updating   : libsss_autofs-1.14.0-43.el7_3.14.x86_64               66/407 
+  Updating   : python-libipa_hbac-1.14.0-43.el7_3.14.x86_64          67/407 
+  Updating   : spice-glib-0.31-6.el7_3.2.x86_64                      68/407 
+  Updating   : accountsservice-libs-0.6.35-14.el7_3.x86_64           69/407 
+  Updating   : 1:gdm-3.14.2-20.el7_3.x86_64                          70/407 
+  Updating   : pulseaudio-gdm-hooks-6.0-9.el7_3.x86_64               71/407 
+  Updating   : rpcbind-0.2.0-38.el7_3.x86_64                         72/407 
+  Updating   : 1:nfs-utils-1.3.0-0.33.el7_3.x86_64                   73/407 
+  Updating   : 1:java-1.8.0-openjdk-headless-1.8.0.131-3.b12.el7_    74/407 
+  Updating   : samba-common-libs-4.4.4-14.el7_3.x86_64               75/407 
+  Updating   : 32:bind-libs-9.9.4-38.el7_3.3.x86_64                  76/407 
+  Updating   : 32:bind-utils-9.9.4-38.el7_3.3.x86_64                 77/407 
+  Updating   : ntpdate-4.2.6p5-25.el7.centos.2.x86_64                78/407 
+  Updating   : ntp-4.2.6p5-25.el7.centos.2.x86_64                    79/407 
+  Updating   : spice-server-0.12.4-20.el7_3.x86_64                   80/407 
+  Updating   : 1:openssl-1.0.1e-60.el7_3.1.x86_64                    81/407 
+  Updating   : open-vm-tools-10.0.5-4.el7_3.x86_64                   82/407 
+  Updating   : httpd-tools-2.4.6-45.el7.centos.4.x86_64              83/407 
+  Updating   : httpd-2.4.6-45.el7.centos.4.x86_64                    84/407 
+  Updating   : libkadm5-1.14.1-27.el7_3.x86_64                       85/407 
+  Updating   : krb5-workstation-1.14.1-27.el7_3.x86_64               86/407 
+  Updating   : 7:device-mapper-event-1.02.135-1.el7_3.4.x86_64       87/407 
+  Updating   : 7:lvm2-libs-2.02.166-1.el7_3.4.x86_64                 88/407 
+  Updating   : 7:lvm2-2.02.166-1.el7_3.4.x86_64                      89/407 
+  Updating   : device-mapper-multipath-libs-0.4.9-99.el7_3.3.x86_    90/407 
+  Updating   : device-mapper-multipath-0.4.9-99.el7_3.3.x86_64       91/407 
+  Updating   : mdadm-3.4-14.el7_3.1.x86_64                           92/407 
+  Updating   : 10:qemu-kvm-common-1.5.3-126.el7_3.6.x86_64           93/407 
+  Updating   : 10:qemu-kvm-1.5.3-126.el7_3.6.x86_64                  94/407 
+  Updating   : firewalld-0.4.3.2-8.1.el7_3.3.noarch                  95/407 
+  Updating   : pulseaudio-utils-6.0-9.el7_3.x86_64                   96/407 
+  Updating   : libsemanage-python-2.5-5.1.el7_3.x86_64               97/407 
+  Updating   : grubby-8.28-21.el7_3.x86_64                           98/407 
+  Installing : kernel-3.10.0-514.21.1.el7.x86_64                     99/407 
+  Updating   : audit-libs-python-2.6.5-3.el7_3.1.x86_64             100/407 
+  Updating   : nss-tools-3.28.4-1.2.el7_3.x86_64                    101/407 
+  Updating   : glibc-headers-2.17-157.el7_3.2.x86_64                102/407 
+  Updating   : 2:vim-common-7.4.160-1.el7_3.1.x86_64                103/407 
+  Updating   : python-sss-murmur-1.14.0-43.el7_3.14.x86_64          104/407 
+  Updating   : python2-ipalib-4.4.0-14.el7.centos.7.noarch          105/407 
+  Updating   : python2-ipaclient-4.4.0-14.el7.centos.7.noarch       106/407 
+  Updating   : 2:vim-minimal-7.4.160-1.el7_3.1.x86_64               107/407 
+  Updating   : libtiff-4.0.3-27.el7_3.x86_64                        108/407 
+  Updating   : ghostscript-9.07-20.el7_3.5.x86_64                   109/407 
+  Updating   : libtool-ltdl-2.4.2-22.el7_3.x86_64                   110/407 
+  Updating   : pulseaudio-6.0-9.el7_3.x86_64                        111/407 
+  Updating   : libsss_sudo-1.14.0-43.el7_3.14.x86_64                112/407 
+  Updating   : libsss_nss_idmap-1.14.0-43.el7_3.14.x86_64           113/407 
+  Updating   : sssd-client-1.14.0-43.el7_3.14.x86_64                114/407 
+  Updating   : sssd-common-1.14.0-43.el7_3.14.x86_64                115/407 
+  Updating   : sssd-krb5-common-1.14.0-43.el7_3.14.x86_64           116/407 
+  Updating   : sssd-common-pac-1.14.0-43.el7_3.14.x86_64            117/407 
+  Updating   : sssd-ad-1.14.0-43.el7_3.14.x86_64                    118/407 
+  Updating   : sssd-ipa-1.14.0-43.el7_3.14.x86_64                   119/407 
+  Updating   : sssd-ldap-1.14.0-43.el7_3.14.x86_64                  120/407 
+  Updating   : sssd-krb5-1.14.0-43.el7_3.14.x86_64                  121/407 
+  Updating   : sssd-proxy-1.14.0-43.el7_3.14.x86_64                 122/407 
+  Updating   : sssd-1.14.0-43.el7_3.14.x86_64                       123/407 
+  Updating   : jasper-libs-1.900.1-30.el7_3.x86_64                  124/407 
+  Updating   : python-perf-3.10.0-514.21.1.el7.x86_64               125/407 
+  Updating   : kernel-tools-libs-3.10.0-514.21.1.el7.x86_64         126/407 
+  Updating   : 1:dmidecode-3.0-2.1.el7_3.x86_64                     127/407 
+  Updating   : libvirt-daemon-2.0.0-10.el7_3.9.x86_64               128/407 
+  Updating   : libvirt-daemon-driver-network-2.0.0-10.el7_3.9.x86   129/407 
+  Updating   : libvirt-daemon-driver-storage-2.0.0-10.el7_3.9.x86   130/407 
+  Updating   : libvirt-daemon-driver-nwfilter-2.0.0-10.el7_3.9.x8   131/407 
+  Updating   : libvirt-daemon-driver-qemu-2.0.0-10.el7_3.9.x86_64   132/407 
+  Updating   : libvirt-daemon-driver-secret-2.0.0-10.el7_3.9.x86_   133/407 
+  Updating   : libvirt-daemon-driver-interface-2.0.0-10.el7_3.9.x   134/407 
+  Updating   : libvirt-daemon-driver-nodedev-2.0.0-10.el7_3.9.x86   135/407 
+  Updating   : libvirt-daemon-kvm-2.0.0-10.el7_3.9.x86_64           136/407 
+  Updating   : libvirt-daemon-config-nwfilter-2.0.0-10.el7_3.9.x8   137/407 
+  Updating   : libvirt-daemon-config-network-2.0.0-10.el7_3.9.x86   138/407 
+  Updating   : libvirt-daemon-driver-lxc-2.0.0-10.el7_3.9.x86_64    139/407 
+  Updating   : 1:libreoffice-opensymbol-fonts-5.0.6.2-5.el7_3.1.n   140/407 
+  Updating   : 1:libreoffice-core-5.0.6.2-5.el7_3.1.x86_64          141/407 
+  Updating   : 1:libreoffice-pyuno-5.0.6.2-5.el7_3.1.x86_64         142/407 
+  Updating   : 1:libreoffice-graphicfilter-5.0.6.2-5.el7_3.1.x86_   143/407 
+  Updating   : 1:libreoffice-pdfimport-5.0.6.2-5.el7_3.1.x86_64     144/407 
+  Updating   : 1:libreoffice-draw-5.0.6.2-5.el7_3.1.x86_64          145/407 
+  Updating   : 1:libreoffice-writer-5.0.6.2-5.el7_3.1.x86_64        146/407 
+  Updating   : 1:libreoffice-calc-5.0.6.2-5.el7_3.1.x86_64          147/407 
+  Updating   : 1:libreoffice-impress-5.0.6.2-5.el7_3.1.x86_64       148/407 
+  Updating   : 1:libreoffice-langpack-en-5.0.6.2-5.el7_3.1.x86_64   149/407 
+  Updating   : libvirt-2.0.0-10.el7_3.9.x86_64                      150/407 
+  Updating   : 1:libguestfs-1.32.7-3.el7.centos.2.x86_64            151/407 
+  Updating   : kernel-tools-3.10.0-514.21.1.el7.x86_64              152/407 
+  Updating   : tuned-2.7.1-3.el7_3.2.noarch                         153/407 
+  Updating   : gstreamer-plugins-bad-free-0.10.23-22.el7_3.x86_64   154/407 
+  Updating   : ipa-client-4.4.0-14.el7.centos.7.x86_64              155/407 
+  Updating   : pulseaudio-module-bluetooth-6.0-9.el7_3.x86_64       156/407 
+  Updating   : pulseaudio-module-x11-6.0-9.el7_3.x86_64             157/407 
+  Updating   : ghostscript-cups-9.07-20.el7_3.5.x86_64              158/407 
+  Updating   : sudo-1.8.6p7-22.el7_3.x86_64                         159/407 
+  Updating   : 2:vim-enhanced-7.4.160-1.el7_3.1.x86_64              160/407 
+  Updating   : glibc-devel-2.17-157.el7_3.2.x86_64                  161/407 
+  Updating   : policycoreutils-python-2.5-11.el7_3.x86_64           162/407 
+  Updating   : firewall-config-0.4.3.2-8.1.el7_3.3.noarch           163/407 
+  Updating   : fcoe-utils-1.0.31-1.git5dfd3e4.el7_3.1.x86_64        164/407 
+  Updating   : httpd-manual-2.4.6-45.el7.centos.4.noarch            165/407 
+  Updating   : 1:mod_ssl-2.4.6-45.el7.centos.4.x86_64               166/407 
+  Updating   : open-vm-tools-desktop-10.0.5-4.el7_3.x86_64          167/407 
+  Updating   : samba-client-4.4.4-14.el7_3.x86_64                   168/407 
+  Updating   : 1:java-1.8.0-openjdk-1.8.0.131-3.b12.el7_3.x86_64    169/407 
+  Updating   : spice-gtk3-0.31-6.el7_3.2.x86_64                     170/407 
+  Updating   : selinux-policy-targeted-3.13.1-102.el7_3.16.noarch   171/407 
+  Updating   : 1:NetworkManager-wifi-1.4.0-20.el7_3.x86_64          172/407 
+  Updating   : 1:NetworkManager-team-1.4.0-20.el7_3.x86_64          173/407 
+  Updating   : 1:NetworkManager-adsl-1.4.0-20.el7_3.x86_64          174/407 
+  Updating   : 1:NetworkManager-tui-1.4.0-20.el7_3.x86_64           175/407 
+  Updating   : openssh-server-6.6.1p1-35.el7_3.x86_64               176/407 
+  Updating   : openssh-clients-6.6.1p1-35.el7_3.x86_64              177/407 
+  Updating   : 1:java-1.7.0-openjdk-1.7.0.141-2.6.10.1.el7_3.x86_   178/407 
+  Updating   : samba-libs-4.4.4-14.el7_3.x86_64                     179/407 
+  Updating   : 1:net-snmp-libs-5.7.2-24.el7_3.2.x86_64              180/407 
+  Updating   : 32:bind-libs-lite-9.9.4-38.el7_3.3.x86_64            181/407 
+  Updating   : perf-3.10.0-514.21.1.el7.x86_64                      182/407 
+  Updating   : audit-2.6.5-3.el7_3.1.x86_64                         183/407 
+  Updating   : dracut-network-033-463.el7_3.1.x86_64                184/407 
+  Updating   : rdma-7.3_4.7_rc2-6.el7_3.noarch                      185/407 
+  Updating   : dracut-config-rescue-033-463.el7_3.1.x86_64          186/407 
+  Updating   : 3:irqbalance-1.0.7-6.el7_3.1.x86_64                  187/407 
+  Updating   : chrony-2.1.1-4.el7.centos.x86_64                     188/407 
+  Updating   : systemd-python-219-30.el7_3.9.x86_64                 189/407 
+  Updating   : 2:microcode_ctl-2.1-16.3.el7_3.x86_64                190/407 
+  Updating   : gtk3-immodule-xim-3.14.13-20.el7_3.1.x86_64          191/407 
+  Updating   : 1:NetworkManager-glib-1.4.0-20.el7_3.x86_64          192/407 
+  Updating   : gstreamer-plugins-good-0.10.31-12.el7_3.x86_64       193/407 
+  Updating   : gstreamer1-plugins-good-1.4.5-3.el7_3.x86_64         194/407 
+  Updating   : xfsprogs-4.5.0-9.el7_3.x86_64                        195/407 
+  Updating   : libnl3-cli-3.2.28-3.el7_3.x86_64                     196/407 
+  Updating   : firefox-52.1.0-2.el7.centos.x86_64                   197/407 
+  Updating   : oprofile-0.9.9-21.el7_3.x86_64                       198/407 
+  Updating   : gstreamer1-plugins-bad-free-1.4.5-6.el7_3.x86_64     199/407 
+  Updating   : openjpeg-libs-1.5.1-16.el7_3.x86_64                  200/407 
+  Updating   : tcsh-6.18.01-13.el7_3.1.x86_64                       201/407 
+  Updating   : libnetfilter_conntrack-1.0.6-1.el7_3.x86_64          202/407 
+  Updating   : 1:emacs-filesystem-24.3-19.el7_3.noarch              203/407 
+  Updating   : sos-3.3-5.el7.centos.noarch                          204/407 
+  Cleanup    : ipa-client-4.4.0-12.el7.centos.x86_64                205/407 
+  Cleanup    : 1:libguestfs-1.32.7-3.el7.centos.x86_64              206/407 
+  Cleanup    : samba-client-4.4.4-9.el7.x86_64                      207/407 
+  Cleanup    : libvirt-2.0.0-10.el7.x86_64                          208/407 
+  Cleanup    : pulseaudio-gdm-hooks-6.0-8.el7.x86_64                209/407 
+  Cleanup    : 1:gdm-3.14.2-19.el7.x86_64                           210/407 
+  Cleanup    : 1:NetworkManager-tui-1.4.0-12.el7.x86_64             211/407 
+  Cleanup    : 1:libreoffice-calc-5.0.6.2-3.el7.x86_64              212/407 
+  Cleanup    : 1:libreoffice-writer-5.0.6.2-3.el7.x86_64            213/407 
+  Cleanup    : samba-libs-4.4.4-9.el7.x86_64                        214/407 
+  Cleanup    : spice-gtk3-0.31-6.el7.x86_64                         215/407 
+  Cleanup    : 1:libreoffice-impress-5.0.6.2-3.el7.x86_64           216/407 
+  Cleanup    : pulseaudio-module-x11-6.0-8.el7.x86_64               217/407 
+  Cleanup    : samba-common-libs-4.4.4-9.el7.x86_64                 218/407 
+  Cleanup    : firefox-45.4.0-1.el7.centos.x86_64                   219/407 
+  Cleanup    : libvirt-daemon-driver-lxc-2.0.0-10.el7.x86_64        220/407 
+  Cleanup    : 1:NetworkManager-glib-1.4.0-12.el7.x86_64            221/407 
+  Cleanup    : openssh-server-6.6.1p1-31.el7.x86_64                 222/407 
+  Cleanup    : spice-glib-0.31-6.el7.x86_64                         223/407 
+  Cleanup    : libvirt-daemon-kvm-2.0.0-10.el7.x86_64               224/407 
+  Cleanup    : 1:mod_ssl-2.4.6-45.el7.centos.x86_64                 225/407 
+  Cleanup    : 10:qemu-kvm-1.5.3-126.el7.x86_64                     226/407 
+  Cleanup    : libvirt-daemon-driver-qemu-2.0.0-10.el7.x86_64       227/407 
+  Cleanup    : libvirt-daemon-driver-storage-2.0.0-10.el7.x86_64    228/407 
+  Cleanup    : 1:nfs-utils-1.3.0-0.33.el7.x86_64                    229/407 
+  Cleanup    : 7:lvm2-2.02.166-1.el7.x86_64                         230/407 
+  Cleanup    : 7:lvm2-libs-2.02.166-1.el7.x86_64                    231/407 
+  Cleanup    : 7:device-mapper-event-1.02.135-1.el7.x86_64          232/407 
+  Cleanup    : rpcbind-0.2.0-38.el7.x86_64                          233/407 
+  Cleanup    : libvirt-daemon-driver-nodedev-2.0.0-10.el7.x86_64    234/407 
+  Cleanup    : nss-tools-3.21.0-17.el7.x86_64                       235/407 
+  Cleanup    : 1:java-1.7.0-openjdk-1.7.0.111-2.6.7.8.el7.x86_64    236/407 
+  Cleanup    : openssh-clients-6.6.1p1-31.el7.x86_64                237/407 
+  Cleanup    : sssd-1.14.0-43.el7.x86_64                            238/407 
+  Cleanup    : sssd-ipa-1.14.0-43.el7.x86_64                        239/407 
+  Cleanup    : sssd-ad-1.14.0-43.el7.x86_64                         240/407 
+  Cleanup    : sssd-common-pac-1.14.0-43.el7.x86_64                 241/407 
+  Cleanup    : sssd-ldap-1.14.0-43.el7.x86_64                       242/407 
+  Cleanup    : sssd-krb5-1.14.0-43.el7.x86_64                       243/407 
+  Cleanup    : sssd-proxy-1.14.0-43.el7.x86_64                      244/407 
+  Cleanup    : libsmbclient-4.4.4-9.el7.x86_64                      245/407 
+  Cleanup    : 32:bind-utils-9.9.4-37.el7.x86_64                    246/407 
+  Cleanup    : libwbclient-4.4.4-9.el7.x86_64                       247/407 
+  Cleanup    : samba-client-libs-4.4.4-9.el7.x86_64                 248/407 
+  Cleanup    : sssd-krb5-common-1.14.0-43.el7.x86_64                249/407 
+  Cleanup    : sssd-common-1.14.0-43.el7.x86_64                     250/407 
+  Cleanup    : sssd-client-1.14.0-43.el7.x86_64                     251/407 
+  Cleanup    : 32:bind-libs-9.9.4-37.el7.x86_64                     252/407 
+  Cleanup    : 1:openssl-1.0.1e-60.el7.x86_64                       253/407 
+  Cleanup    : krb5-workstation-1.14.1-26.el7.x86_64                254/407 
+  Cleanup    : ntp-4.2.6p5-25.el7.centos.x86_64                     255/407 
+  Cleanup    : 1:java-1.8.0-openjdk-1.8.0.102-4.b14.el7.x86_64      256/407 
+  Cleanup    : 1:java-1.8.0-openjdk-headless-1.8.0.102-4.b14.el7.   257/407 
+  Cleanup    : audit-2.6.5-3.el7.x86_64                             258/407 
+  Cleanup    : pulseaudio-module-bluetooth-6.0-8.el7.x86_64         259/407 
+  Cleanup    : pulseaudio-6.0-8.el7.x86_64                          260/407 
+  Cleanup    : systemd-python-219-30.el7.x86_64                     261/407 
+  Cleanup    : 32:bind-libs-lite-9.9.4-37.el7.x86_64                262/407 
+  Cleanup    : 1:libreoffice-pdfimport-5.0.6.2-3.el7.x86_64         263/407 
+  Cleanup    : 1:libreoffice-draw-5.0.6.2-3.el7.x86_64              264/407 
+  Cleanup    : 1:libreoffice-graphicfilter-5.0.6.2-3.el7.x86_64     265/407 
+  Cleanup    : openssh-6.6.1p1-31.el7.x86_64                        266/407 
+  Cleanup    : 10:qemu-kvm-common-1.5.3-126.el7.x86_64              267/407 
+  Cleanup    : pulseaudio-utils-6.0-8.el7.x86_64                    268/407 
+  Cleanup    : gstreamer-plugins-bad-free-0.10.23-20.el7.x86_64     269/407 
+  Cleanup    : fcoe-utils-1.0.31-1.git5dfd3e4.el7.x86_64            270/407 
+  Cleanup    : device-mapper-multipath-0.4.9-99.el7.x86_64          271/407 
+  Cleanup    : perf-3.10.0-514.el7.x86_64                           272/407 
+  Cleanup    : xfsprogs-4.5.0-8.el7.x86_64                          273/407 
+  Cleanup    : sudo-1.8.6p7-20.el7.x86_64                           274/407 
+  Cleanup    : tuned-2.7.1-3.el7.noarch                             275/407 
+  Cleanup    : device-mapper-multipath-libs-0.4.9-99.el7.x86_64     276/407 
+  Cleanup    : ntpdate-4.2.6p5-25.el7.centos.x86_64                 277/407 
+  Cleanup    : libkadm5-1.14.1-26.el7.x86_64                        278/407 
+  Cleanup    : spice-server-0.12.4-19.el7.x86_64                    279/407 
+  Cleanup    : libvirt-daemon-driver-interface-2.0.0-10.el7.x86_6   280/407 
+  Cleanup    : pulseaudio-libs-glib2-6.0-8.el7.x86_64               281/407 
+  Cleanup    : accountsservice-libs-0.6.35-12.el7.x86_64            282/407 
+  Cleanup    : accountsservice-0.6.35-12.el7.x86_64                 283/407 
+  Cleanup    : ghostscript-cups-9.07-20.el7.x86_64                  284/407 
+  Cleanup    : ghostscript-9.07-20.el7.x86_64                       285/407 
+  Cleanup    : open-vm-tools-desktop-10.0.5-2.el7.x86_64            286/407 
+  Cleanup    : open-vm-tools-10.0.5-2.el7.x86_64                    287/407 
+  Cleanup    : kernel-tools-3.10.0-514.el7.x86_64                   288/407 
+  Cleanup    : gtk3-immodule-xim-3.14.13-20.el7.x86_64              289/407 
+  Cleanup    : 1:NetworkManager-wifi-1.4.0-12.el7.x86_64            290/407 
+  Cleanup    : policycoreutils-python-2.5-8.el7.x86_64              291/407 
+  Cleanup    : glibc-devel-2.17-157.el7.x86_64                      292/407 
+  Cleanup    : firewall-config-0.4.3.2-8.el7.noarch                 293/407 
+  Cleanup    : firewalld-0.4.3.2-8.el7.noarch                       294/407 
+  Cleanup    : initscripts-9.49.37-1.el7.x86_64                     295/407 
+  Cleanup    : 1:libreoffice-pyuno-5.0.6.2-3.el7.x86_64             296/407 
+  Cleanup    : 1:NetworkManager-adsl-1.4.0-12.el7.x86_64            297/407 
+  Cleanup    : 1:NetworkManager-team-1.4.0-12.el7.x86_64            298/407 
+  Cleanup    : 1:NetworkManager-1.4.0-12.el7.x86_64                 299/407 
+  Cleanup    : 1:NetworkManager-libnm-1.4.0-12.el7.x86_64           300/407 
+  Cleanup    : 1:wpa_supplicant-2.0-20.el7.x86_64                   301/407 
+  Cleanup    : libgudev1-219-30.el7.x86_64                          302/407 
+  Cleanup    : gstreamer-plugins-good-0.10.31-11.el7.x86_64         303/407 
+  Cleanup    : glibc-headers-2.17-157.el7.x86_64                    304/407 
+  Cleanup    : libvirt-daemon-config-network-2.0.0-10.el7.x86_64    305/407 
+  Cleanup    : python2-ipaclient-4.4.0-12.el7.centos.noarch         306/407 
+  Cleanup    : python2-ipalib-4.4.0-12.el7.centos.noarch            307/407 
+  Cleanup    : selinux-policy-targeted-3.13.1-102.el7.noarch        308/407 
+  Cleanup    : selinux-policy-3.13.1-102.el7.noarch                 309/407 
+  Cleanup    : rdma-7.3_4.7_rc2-5.el7.noarch                        310/407 
+  Cleanup    : libvirt-daemon-driver-network-2.0.0-10.el7.x86_64    311/407 
+  Cleanup    : policycoreutils-2.5-8.el7.x86_64                     312/407 
+  Cleanup    : python-libipa_hbac-1.14.0-43.el7.x86_64              313/407 
+  Cleanup    : libsemanage-python-2.5-4.el7.x86_64                  314/407 
+  Cleanup    : libsemanage-2.5-4.el7.x86_64                         315/407 
+  Cleanup    : libtirpc-0.2.4-0.8.el7.x86_64                        316/407 
+  Cleanup    : 7:device-mapper-event-libs-1.02.135-1.el7.x86_64     317/407 
+  Cleanup    : 10:qemu-img-1.5.3-126.el7.x86_64                     318/407 
+  Cleanup    : libvirt-daemon-driver-secret-2.0.0-10.el7.x86_64     319/407 
+  Cleanup    : mdadm-3.4-14.el7.x86_64                              320/407 
+  Cleanup    : 2:vim-enhanced-7.4.160-1.el7.x86_64                  321/407 
+  Cleanup    : 2:vim-common-7.4.160-1.el7.x86_64                    322/407 
+  Cleanup    : 2:microcode_ctl-2.1-16.el7.x86_64                    323/407 
+  Cleanup    : grubby-8.28-18.el7.x86_64                            324/407 
+  Cleanup    : gstreamer1-plugins-good-1.4.5-2.el7.x86_64           325/407 
+  Cleanup    : pulseaudio-libs-6.0-8.el7.x86_64                     326/407 
+  Cleanup    : chrony-2.1.1-3.el7.centos.x86_64                     327/407 
+  Cleanup    : 1:net-snmp-libs-5.7.2-24.el7_2.1.x86_64              328/407 
+  Cleanup    : 3:irqbalance-1.0.7-6.el7.x86_64                      329/407 
+  Cleanup    : libnl3-cli-3.2.28-2.el7.x86_64                       330/407 
+  Cleanup    : samba-common-4.4.4-9.el7.noarch                      331/407 
+  Cleanup    : libvirt-daemon-config-nwfilter-2.0.0-10.el7.x86_64   332/407 
+  Cleanup    : 1:libreoffice-langpack-en-5.0.6.2-3.el7.x86_64       333/407 
+  Cleanup    : dracut-config-rescue-033-463.el7.x86_64              334/407 
+  Cleanup    : dracut-network-033-463.el7.x86_64                    335/407 
+  Cleanup    : 1:libreoffice-core-5.0.6.2-3.el7.x86_64              336/407 
+  Cleanup    : dracut-033-463.el7.x86_64                            337/407 
+  Cleanup    : libvirt-daemon-driver-nwfilter-2.0.0-10.el7.x86_64   338/407 
+  Cleanup    : libvirt-daemon-2.0.0-10.el7.x86_64                   339/407 
+  Cleanup    : libvirt-client-2.0.0-10.el7.x86_64                   340/407 
+  Cleanup    : polkit-0.112-9.el7.x86_64                            341/407 
+  Cleanup    : 1:libreoffice-ure-5.0.6.2-3.el7.x86_64               342/407 
+  Cleanup    : 1:java-1.7.0-openjdk-headless-1.7.0.111-2.6.7.8.el   343/407 
+  Cleanup    : nss-sysinit-3.21.0-17.el7.x86_64                     344/407 
+  Cleanup    : nss-3.21.0-17.el7.x86_64                             345/407 
+  Cleanup    : nss-util-3.21.0-2.2.el7_2.x86_64                     346/407 
+  Cleanup    : kpartx-0.4.9-99.el7.x86_64                           347/407 
+  Cleanup    : 7:device-mapper-1.02.135-1.el7.x86_64                348/407 
+  Cleanup    : 7:device-mapper-libs-1.02.135-1.el7.x86_64           349/407 
+  Cleanup    : util-linux-2.23.2-33.el7.x86_64                      350/407 
+  Cleanup    : gtk3-3.14.13-20.el7.x86_64                           351/407 
+  Cleanup    : audit-libs-python-2.6.5-3.el7.x86_64                 352/407 
+  Cleanup    : tcsh-6.18.01-13.el7.x86_64                           353/407 
+  Cleanup    : oprofile-0.9.9-20.el7.x86_64                         354/407 
+  Cleanup    : systemd-sysv-219-30.el7.x86_64                       355/407 
+  Cleanup    : 1:libreoffice-opensymbol-fonts-5.0.6.2-3.el7.noarc   356/407 
+  Cleanup    : httpd-manual-2.4.6-45.el7.centos.noarch              357/407 
+  Cleanup    : httpd-2.4.6-45.el7.centos.x86_64                     358/407 
+  Cleanup    : httpd-tools-2.4.6-45.el7.centos.x86_64               359/407 
+  Cleanup    : tzdata-java-2016g-2.el7.noarch                       360/407 
+  Cleanup    : 1:autocorr-en-5.0.6.2-3.el7.noarch                   361/407 
+  Cleanup    : 2:vim-filesystem-7.4.160-1.el7.x86_64                362/407 
+  Cleanup    : ipa-common-4.4.0-12.el7.centos.noarch                363/407 
+  Cleanup    : ipa-client-common-4.4.0-12.el7.centos.noarch         364/407 
+  Cleanup    : kernel-headers-3.10.0-514.el7.x86_64                 365/407 
+  Cleanup    : firewalld-filesystem-0.4.3.2-8.el7.noarch            366/407 
+  Cleanup    : python-firewall-0.4.3.2-8.el7.noarch                 367/407 
+  Cleanup    : 32:bind-license-9.9.4-37.el7.noarch                  368/407 
+  Cleanup    : python-sssdconfig-1.14.0-43.el7.noarch               369/407 
+  Cleanup    : seabios-bin-1.9.1-5.el7.noarch                       370/407 
+  Cleanup    : seavgabios-bin-1.9.1-5.el7.noarch                    371/407 
+  Cleanup    : 1:emacs-filesystem-24.3-18.el7.noarch                372/407 
+  Cleanup    : sos-3.3-4.el7.centos.noarch                          373/407 
+  Cleanup    : systemd-219-30.el7.x86_64                            374/407 
+  Cleanup    : libmount-2.23.2-33.el7.x86_64                        375/407 
+  Cleanup    : 1:openssl-libs-1.0.1e-60.el7.x86_64                  376/407 
+  Cleanup    : krb5-libs-1.14.1-26.el7.x86_64                       377/407 
+  Cleanup    : libblkid-2.23.2-33.el7.x86_64                        378/407 
+  Cleanup    : systemd-libs-219-30.el7.x86_64                       379/407 
+  Cleanup    : ca-certificates-2015.2.6-73.el7.noarch               380/407 
+  Cleanup    : libgcrypt-1.5.3-12.el7_1.1.x86_64                    381/407 
+  Cleanup    : libuuid-2.23.2-33.el7.x86_64                         382/407 
+  Cleanup    : audit-libs-2.6.5-3.el7.x86_64                        383/407 
+  Cleanup    : expat-2.1.0-8.el7.x86_64                             384/407 
+  Cleanup    : nspr-4.11.0-1.el7_2.x86_64                           385/407 
+  Cleanup    : libnl3-3.2.28-2.el7.x86_64                           386/407 
+  Cleanup    : 1:dmidecode-3.0-2.el7.x86_64                         387/407 
+  Cleanup    : libipa_hbac-1.14.0-43.el7.x86_64                     388/407 
+  Cleanup    : python-sss-murmur-1.14.0-43.el7.x86_64               389/407 
+  Cleanup    : kernel-tools-libs-3.10.0-514.el7.x86_64              390/407 
+  Cleanup    : libtiff-4.0.3-25.el7_2.x86_64                        391/407 
+  Cleanup    : python-perf-3.10.0-514.el7.x86_64                    392/407 
+  Cleanup    : 2:vim-minimal-7.4.160-1.el7.x86_64                   393/407 
+  Cleanup    : libpciaccess-0.13.4-2.el7.x86_64                     394/407 
+  Cleanup    : jasper-libs-1.900.1-29.el7.x86_64                    395/407 
+  Cleanup    : libtool-ltdl-2.4.2-21.el7_2.x86_64                   396/407 
+  Cleanup    : libsss_idmap-1.14.0-43.el7.x86_64                    397/407 
+  Cleanup    : libsss_nss_idmap-1.14.0-43.el7.x86_64                398/407 
+  Cleanup    : libsss_autofs-1.14.0-43.el7.x86_64                   399/407 
+  Cleanup    : libsss_sudo-1.14.0-43.el7.x86_64                     400/407 
+  Cleanup    : libnetfilter_conntrack-1.0.4-2.el7.x86_64            401/407 
+  Cleanup    : openjpeg-libs-1.5.1-10.el7.x86_64                    402/407 
+  Cleanup    : gstreamer1-plugins-bad-free-1.4.5-4.el7.x86_64       403/407 
+  Cleanup    : bash-4.2.46-20.el7_2.x86_64                          404/407 
+  Cleanup    : glibc-common-2.17-157.el7.x86_64                     405/407 
+  Cleanup    : glibc-2.17-157.el7.x86_64                            406/407 
+  Cleanup    : tzdata-2016g-2.el7.noarch                            407/407 
+  Verifying  : pulseaudio-utils-6.0-9.el7_3.x86_64                    1/407 
+  Verifying  : rpcbind-0.2.0-38.el7_3.x86_64                          2/407 
+  Verifying  : policycoreutils-python-2.5-11.el7_3.x86_64             3/407 
+  Verifying  : libnl3-cli-3.2.28-3.el7_3.x86_64                       4/407 
+  Verifying  : nss-util-3.28.4-1.0.el7_3.x86_64                       5/407 
+  Verifying  : 1:java-1.7.0-openjdk-headless-1.7.0.141-2.6.10.1.e     6/407 
+  Verifying  : 1:NetworkManager-libnm-1.4.0-20.el7_3.x86_64           7/407 
+  Verifying  : 3:irqbalance-1.0.7-6.el7_3.1.x86_64                    8/407 
+  Verifying  : gstreamer-plugins-good-0.10.31-12.el7_3.x86_64         9/407 
+  Verifying  : tzdata-2017b-1.el7.noarch                             10/407 
+  Verifying  : oprofile-0.9.9-21.el7_3.x86_64                        11/407 
+  Verifying  : python-libipa_hbac-1.14.0-43.el7_3.14.x86_64          12/407 
+  Verifying  : glibc-headers-2.17-157.el7_3.2.x86_64                 13/407 
+  Verifying  : libvirt-daemon-config-network-2.0.0-10.el7_3.9.x86    14/407 
+  Verifying  : polkit-0.112-12.el7_3.x86_64                          15/407 
+  Verifying  : 1:NetworkManager-wifi-1.4.0-20.el7_3.x86_64           16/407 
+  Verifying  : sos-3.3-5.el7.centos.noarch                           17/407 
+  Verifying  : 1:net-snmp-libs-5.7.2-24.el7_3.2.x86_64               18/407 
+  Verifying  : ipa-client-4.4.0-14.el7.centos.7.x86_64               19/407 
+  Verifying  : dracut-network-033-463.el7_3.1.x86_64                 20/407 
+  Verifying  : chrony-2.1.1-4.el7.centos.x86_64                      21/407 
+  Verifying  : libpciaccess-0.13.4-3.el7_3.x86_64                    22/407 
+  Verifying  : ipa-common-4.4.0-14.el7.centos.7.noarch               23/407 
+  Verifying  : systemd-libs-219-30.el7_3.9.x86_64                    24/407 
+  Verifying  : 32:bind-libs-9.9.4-38.el7_3.3.x86_64                  25/407 
+  Verifying  : libnl3-3.2.28-3.el7_3.x86_64                          26/407 
+  Verifying  : libwbclient-4.4.4-14.el7_3.x86_64                     27/407 
+  Verifying  : 1:emacs-filesystem-24.3-19.el7_3.noarch               28/407 
+  Verifying  : nss-tools-3.28.4-1.2.el7_3.x86_64                     29/407 
+  Verifying  : sssd-1.14.0-43.el7_3.14.x86_64                        30/407 
+  Verifying  : sudo-1.8.6p7-22.el7_3.x86_64                          31/407 
+  Verifying  : 1:gdm-3.14.2-20.el7_3.x86_64                          32/407 
+  Verifying  : gtk3-3.14.13-20.el7_3.1.x86_64                        33/407 
+  Verifying  : samba-common-4.4.4-14.el7_3.noarch                    34/407 
+  Verifying  : 2:vim-common-7.4.160-1.el7_3.1.x86_64                 35/407 
+  Verifying  : 7:lvm2-libs-2.02.166-1.el7_3.4.x86_64                 36/407 
+  Verifying  : httpd-2.4.6-45.el7.centos.4.x86_64                    37/407 
+  Verifying  : gstreamer1-plugins-good-1.4.5-3.el7_3.x86_64          38/407 
+  Verifying  : libuuid-2.23.2-33.el7_3.2.x86_64                      39/407 
+  Verifying  : libvirt-daemon-kvm-2.0.0-10.el7_3.9.x86_64            40/407 
+  Verifying  : gstreamer1-plugins-bad-free-1.4.5-6.el7_3.x86_64      41/407 
+  Verifying  : xfsprogs-4.5.0-9.el7_3.x86_64                         42/407 
+  Verifying  : ntp-4.2.6p5-25.el7.centos.2.x86_64                    43/407 
+  Verifying  : python-sssdconfig-1.14.0-43.el7_3.14.noarch           44/407 
+  Verifying  : grubby-8.28-21.el7_3.x86_64                           45/407 
+  Verifying  : mdadm-3.4-14.el7_3.1.x86_64                           46/407 
+  Verifying  : libsemanage-2.5-5.1.el7_3.x86_64                      47/407 
+  Verifying  : 7:device-mapper-event-1.02.135-1.el7_3.4.x86_64       48/407 
+  Verifying  : ntpdate-4.2.6p5-25.el7.centos.2.x86_64                49/407 
+  Verifying  : libtirpc-0.2.4-0.8.el7_3.x86_64                       50/407 
+  Verifying  : accountsservice-0.6.35-14.el7_3.x86_64                51/407 
+  Verifying  : nss-3.28.4-1.2.el7_3.x86_64                           52/407 
+  Verifying  : selinux-policy-3.13.1-102.el7_3.16.noarch             53/407 
+  Verifying  : openssh-server-6.6.1p1-35.el7_3.x86_64                54/407 
+  Verifying  : 7:device-mapper-event-libs-1.02.135-1.el7_3.4.x86_    55/407 
+  Verifying  : sssd-ldap-1.14.0-43.el7_3.14.x86_64                   56/407 
+  Verifying  : rdma-7.3_4.7_rc2-6.el7_3.noarch                       57/407 
+  Verifying  : libsss_idmap-1.14.0-43.el7_3.14.x86_64                58/407 
+  Verifying  : kernel-3.10.0-514.21.1.el7.x86_64                     59/407 
+  Verifying  : libgudev1-219-30.el7_3.9.x86_64                       60/407 
+  Verifying  : 32:bind-libs-lite-9.9.4-38.el7_3.3.x86_64             61/407 
+  Verifying  : sssd-proxy-1.14.0-43.el7_3.14.x86_64                  62/407 
+  Verifying  : 1:libreoffice-draw-5.0.6.2-5.el7_3.1.x86_64           63/407 
+  Verifying  : openssh-6.6.1p1-35.el7_3.x86_64                       64/407 
+  Verifying  : 10:qemu-img-1.5.3-126.el7_3.6.x86_64                  65/407 
+  Verifying  : openssh-clients-6.6.1p1-35.el7_3.x86_64               66/407 
+  Verifying  : python-sss-murmur-1.14.0-43.el7_3.14.x86_64           67/407 
+  Verifying  : libmount-2.23.2-33.el7_3.2.x86_64                     68/407 
+  Verifying  : gtk3-immodule-xim-3.14.13-20.el7_3.1.x86_64           69/407 
+  Verifying  : spice-glib-0.31-6.el7_3.2.x86_64                      70/407 
+  Verifying  : 7:device-mapper-libs-1.02.135-1.el7_3.4.x86_64        71/407 
+  Verifying  : spice-server-0.12.4-20.el7_3.x86_64                   72/407 
+  Verifying  : openjpeg-libs-1.5.1-16.el7_3.x86_64                   73/407 
+  Verifying  : libipa_hbac-1.14.0-43.el7_3.14.x86_64                 74/407 
+  Verifying  : 1:java-1.7.0-openjdk-1.7.0.141-2.6.10.1.el7_3.x86_    75/407 
+  Verifying  : 1:wpa_supplicant-2.0-21.el7_3.x86_64                  76/407 
+  Verifying  : 1:autocorr-en-5.0.6.2-5.el7_3.1.noarch                77/407 
+  Verifying  : 2:vim-minimal-7.4.160-1.el7_3.1.x86_64                78/407 
+  Verifying  : nspr-4.13.1-1.0.el7_3.x86_64                          79/407 
+  Verifying  : libtiff-4.0.3-27.el7_3.x86_64                         80/407 
+  Verifying  : sssd-krb5-1.14.0-43.el7_3.14.x86_64                   81/407 
+  Verifying  : 1:libreoffice-writer-5.0.6.2-5.el7_3.1.x86_64         82/407 
+  Verifying  : libsss_autofs-1.14.0-43.el7_3.14.x86_64               83/407 
+  Verifying  : 1:java-1.8.0-openjdk-headless-1.8.0.131-3.b12.el7_    84/407 
+  Verifying  : 1:libreoffice-ure-5.0.6.2-5.el7_3.1.x86_64            85/407 
+  Verifying  : 1:NetworkManager-glib-1.4.0-20.el7_3.x86_64           86/407 
+  Verifying  : perf-3.10.0-514.21.1.el7.x86_64                       87/407 
+  Verifying  : krb5-workstation-1.14.1-27.el7_3.x86_64               88/407 
+  Verifying  : libvirt-daemon-driver-qemu-2.0.0-10.el7_3.9.x86_64    89/407 
+  Verifying  : 1:nfs-utils-1.3.0-0.33.el7_3.x86_64                   90/407 
+  Verifying  : 1:libreoffice-pdfimport-5.0.6.2-5.el7_3.1.x86_64      91/407 
+  Verifying  : 1:openssl-1.0.1e-60.el7_3.1.x86_64                    92/407 
+  Verifying  : open-vm-tools-10.0.5-4.el7_3.x86_64                   93/407 
+  Verifying  : kernel-tools-3.10.0-514.21.1.el7.x86_64               94/407 
+  Verifying  : 1:NetworkManager-1.4.0-20.el7_3.x86_64                95/407 
+  Verifying  : krb5-libs-1.14.1-27.el7_3.x86_64                      96/407 
+  Verifying  : initscripts-9.49.37-1.el7_3.1.x86_64                  97/407 
+  Verifying  : firewall-config-0.4.3.2-8.1.el7_3.3.noarch            98/407 
+  Verifying  : httpd-manual-2.4.6-45.el7.centos.4.noarch             99/407 
+  Verifying  : seabios-bin-1.9.1-5.el7_3.3.noarch                   100/407 
+  Verifying  : util-linux-2.23.2-33.el7_3.2.x86_64                  101/407 
+  Verifying  : kernel-headers-3.10.0-514.21.1.el7.x86_64            102/407 
+  Verifying  : python2-ipalib-4.4.0-14.el7.centos.7.noarch          103/407 
+  Verifying  : open-vm-tools-desktop-10.0.5-4.el7_3.x86_64          104/407 
+  Verifying  : 10:qemu-kvm-common-1.5.3-126.el7_3.6.x86_64          105/407 
+  Verifying  : pulseaudio-6.0-9.el7_3.x86_64                        106/407 
+  Verifying  : pulseaudio-gdm-hooks-6.0-9.el7_3.x86_64              107/407 
+  Verifying  : 1:mod_ssl-2.4.6-45.el7.centos.4.x86_64               108/407 
+  Verifying  : 1:NetworkManager-team-1.4.0-20.el7_3.x86_64          109/407 
+  Verifying  : 1:libreoffice-graphicfilter-5.0.6.2-5.el7_3.1.x86_   110/407 
+  Verifying  : libtool-ltdl-2.4.2-22.el7_3.x86_64                   111/407 
+  Verifying  : libsss_sudo-1.14.0-43.el7_3.14.x86_64                112/407 
+  Verifying  : selinux-policy-targeted-3.13.1-102.el7_3.16.noarch   113/407 
+  Verifying  : 1:libreoffice-calc-5.0.6.2-5.el7_3.1.x86_64          114/407 
+  Verifying  : systemd-python-219-30.el7_3.9.x86_64                 115/407 
+  Verifying  : samba-client-libs-4.4.4-14.el7_3.x86_64              116/407 
+  Verifying  : 1:NetworkManager-adsl-1.4.0-20.el7_3.x86_64          117/407 
+  Verifying  : libvirt-daemon-driver-network-2.0.0-10.el7_3.9.x86   118/407 
+  Verifying  : 32:bind-license-9.9.4-38.el7_3.3.noarch              119/407 
+  Verifying  : systemd-219-30.el7_3.9.x86_64                        120/407 
+  Verifying  : device-mapper-multipath-libs-0.4.9-99.el7_3.3.x86_   121/407 
+  Verifying  : 1:libguestfs-1.32.7-3.el7.centos.2.x86_64            122/407 
+  Verifying  : 1:openssl-libs-1.0.1e-60.el7_3.1.x86_64              123/407 
+  Verifying  : 7:device-mapper-1.02.135-1.el7_3.4.x86_64            124/407 
+  Verifying  : samba-client-4.4.4-14.el7_3.x86_64                   125/407 
+  Verifying  : ca-certificates-2017.2.11-70.1.el7_3.noarch          126/407 
+  Verifying  : libvirt-daemon-driver-secret-2.0.0-10.el7_3.9.x86_   127/407 
+  Verifying  : pulseaudio-libs-glib2-6.0-9.el7_3.x86_64             128/407 
+  Verifying  : ipa-client-common-4.4.0-14.el7.centos.7.noarch       129/407 
+  Verifying  : firewalld-0.4.3.2-8.1.el7_3.3.noarch                 130/407 
+  Verifying  : sssd-common-1.14.0-43.el7_3.14.x86_64                131/407 
+  Verifying  : fcoe-utils-1.0.31-1.git5dfd3e4.el7_3.1.x86_64        132/407 
+  Verifying  : tuned-2.7.1-3.el7_3.2.noarch                         133/407 
+  Verifying  : seavgabios-bin-1.9.1-5.el7_3.3.noarch                134/407 
+  Verifying  : libvirt-client-2.0.0-10.el7_3.9.x86_64               135/407 
+  Verifying  : samba-common-libs-4.4.4-14.el7_3.x86_64              136/407 
+  Verifying  : policycoreutils-2.5-11.el7_3.x86_64                  137/407 
+  Verifying  : pulseaudio-module-bluetooth-6.0-9.el7_3.x86_64       138/407 
+  Verifying  : libvirt-daemon-driver-lxc-2.0.0-10.el7_3.9.x86_64    139/407 
+  Verifying  : libvirt-daemon-2.0.0-10.el7_3.9.x86_64               140/407 
+  Verifying  : libvirt-daemon-driver-interface-2.0.0-10.el7_3.9.x   141/407 
+  Verifying  : tzdata-java-2017b-1.el7.noarch                       142/407 
+  Verifying  : libsss_nss_idmap-1.14.0-43.el7_3.14.x86_64           143/407 
+  Verifying  : libsmbclient-4.4.4-14.el7_3.x86_64                   144/407 
+  Verifying  : 32:bind-utils-9.9.4-38.el7_3.3.x86_64                145/407 
+  Verifying  : sssd-client-1.14.0-43.el7_3.14.x86_64                146/407 
+  Verifying  : audit-libs-2.6.5-3.el7_3.1.x86_64                    147/407 
+  Verifying  : expat-2.1.0-10.el7_3.x86_64                          148/407 
+  Verifying  : sssd-krb5-common-1.14.0-43.el7_3.14.x86_64           149/407 
+  Verifying  : dracut-config-rescue-033-463.el7_3.1.x86_64          150/407 
+  Verifying  : libblkid-2.23.2-33.el7_3.2.x86_64                    151/407 
+  Verifying  : 7:lvm2-2.02.166-1.el7_3.4.x86_64                     152/407 
+  Verifying  : libgcrypt-1.5.3-13.el7_3.1.x86_64                    153/407 
+  Verifying  : kpartx-0.4.9-99.el7_3.3.x86_64                       154/407 
+  Verifying  : jasper-libs-1.900.1-30.el7_3.x86_64                  155/407 
+  Verifying  : libvirt-daemon-driver-nodedev-2.0.0-10.el7_3.9.x86   156/407 
+  Verifying  : sssd-ad-1.14.0-43.el7_3.14.x86_64                    157/407 
+  Verifying  : python-perf-3.10.0-514.21.1.el7.x86_64               158/407 
+  Verifying  : pulseaudio-libs-6.0-9.el7_3.x86_64                   159/407 
+  Verifying  : glibc-common-2.17-157.el7_3.2.x86_64                 160/407 
+  Verifying  : 1:libreoffice-opensymbol-fonts-5.0.6.2-5.el7_3.1.n   161/407 
+  Verifying  : firewalld-filesystem-0.4.3.2-8.1.el7_3.3.noarch      162/407 
+  Verifying  : pulseaudio-module-x11-6.0-9.el7_3.x86_64             163/407 
+  Verifying  : ghostscript-cups-9.07-20.el7_3.5.x86_64              164/407 
+  Verifying  : python-firewall-0.4.3.2-8.1.el7_3.3.noarch           165/407 
+  Verifying  : tcsh-6.18.01-13.el7_3.1.x86_64                       166/407 
+  Verifying  : httpd-tools-2.4.6-45.el7.centos.4.x86_64             167/407 
+  Verifying  : 1:libreoffice-pyuno-5.0.6.2-5.el7_3.1.x86_64         168/407 
+  Verifying  : audit-2.6.5-3.el7_3.1.x86_64                         169/407 
+  Verifying  : glibc-2.17-157.el7_3.2.x86_64                        170/407 
+  Verifying  : bash-4.2.46-21.el7_3.x86_64                          171/407 
+  Verifying  : libvirt-daemon-config-nwfilter-2.0.0-10.el7_3.9.x8   172/407 
+  Verifying  : 1:libreoffice-langpack-en-5.0.6.2-5.el7_3.1.x86_64   173/407 
+  Verifying  : libvirt-2.0.0-10.el7_3.9.x86_64                      174/407 
+  Verifying  : accountsservice-libs-0.6.35-14.el7_3.x86_64          175/407 
+  Verifying  : spice-gtk3-0.31-6.el7_3.2.x86_64                     176/407 
+  Verifying  : 2:microcode_ctl-2.1-16.3.el7_3.x86_64                177/407 
+  Verifying  : glibc-devel-2.17-157.el7_3.2.x86_64                  178/407 
+  Verifying  : audit-libs-python-2.6.5-3.el7_3.1.x86_64             179/407 
+  Verifying  : dracut-033-463.el7_3.1.x86_64                        180/407 
+  Verifying  : libvirt-daemon-driver-storage-2.0.0-10.el7_3.9.x86   181/407 
+  Verifying  : libkadm5-1.14.1-27.el7_3.x86_64                      182/407 
+  Verifying  : sssd-ipa-1.14.0-43.el7_3.14.x86_64                   183/407 
+  Verifying  : gstreamer-plugins-bad-free-0.10.23-22.el7_3.x86_64   184/407 
+  Verifying  : 10:qemu-kvm-1.5.3-126.el7_3.6.x86_64                 185/407 
+  Verifying  : 1:libreoffice-core-5.0.6.2-5.el7_3.1.x86_64          186/407 
+  Verifying  : python2-ipaclient-4.4.0-14.el7.centos.7.noarch       187/407 
+  Verifying  : 1:libreoffice-impress-5.0.6.2-5.el7_3.1.x86_64       188/407 
+  Verifying  : 1:java-1.8.0-openjdk-1.8.0.131-3.b12.el7_3.x86_64    189/407 
+  Verifying  : firefox-52.1.0-2.el7.centos.x86_64                   190/407 
+  Verifying  : sssd-common-pac-1.14.0-43.el7_3.14.x86_64            191/407 
+  Verifying  : 2:vim-enhanced-7.4.160-1.el7_3.1.x86_64              192/407 
+  Verifying  : libnetfilter_conntrack-1.0.6-1.el7_3.x86_64          193/407 
+  Verifying  : ghostscript-9.07-20.el7_3.5.x86_64                   194/407 
+  Verifying  : libvirt-daemon-driver-nwfilter-2.0.0-10.el7_3.9.x8   195/407 
+  Verifying  : samba-libs-4.4.4-14.el7_3.x86_64                     196/407 
+  Verifying  : nss-sysinit-3.28.4-1.2.el7_3.x86_64                  197/407 
+  Verifying  : device-mapper-multipath-0.4.9-99.el7_3.3.x86_64      198/407 
+  Verifying  : kernel-tools-libs-3.10.0-514.21.1.el7.x86_64         199/407 
+  Verifying  : 1:NetworkManager-tui-1.4.0-20.el7_3.x86_64           200/407 
+  Verifying  : systemd-sysv-219-30.el7_3.9.x86_64                   201/407 
+  Verifying  : 1:dmidecode-3.0-2.1.el7_3.x86_64                     202/407 
+  Verifying  : libsemanage-python-2.5-5.1.el7_3.x86_64              203/407 
+  Verifying  : 2:vim-filesystem-7.4.160-1.el7_3.1.x86_64            204/407 
+  Verifying  : 2:vim-common-7.4.160-1.el7.x86_64                    205/407 
+  Verifying  : pulseaudio-gdm-hooks-6.0-8.el7.x86_64                206/407 
+  Verifying  : 3:irqbalance-1.0.7-6.el7.x86_64                      207/407 
+  Verifying  : 1:libreoffice-pyuno-5.0.6.2-3.el7.x86_64             208/407 
+  Verifying  : libsemanage-python-2.5-4.el7.x86_64                  209/407 
+  Verifying  : httpd-manual-2.4.6-45.el7.centos.noarch              210/407 
+  Verifying  : firewalld-filesystem-0.4.3.2-8.el7.noarch            211/407 
+  Verifying  : policycoreutils-python-2.5-8.el7.x86_64              212/407 
+  Verifying  : selinux-policy-targeted-3.13.1-102.el7.noarch        213/407 
+  Verifying  : systemd-python-219-30.el7.x86_64                     214/407 
+  Verifying  : 1:net-snmp-libs-5.7.2-24.el7_2.1.x86_64              215/407 
+  Verifying  : krb5-libs-1.14.1-26.el7.x86_64                       216/407 
+  Verifying  : 1:libreoffice-opensymbol-fonts-5.0.6.2-3.el7.noarc   217/407 
+  Verifying  : 1:libreoffice-core-5.0.6.2-3.el7.x86_64              218/407 
+  Verifying  : 1:libreoffice-draw-5.0.6.2-3.el7.x86_64              219/407 
+  Verifying  : 1:java-1.8.0-openjdk-headless-1.8.0.102-4.b14.el7.   220/407 
+  Verifying  : gstreamer-plugins-bad-free-0.10.23-20.el7.x86_64     221/407 
+  Verifying  : firewalld-0.4.3.2-8.el7.noarch                       222/407 
+  Verifying  : sssd-ipa-1.14.0-43.el7.x86_64                        223/407 
+  Verifying  : nss-3.21.0-17.el7.x86_64                             224/407 
+  Verifying  : audit-libs-python-2.6.5-3.el7.x86_64                 225/407 
+  Verifying  : 1:gdm-3.14.2-19.el7.x86_64                           226/407 
+  Verifying  : systemd-219-30.el7.x86_64                            227/407 
+  Verifying  : python2-ipaclient-4.4.0-12.el7.centos.noarch         228/407 
+  Verifying  : 1:autocorr-en-5.0.6.2-3.el7.noarch                   229/407 
+  Verifying  : samba-libs-4.4.4-9.el7.x86_64                        230/407 
+  Verifying  : jasper-libs-1.900.1-29.el7.x86_64                    231/407 
+  Verifying  : 1:dmidecode-3.0-2.el7.x86_64                         232/407 
+  Verifying  : libgudev1-219-30.el7.x86_64                          233/407 
+  Verifying  : pulseaudio-module-bluetooth-6.0-8.el7.x86_64         234/407 
+  Verifying  : libsss_autofs-1.14.0-43.el7.x86_64                   235/407 
+  Verifying  : glibc-headers-2.17-157.el7.x86_64                    236/407 
+  Verifying  : openssh-clients-6.6.1p1-31.el7.x86_64                237/407 
+  Verifying  : open-vm-tools-10.0.5-2.el7.x86_64                    238/407 
+  Verifying  : 7:device-mapper-event-libs-1.02.135-1.el7.x86_64     239/407 
+  Verifying  : 7:lvm2-2.02.166-1.el7.x86_64                         240/407 
+  Verifying  : seabios-bin-1.9.1-5.el7.noarch                       241/407 
+  Verifying  : sssd-1.14.0-43.el7.x86_64                            242/407 
+  Verifying  : sudo-1.8.6p7-20.el7.x86_64                           243/407 
+  Verifying  : systemd-sysv-219-30.el7.x86_64                       244/407 
+  Verifying  : libtirpc-0.2.4-0.8.el7.x86_64                        245/407 
+  Verifying  : 1:libreoffice-graphicfilter-5.0.6.2-3.el7.x86_64     246/407 
+  Verifying  : 1:java-1.7.0-openjdk-1.7.0.111-2.6.7.8.el7.x86_64    247/407 
+  Verifying  : libwbclient-4.4.4-9.el7.x86_64                       248/407 
+  Verifying  : glibc-devel-2.17-157.el7.x86_64                      249/407 
+  Verifying  : 1:NetworkManager-tui-1.4.0-12.el7.x86_64             250/407 
+  Verifying  : sssd-krb5-1.14.0-43.el7.x86_64                       251/407 
+  Verifying  : sssd-ad-1.14.0-43.el7.x86_64                         252/407 
+  Verifying  : libvirt-daemon-2.0.0-10.el7.x86_64                   253/407 
+  Verifying  : libvirt-daemon-driver-interface-2.0.0-10.el7.x86_6   254/407 
+  Verifying  : ipa-common-4.4.0-12.el7.centos.noarch                255/407 
+  Verifying  : libtiff-4.0.3-25.el7_2.x86_64                        256/407 
+  Verifying  : libsss_sudo-1.14.0-43.el7.x86_64                     257/407 
+  Verifying  : python-sssdconfig-1.14.0-43.el7.noarch               258/407 
+  Verifying  : samba-common-4.4.4-9.el7.noarch                      259/407 
+  Verifying  : ipa-client-common-4.4.0-12.el7.centos.noarch         260/407 
+  Verifying  : 7:device-mapper-event-1.02.135-1.el7.x86_64          261/407 
+  Verifying  : open-vm-tools-desktop-10.0.5-2.el7.x86_64            262/407 
+  Verifying  : 1:openssl-libs-1.0.1e-60.el7.x86_64                  263/407 
+  Verifying  : sssd-ldap-1.14.0-43.el7.x86_64                       264/407 
+  Verifying  : 32:bind-libs-9.9.4-37.el7.x86_64                     265/407 
+  Verifying  : 1:openssl-1.0.1e-60.el7.x86_64                       266/407 
+  Verifying  : seavgabios-bin-1.9.1-5.el7.noarch                    267/407 
+  Verifying  : 1:libguestfs-1.32.7-3.el7.centos.x86_64              268/407 
+  Verifying  : 1:libreoffice-calc-5.0.6.2-3.el7.x86_64              269/407 
+  Verifying  : rpcbind-0.2.0-38.el7.x86_64                          270/407 
+  Verifying  : 1:libreoffice-impress-5.0.6.2-3.el7.x86_64           271/407 
+  Verifying  : libvirt-daemon-driver-lxc-2.0.0-10.el7.x86_64        272/407 
+  Verifying  : 2:vim-enhanced-7.4.160-1.el7.x86_64                  273/407 
+  Verifying  : 32:bind-libs-lite-9.9.4-37.el7.x86_64                274/407 
+  Verifying  : tzdata-java-2016g-2.el7.noarch                       275/407 
+  Verifying  : python-sss-murmur-1.14.0-43.el7.x86_64               276/407 
+  Verifying  : kernel-tools-libs-3.10.0-514.el7.x86_64              277/407 
+  Verifying  : util-linux-2.23.2-33.el7.x86_64                      278/407 
+  Verifying  : gstreamer1-plugins-bad-free-1.4.5-4.el7.x86_64       279/407 
+  Verifying  : nss-tools-3.21.0-17.el7.x86_64                       280/407 
+  Verifying  : ntpdate-4.2.6p5-25.el7.centos.x86_64                 281/407 
+  Verifying  : 1:java-1.8.0-openjdk-1.8.0.102-4.b14.el7.x86_64      282/407 
+  Verifying  : sssd-common-1.14.0-43.el7.x86_64                     283/407 
+  Verifying  : expat-2.1.0-8.el7.x86_64                             284/407 
+  Verifying  : libgcrypt-1.5.3-12.el7_1.1.x86_64                    285/407 
+  Verifying  : libvirt-daemon-config-nwfilter-2.0.0-10.el7.x86_64   286/407 
+  Verifying  : gstreamer-plugins-good-0.10.31-11.el7.x86_64         287/407 
+  Verifying  : oprofile-0.9.9-20.el7.x86_64                         288/407 
+  Verifying  : gtk3-immodule-xim-3.14.13-20.el7.x86_64              289/407 
+  Verifying  : tuned-2.7.1-3.el7.noarch                             290/407 
+  Verifying  : libvirt-daemon-driver-storage-2.0.0-10.el7.x86_64    291/407 
+  Verifying  : mdadm-3.4-14.el7.x86_64                              292/407 
+  Verifying  : 2:microcode_ctl-2.1-16.el7.x86_64                    293/407 
+  Verifying  : krb5-workstation-1.14.1-26.el7.x86_64                294/407 
+  Verifying  : httpd-2.4.6-45.el7.centos.x86_64                     295/407 
+  Verifying  : audit-2.6.5-3.el7.x86_64                             296/407 
+  Verifying  : 1:libreoffice-langpack-en-5.0.6.2-3.el7.x86_64       297/407 
+  Verifying  : libblkid-2.23.2-33.el7.x86_64                        298/407 
+  Verifying  : libsemanage-2.5-4.el7.x86_64                         299/407 
+  Verifying  : 1:NetworkManager-wifi-1.4.0-12.el7.x86_64            300/407 
+  Verifying  : ghostscript-cups-9.07-20.el7.x86_64                  301/407 
+  Verifying  : python-perf-3.10.0-514.el7.x86_64                    302/407 
+  Verifying  : libsmbclient-4.4.4-9.el7.x86_64                      303/407 
+  Verifying  : nspr-4.11.0-1.el7_2.x86_64                           304/407 
+  Verifying  : dracut-033-463.el7.x86_64                            305/407 
+  Verifying  : openssh-server-6.6.1p1-31.el7.x86_64                 306/407 
+  Verifying  : libmount-2.23.2-33.el7.x86_64                        307/407 
+  Verifying  : libuuid-2.23.2-33.el7.x86_64                         308/407 
+  Verifying  : libvirt-daemon-driver-qemu-2.0.0-10.el7.x86_64       309/407 
+  Verifying  : 1:wpa_supplicant-2.0-20.el7.x86_64                   310/407 
+  Verifying  : libnl3-cli-3.2.28-2.el7.x86_64                       311/407 
+  Verifying  : libipa_hbac-1.14.0-43.el7.x86_64                     312/407 
+  Verifying  : openjpeg-libs-1.5.1-10.el7.x86_64                    313/407 
+  Verifying  : libkadm5-1.14.1-26.el7.x86_64                        314/407 
+  Verifying  : openssh-6.6.1p1-31.el7.x86_64                        315/407 
+  Verifying  : ca-certificates-2015.2.6-73.el7.noarch               316/407 
+  Verifying  : python-libipa_hbac-1.14.0-43.el7.x86_64              317/407 
+  Verifying  : pulseaudio-6.0-8.el7.x86_64                          318/407 
+  Verifying  : xfsprogs-4.5.0-8.el7.x86_64                          319/407 
+  Verifying  : libvirt-daemon-driver-nwfilter-2.0.0-10.el7.x86_64   320/407 
+  Verifying  : httpd-tools-2.4.6-45.el7.centos.x86_64               321/407 
+  Verifying  : 32:bind-utils-9.9.4-37.el7.x86_64                    322/407 
+  Verifying  : 7:device-mapper-libs-1.02.135-1.el7.x86_64           323/407 
+  Verifying  : pulseaudio-libs-6.0-8.el7.x86_64                     324/407 
+  Verifying  : libnl3-3.2.28-2.el7.x86_64                           325/407 
+  Verifying  : 7:lvm2-libs-2.02.166-1.el7.x86_64                    326/407 
+  Verifying  : fcoe-utils-1.0.31-1.git5dfd3e4.el7.x86_64            327/407 
+  Verifying  : bash-4.2.46-20.el7_2.x86_64                          328/407 
+  Verifying  : 1:mod_ssl-2.4.6-45.el7.centos.x86_64                 329/407 
+  Verifying  : libvirt-daemon-kvm-2.0.0-10.el7.x86_64               330/407 
+  Verifying  : samba-client-libs-4.4.4-9.el7.x86_64                 331/407 
+  Verifying  : libvirt-2.0.0-10.el7.x86_64                          332/407 
+  Verifying  : tcsh-6.18.01-13.el7.x86_64                           333/407 
+  Verifying  : polkit-0.112-9.el7.x86_64                            334/407 
+  Verifying  : ntp-4.2.6p5-25.el7.centos.x86_64                     335/407 
+  Verifying  : 32:bind-license-9.9.4-37.el7.noarch                  336/407 
+  Verifying  : 2:vim-minimal-7.4.160-1.el7.x86_64                   337/407 
+  Verifying  : ipa-client-4.4.0-12.el7.centos.x86_64                338/407 
+  Verifying  : dracut-config-rescue-033-463.el7.x86_64              339/407 
+  Verifying  : samba-client-4.4.4-9.el7.x86_64                      340/407 
+  Verifying  : 10:qemu-kvm-1.5.3-126.el7.x86_64                     341/407 
+  Verifying  : kpartx-0.4.9-99.el7.x86_64                           342/407 
+  Verifying  : gstreamer1-plugins-good-1.4.5-2.el7.x86_64           343/407 
+  Verifying  : libvirt-daemon-driver-nodedev-2.0.0-10.el7.x86_64    344/407 
+  Verifying  : libvirt-daemon-config-network-2.0.0-10.el7.x86_64    345/407 
+  Verifying  : glibc-common-2.17-157.el7.x86_64                     346/407 
+  Verifying  : initscripts-9.49.37-1.el7.x86_64                     347/407 
+  Verifying  : python-firewall-0.4.3.2-8.el7.noarch                 348/407 
+  Verifying  : sssd-client-1.14.0-43.el7.x86_64                     349/407 
+  Verifying  : 1:nfs-utils-1.3.0-0.33.el7.x86_64                    350/407 
+  Verifying  : firewall-config-0.4.3.2-8.el7.noarch                 351/407 
+  Verifying  : 1:libreoffice-writer-5.0.6.2-3.el7.x86_64            352/407 
+  Verifying  : 1:NetworkManager-adsl-1.4.0-12.el7.x86_64            353/407 
+  Verifying  : libvirt-daemon-driver-secret-2.0.0-10.el7.x86_64     354/407 
+  Verifying  : dracut-network-033-463.el7.x86_64                    355/407 
+  Verifying  : 1:libreoffice-ure-5.0.6.2-3.el7.x86_64               356/407 
+  Verifying  : 1:NetworkManager-libnm-1.4.0-12.el7.x86_64           357/407 
+  Verifying  : samba-common-libs-4.4.4-9.el7.x86_64                 358/407 
+  Verifying  : accountsservice-libs-0.6.35-12.el7.x86_64            359/407 
+  Verifying  : ghostscript-9.07-20.el7.x86_64                       360/407 
+  Verifying  : gtk3-3.14.13-20.el7.x86_64                           361/407 
+  Verifying  : audit-libs-2.6.5-3.el7.x86_64                        362/407 
+  Verifying  : python2-ipalib-4.4.0-12.el7.centos.noarch            363/407 
+  Verifying  : kernel-tools-3.10.0-514.el7.x86_64                   364/407 
+  Verifying  : nss-util-3.21.0-2.2.el7_2.x86_64                     365/407 
+  Verifying  : 1:NetworkManager-team-1.4.0-12.el7.x86_64            366/407 
+  Verifying  : perf-3.10.0-514.el7.x86_64                           367/407 
+  Verifying  : 1:NetworkManager-1.4.0-12.el7.x86_64                 368/407 
+  Verifying  : kernel-headers-3.10.0-514.el7.x86_64                 369/407 
+  Verifying  : device-mapper-multipath-0.4.9-99.el7.x86_64          370/407 
+  Verifying  : policycoreutils-2.5-8.el7.x86_64                     371/407 
+  Verifying  : 1:libreoffice-pdfimport-5.0.6.2-3.el7.x86_64         372/407 
+  Verifying  : device-mapper-multipath-libs-0.4.9-99.el7.x86_64     373/407 
+  Verifying  : libvirt-client-2.0.0-10.el7.x86_64                   374/407 
+  Verifying  : sos-3.3-4.el7.centos.noarch                          375/407 
+  Verifying  : 10:qemu-img-1.5.3-126.el7.x86_64                     376/407 
+  Verifying  : chrony-2.1.1-3.el7.centos.x86_64                     377/407 
+  Verifying  : nss-sysinit-3.21.0-17.el7.x86_64                     378/407 
+  Verifying  : spice-gtk3-0.31-6.el7.x86_64                         379/407 
+  Verifying  : 10:qemu-kvm-common-1.5.3-126.el7.x86_64              380/407 
+  Verifying  : tzdata-2016g-2.el7.noarch                            381/407 
+  Verifying  : 1:NetworkManager-glib-1.4.0-12.el7.x86_64            382/407 
+  Verifying  : libsss_idmap-1.14.0-43.el7.x86_64                    383/407 
+  Verifying  : glibc-2.17-157.el7.x86_64                            384/407 
+  Verifying  : grubby-8.28-18.el7.x86_64                            385/407 
+  Verifying  : libnetfilter_conntrack-1.0.4-2.el7.x86_64            386/407 
+  Verifying  : pulseaudio-module-x11-6.0-8.el7.x86_64               387/407 
+  Verifying  : selinux-policy-3.13.1-102.el7.noarch                 388/407 
+  Verifying  : libtool-ltdl-2.4.2-21.el7_2.x86_64                   389/407 
+  Verifying  : spice-glib-0.31-6.el7.x86_64                         390/407 
+  Verifying  : 1:java-1.7.0-openjdk-headless-1.7.0.111-2.6.7.8.el   391/407 
+  Verifying  : libsss_nss_idmap-1.14.0-43.el7.x86_64                392/407 
+  Verifying  : pulseaudio-utils-6.0-8.el7.x86_64                    393/407 
+  Verifying  : pulseaudio-libs-glib2-6.0-8.el7.x86_64               394/407 
+  Verifying  : libpciaccess-0.13.4-2.el7.x86_64                     395/407 
+  Verifying  : 2:vim-filesystem-7.4.160-1.el7.x86_64                396/407 
+  Verifying  : sssd-proxy-1.14.0-43.el7.x86_64                      397/407 
+  Verifying  : libvirt-daemon-driver-network-2.0.0-10.el7.x86_64    398/407 
+  Verifying  : accountsservice-0.6.35-12.el7.x86_64                 399/407 
+  Verifying  : 1:emacs-filesystem-24.3-18.el7.noarch                400/407 
+  Verifying  : 7:device-mapper-1.02.135-1.el7.x86_64                401/407 
+  Verifying  : spice-server-0.12.4-19.el7.x86_64                    402/407 
+  Verifying  : rdma-7.3_4.7_rc2-5.el7.noarch                        403/407 
+  Verifying  : systemd-libs-219-30.el7.x86_64                       404/407 
+  Verifying  : sssd-common-pac-1.14.0-43.el7.x86_64                 405/407 
+  Verifying  : sssd-krb5-common-1.14.0-43.el7.x86_64                406/407 
+  Verifying  : firefox-45.4.0-1.el7.centos.x86_64                   407/407 
+
+Installed:
+  kernel.x86_64 0:3.10.0-514.21.1.el7                                       
+
+Updated:
+  NetworkManager.x86_64 1:1.4.0-20.el7_3                                    
+  NetworkManager-adsl.x86_64 1:1.4.0-20.el7_3                               
+  NetworkManager-glib.x86_64 1:1.4.0-20.el7_3                               
+  NetworkManager-libnm.x86_64 1:1.4.0-20.el7_3                              
+  NetworkManager-team.x86_64 1:1.4.0-20.el7_3                               
+  NetworkManager-tui.x86_64 1:1.4.0-20.el7_3                                
+  NetworkManager-wifi.x86_64 1:1.4.0-20.el7_3                               
+  accountsservice.x86_64 0:0.6.35-14.el7_3                                  
+  accountsservice-libs.x86_64 0:0.6.35-14.el7_3                             
+  audit.x86_64 0:2.6.5-3.el7_3.1                                            
+  audit-libs.x86_64 0:2.6.5-3.el7_3.1                                       
+  audit-libs-python.x86_64 0:2.6.5-3.el7_3.1                                
+  autocorr-en.noarch 1:5.0.6.2-5.el7_3.1                                    
+  bash.x86_64 0:4.2.46-21.el7_3                                             
+  bind-libs.x86_64 32:9.9.4-38.el7_3.3                                      
+  bind-libs-lite.x86_64 32:9.9.4-38.el7_3.3                                 
+  bind-license.noarch 32:9.9.4-38.el7_3.3                                   
+  bind-utils.x86_64 32:9.9.4-38.el7_3.3                                     
+  ca-certificates.noarch 0:2017.2.11-70.1.el7_3                             
+  chrony.x86_64 0:2.1.1-4.el7.centos                                        
+  device-mapper.x86_64 7:1.02.135-1.el7_3.4                                 
+  device-mapper-event.x86_64 7:1.02.135-1.el7_3.4                           
+  device-mapper-event-libs.x86_64 7:1.02.135-1.el7_3.4                      
+  device-mapper-libs.x86_64 7:1.02.135-1.el7_3.4                            
+  device-mapper-multipath.x86_64 0:0.4.9-99.el7_3.3                         
+  device-mapper-multipath-libs.x86_64 0:0.4.9-99.el7_3.3                    
+  dmidecode.x86_64 1:3.0-2.1.el7_3                                          
+  dracut.x86_64 0:033-463.el7_3.1                                           
+  dracut-config-rescue.x86_64 0:033-463.el7_3.1                             
+  dracut-network.x86_64 0:033-463.el7_3.1                                   
+  emacs-filesystem.noarch 1:24.3-19.el7_3                                   
+  expat.x86_64 0:2.1.0-10.el7_3                                             
+  fcoe-utils.x86_64 0:1.0.31-1.git5dfd3e4.el7_3.1                           
+  firefox.x86_64 0:52.1.0-2.el7.centos                                      
+  firewall-config.noarch 0:0.4.3.2-8.1.el7_3.3                              
+  firewalld.noarch 0:0.4.3.2-8.1.el7_3.3                                    
+  firewalld-filesystem.noarch 0:0.4.3.2-8.1.el7_3.3                         
+  gdm.x86_64 1:3.14.2-20.el7_3                                              
+  ghostscript.x86_64 0:9.07-20.el7_3.5                                      
+  ghostscript-cups.x86_64 0:9.07-20.el7_3.5                                 
+  glibc.x86_64 0:2.17-157.el7_3.2                                           
+  glibc-common.x86_64 0:2.17-157.el7_3.2                                    
+  glibc-devel.x86_64 0:2.17-157.el7_3.2                                     
+  glibc-headers.x86_64 0:2.17-157.el7_3.2                                   
+  grubby.x86_64 0:8.28-21.el7_3                                             
+  gstreamer-plugins-bad-free.x86_64 0:0.10.23-22.el7_3                      
+  gstreamer-plugins-good.x86_64 0:0.10.31-12.el7_3                          
+  gstreamer1-plugins-bad-free.x86_64 0:1.4.5-6.el7_3                        
+  gstreamer1-plugins-good.x86_64 0:1.4.5-3.el7_3                            
+  gtk3.x86_64 0:3.14.13-20.el7_3.1                                          
+  gtk3-immodule-xim.x86_64 0:3.14.13-20.el7_3.1                             
+  httpd.x86_64 0:2.4.6-45.el7.centos.4                                      
+  httpd-manual.noarch 0:2.4.6-45.el7.centos.4                               
+  httpd-tools.x86_64 0:2.4.6-45.el7.centos.4                                
+  initscripts.x86_64 0:9.49.37-1.el7_3.1                                    
+  ipa-client.x86_64 0:4.4.0-14.el7.centos.7                                 
+  ipa-client-common.noarch 0:4.4.0-14.el7.centos.7                          
+  ipa-common.noarch 0:4.4.0-14.el7.centos.7                                 
+  irqbalance.x86_64 3:1.0.7-6.el7_3.1                                       
+  jasper-libs.x86_64 0:1.900.1-30.el7_3                                     
+  java-1.7.0-openjdk.x86_64 1:1.7.0.141-2.6.10.1.el7_3                      
+  java-1.7.0-openjdk-headless.x86_64 1:1.7.0.141-2.6.10.1.el7_3             
+  java-1.8.0-openjdk.x86_64 1:1.8.0.131-3.b12.el7_3                         
+  java-1.8.0-openjdk-headless.x86_64 1:1.8.0.131-3.b12.el7_3                
+  kernel-headers.x86_64 0:3.10.0-514.21.1.el7                               
+  kernel-tools.x86_64 0:3.10.0-514.21.1.el7                                 
+  kernel-tools-libs.x86_64 0:3.10.0-514.21.1.el7                            
+  kpartx.x86_64 0:0.4.9-99.el7_3.3                                          
+  krb5-libs.x86_64 0:1.14.1-27.el7_3                                        
+  krb5-workstation.x86_64 0:1.14.1-27.el7_3                                 
+  libblkid.x86_64 0:2.23.2-33.el7_3.2                                       
+  libgcrypt.x86_64 0:1.5.3-13.el7_3.1                                       
+  libgudev1.x86_64 0:219-30.el7_3.9                                         
+  libguestfs.x86_64 1:1.32.7-3.el7.centos.2                                 
+  libipa_hbac.x86_64 0:1.14.0-43.el7_3.14                                   
+  libkadm5.x86_64 0:1.14.1-27.el7_3                                         
+  libmount.x86_64 0:2.23.2-33.el7_3.2                                       
+  libnetfilter_conntrack.x86_64 0:1.0.6-1.el7_3                             
+  libnl3.x86_64 0:3.2.28-3.el7_3                                            
+  libnl3-cli.x86_64 0:3.2.28-3.el7_3                                        
+  libpciaccess.x86_64 0:0.13.4-3.el7_3                                      
+  libreoffice-calc.x86_64 1:5.0.6.2-5.el7_3.1                               
+  libreoffice-core.x86_64 1:5.0.6.2-5.el7_3.1                               
+  libreoffice-draw.x86_64 1:5.0.6.2-5.el7_3.1                               
+  libreoffice-graphicfilter.x86_64 1:5.0.6.2-5.el7_3.1                      
+  libreoffice-impress.x86_64 1:5.0.6.2-5.el7_3.1                            
+  libreoffice-langpack-en.x86_64 1:5.0.6.2-5.el7_3.1                        
+  libreoffice-opensymbol-fonts.noarch 1:5.0.6.2-5.el7_3.1                   
+  libreoffice-pdfimport.x86_64 1:5.0.6.2-5.el7_3.1                          
+  libreoffice-pyuno.x86_64 1:5.0.6.2-5.el7_3.1                              
+  libreoffice-ure.x86_64 1:5.0.6.2-5.el7_3.1                                
+  libreoffice-writer.x86_64 1:5.0.6.2-5.el7_3.1                             
+  libsemanage.x86_64 0:2.5-5.1.el7_3                                        
+  libsemanage-python.x86_64 0:2.5-5.1.el7_3                                 
+  libsmbclient.x86_64 0:4.4.4-14.el7_3                                      
+  libsss_autofs.x86_64 0:1.14.0-43.el7_3.14                                 
+  libsss_idmap.x86_64 0:1.14.0-43.el7_3.14                                  
+  libsss_nss_idmap.x86_64 0:1.14.0-43.el7_3.14                              
+  libsss_sudo.x86_64 0:1.14.0-43.el7_3.14                                   
+  libtiff.x86_64 0:4.0.3-27.el7_3                                           
+  libtirpc.x86_64 0:0.2.4-0.8.el7_3                                         
+  libtool-ltdl.x86_64 0:2.4.2-22.el7_3                                      
+  libuuid.x86_64 0:2.23.2-33.el7_3.2                                        
+  libvirt.x86_64 0:2.0.0-10.el7_3.9                                         
+  libvirt-client.x86_64 0:2.0.0-10.el7_3.9                                  
+  libvirt-daemon.x86_64 0:2.0.0-10.el7_3.9                                  
+  libvirt-daemon-config-network.x86_64 0:2.0.0-10.el7_3.9                   
+  libvirt-daemon-config-nwfilter.x86_64 0:2.0.0-10.el7_3.9                  
+  libvirt-daemon-driver-interface.x86_64 0:2.0.0-10.el7_3.9                 
+  libvirt-daemon-driver-lxc.x86_64 0:2.0.0-10.el7_3.9                       
+  libvirt-daemon-driver-network.x86_64 0:2.0.0-10.el7_3.9                   
+  libvirt-daemon-driver-nodedev.x86_64 0:2.0.0-10.el7_3.9                   
+  libvirt-daemon-driver-nwfilter.x86_64 0:2.0.0-10.el7_3.9                  
+  libvirt-daemon-driver-qemu.x86_64 0:2.0.0-10.el7_3.9                      
+  libvirt-daemon-driver-secret.x86_64 0:2.0.0-10.el7_3.9                    
+  libvirt-daemon-driver-storage.x86_64 0:2.0.0-10.el7_3.9                   
+  libvirt-daemon-kvm.x86_64 0:2.0.0-10.el7_3.9                              
+  libwbclient.x86_64 0:4.4.4-14.el7_3                                       
+  lvm2.x86_64 7:2.02.166-1.el7_3.4                                          
+  lvm2-libs.x86_64 7:2.02.166-1.el7_3.4                                     
+  mdadm.x86_64 0:3.4-14.el7_3.1                                             
+  microcode_ctl.x86_64 2:2.1-16.3.el7_3                                     
+  mod_ssl.x86_64 1:2.4.6-45.el7.centos.4                                    
+  net-snmp-libs.x86_64 1:5.7.2-24.el7_3.2                                   
+  nfs-utils.x86_64 1:1.3.0-0.33.el7_3                                       
+  nspr.x86_64 0:4.13.1-1.0.el7_3                                            
+  nss.x86_64 0:3.28.4-1.2.el7_3                                             
+  nss-sysinit.x86_64 0:3.28.4-1.2.el7_3                                     
+  nss-tools.x86_64 0:3.28.4-1.2.el7_3                                       
+  nss-util.x86_64 0:3.28.4-1.0.el7_3                                        
+  ntp.x86_64 0:4.2.6p5-25.el7.centos.2                                      
+  ntpdate.x86_64 0:4.2.6p5-25.el7.centos.2                                  
+  open-vm-tools.x86_64 0:10.0.5-4.el7_3                                     
+  open-vm-tools-desktop.x86_64 0:10.0.5-4.el7_3                             
+  openjpeg-libs.x86_64 0:1.5.1-16.el7_3                                     
+  openssh.x86_64 0:6.6.1p1-35.el7_3                                         
+  openssh-clients.x86_64 0:6.6.1p1-35.el7_3                                 
+  openssh-server.x86_64 0:6.6.1p1-35.el7_3                                  
+  openssl.x86_64 1:1.0.1e-60.el7_3.1                                        
+  openssl-libs.x86_64 1:1.0.1e-60.el7_3.1                                   
+  oprofile.x86_64 0:0.9.9-21.el7_3                                          
+  perf.x86_64 0:3.10.0-514.21.1.el7                                         
+  policycoreutils.x86_64 0:2.5-11.el7_3                                     
+  policycoreutils-python.x86_64 0:2.5-11.el7_3                              
+  polkit.x86_64 0:0.112-12.el7_3                                            
+  pulseaudio.x86_64 0:6.0-9.el7_3                                           
+  pulseaudio-gdm-hooks.x86_64 0:6.0-9.el7_3                                 
+  pulseaudio-libs.x86_64 0:6.0-9.el7_3                                      
+  pulseaudio-libs-glib2.x86_64 0:6.0-9.el7_3                                
+  pulseaudio-module-bluetooth.x86_64 0:6.0-9.el7_3                          
+  pulseaudio-module-x11.x86_64 0:6.0-9.el7_3                                
+  pulseaudio-utils.x86_64 0:6.0-9.el7_3                                     
+  python-firewall.noarch 0:0.4.3.2-8.1.el7_3.3                              
+  python-libipa_hbac.x86_64 0:1.14.0-43.el7_3.14                            
+  python-perf.x86_64 0:3.10.0-514.21.1.el7                                  
+  python-sss-murmur.x86_64 0:1.14.0-43.el7_3.14                             
+  python-sssdconfig.noarch 0:1.14.0-43.el7_3.14                             
+  python2-ipaclient.noarch 0:4.4.0-14.el7.centos.7                          
+  python2-ipalib.noarch 0:4.4.0-14.el7.centos.7                             
+  qemu-img.x86_64 10:1.5.3-126.el7_3.6                                      
+  qemu-kvm.x86_64 10:1.5.3-126.el7_3.6                                      
+  qemu-kvm-common.x86_64 10:1.5.3-126.el7_3.6                               
+  rdma.noarch 0:7.3_4.7_rc2-6.el7_3                                         
+  rpcbind.x86_64 0:0.2.0-38.el7_3                                           
+  samba-client.x86_64 0:4.4.4-14.el7_3                                      
+  samba-client-libs.x86_64 0:4.4.4-14.el7_3                                 
+  samba-common.noarch 0:4.4.4-14.el7_3                                      
+  samba-common-libs.x86_64 0:4.4.4-14.el7_3                                 
+  samba-libs.x86_64 0:4.4.4-14.el7_3                                        
+  seabios-bin.noarch 0:1.9.1-5.el7_3.3                                      
+  seavgabios-bin.noarch 0:1.9.1-5.el7_3.3                                   
+  selinux-policy.noarch 0:3.13.1-102.el7_3.16                               
+  selinux-policy-targeted.noarch 0:3.13.1-102.el7_3.16                      
+  sos.noarch 0:3.3-5.el7.centos                                             
+  spice-glib.x86_64 0:0.31-6.el7_3.2                                        
+  spice-gtk3.x86_64 0:0.31-6.el7_3.2                                        
+  spice-server.x86_64 0:0.12.4-20.el7_3                                     
+  sssd.x86_64 0:1.14.0-43.el7_3.14                                          
+  sssd-ad.x86_64 0:1.14.0-43.el7_3.14                                       
+  sssd-client.x86_64 0:1.14.0-43.el7_3.14                                   
+  sssd-common.x86_64 0:1.14.0-43.el7_3.14                                   
+  sssd-common-pac.x86_64 0:1.14.0-43.el7_3.14                               
+  sssd-ipa.x86_64 0:1.14.0-43.el7_3.14                                      
+  sssd-krb5.x86_64 0:1.14.0-43.el7_3.14                                     
+  sssd-krb5-common.x86_64 0:1.14.0-43.el7_3.14                              
+  sssd-ldap.x86_64 0:1.14.0-43.el7_3.14                                     
+  sssd-proxy.x86_64 0:1.14.0-43.el7_3.14                                    
+  sudo.x86_64 0:1.8.6p7-22.el7_3                                            
+  systemd.x86_64 0:219-30.el7_3.9                                           
+  systemd-libs.x86_64 0:219-30.el7_3.9                                      
+  systemd-python.x86_64 0:219-30.el7_3.9                                    
+  systemd-sysv.x86_64 0:219-30.el7_3.9                                      
+  tcsh.x86_64 0:6.18.01-13.el7_3.1                                          
+  tuned.noarch 0:2.7.1-3.el7_3.2                                            
+  tzdata.noarch 0:2017b-1.el7                                               
+  tzdata-java.noarch 0:2017b-1.el7                                          
+  util-linux.x86_64 0:2.23.2-33.el7_3.2                                     
+  vim-common.x86_64 2:7.4.160-1.el7_3.1                                     
+  vim-enhanced.x86_64 2:7.4.160-1.el7_3.1                                   
+  vim-filesystem.x86_64 2:7.4.160-1.el7_3.1                                 
+  vim-minimal.x86_64 2:7.4.160-1.el7_3.1                                    
+  wpa_supplicant.x86_64 1:2.0-21.el7_3                                      
+  xfsprogs.x86_64 0:4.5.0-9.el7_3                                           
+
+Complete!
+[root@DE2c yum.repos.d]# rpm -qa kernel |sort -V |tail -n 1
+kernel-3.10.0-514.el7.x86_64
+[root@DE2c yum.repos.d]# uname -r
+3.10.0-514.el7.x86_64
+[root@DE2c yum.repos.d]# 
+
+
+
+
+then reboot
+reboot
+
+
+after rebooting twice as root:
+
+
+[scott@DE2c ~]$ su -
+Password: 
+Last login: Wed Jun  7 12:46:57 EDT 2017 on pts/0
+[root@DE2c ~]# 
+[root@DE2c ~]# rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+Retrieving https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+warning: /var/tmp/rpm-tmp.TBdZli: Header V3 RSA/SHA256 Signature, key ID 352c64e5: NOKEY
+Preparing...                          ################################# [100%]
+Updating / installing...
+   1:epel-release-7-9                 ################################# [100%]
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# yum install binutils gcc make patch libgomp glibc-headers glibc-devel kernel-headers kernel-devel dkms
+Loaded plugins: fastestmirror, langpacks
+epel/x86_64/metalink                                     |  12 kB     00:00     
+epel                                                     | 4.3 kB     00:00     
+(1/3): epel/x86_64/group_gz                                | 170 kB   00:00     
+(2/3): epel/x86_64/updateinfo                              | 809 kB   00:00     
+(3/3): epel/x86_64/primary_db                              | 4.7 MB   00:51     
+Loading mirror speeds from cached hostfile
+ * base: mirror.clarkson.edu
+ * epel: reflector.westga.edu
+ * extras: mirror.lug.udel.edu
+ * updates: reflector.westga.edu
+Package binutils-2.25.1-22.base.el7.x86_64 already installed and latest version
+Package 1:make-3.82-23.el7.x86_64 already installed and latest version
+Package libgomp-4.8.5-11.el7.x86_64 already installed and latest version
+Package glibc-headers-2.17-157.el7_3.2.x86_64 already installed and latest version
+Package glibc-devel-2.17-157.el7_3.2.x86_64 already installed and latest version
+Package kernel-headers-3.10.0-514.21.1.el7.x86_64 already installed and latest version
+Resolving Dependencies
+--> Running transaction check
+---> Package dkms.noarch 0:2.3-4.20170313git974d838.el7 will be installed
+---> Package gcc.x86_64 0:4.8.5-11.el7 will be installed
+--> Processing Dependency: cpp = 4.8.5-11.el7 for package: gcc-4.8.5-11.el7.x86_64
+--> Processing Dependency: libmpc.so.3()(64bit) for package: gcc-4.8.5-11.el7.x86_64
+---> Package kernel-devel.x86_64 0:3.10.0-514.21.1.el7 will be installed
+---> Package patch.x86_64 0:2.7.1-8.el7 will be installed
+--> Running transaction check
+---> Package cpp.x86_64 0:4.8.5-11.el7 will be installed
+---> Package libmpc.x86_64 0:1.0.1-3.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package          Arch       Version                          Repository   Size
+================================================================================
+Installing:
+ dkms             noarch     2.3-4.20170313git974d838.el7     epel         79 k
+ gcc              x86_64     4.8.5-11.el7                     base         16 M
+ kernel-devel     x86_64     3.10.0-514.21.1.el7              updates      13 M
+ patch            x86_64     2.7.1-8.el7                      base        110 k
+Installing for dependencies:
+ cpp              x86_64     4.8.5-11.el7                     base        5.9 M
+ libmpc           x86_64     1.0.1-3.el7                      base         51 k
+
+Transaction Summary
+================================================================================
+Install  4 Packages (+2 Dependent packages)
+
+Total download size: 35 M
+Installed size: 87 M
+Is this ok [y/d/N]: y
+Downloading packages:
+warning: /var/cache/yum/x86_64/7/epel/packages/dkms-2.3-4.20170313git974d838.el7.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID 352c64e5: NOKEY
+Public key for dkms-2.3-4.20170313git974d838.el7.noarch.rpm is not installed
+(1/6): dkms-2.3-4.20170313git974d838.el7.noarch.rpm        |  79 kB   00:03     
+(2/6): kernel-devel-3.10.0-514.21.1.el7.x86_64.rpm         |  13 MB   00:05     
+(3/6): libmpc-1.0.1-3.el7.x86_64.rpm                       |  51 kB   00:06     
+(4/6): cpp-4.8.5-11.el7.x86_64.rpm                         | 5.9 MB   00:07     
+(5/6): patch-2.7.1-8.el7.x86_64.rpm                        | 110 kB   00:06     
+(6/6): gcc-4.8.5-11.el7.x86_64.rpm                         |  16 MB   00:11     
+--------------------------------------------------------------------------------
+Total                                              3.0 MB/s |  35 MB  00:11     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Importing GPG key 0x352C64E5:
+ Userid     : "Fedora EPEL (7) <epel@fedoraproject.org>"
+ Fingerprint: 91e9 7d7c 4a5e 96f1 7f3e 888f 6a2f aea2 352c 64e5
+ Package    : epel-release-7-9.noarch (installed)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
+Is this ok [y/N]: y
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+Warning: RPMDB altered outside of yum.
+** Found 3 pre-existing rpmdb problem(s), 'yum check' output follows:
+ipa-client-4.4.0-14.el7.centos.7.x86_64 has installed conflicts freeipa-client: ipa-client-4.4.0-14.el7.centos.7.x86_64
+ipa-client-common-4.4.0-14.el7.centos.7.noarch has installed conflicts freeipa-client-common: ipa-client-common-4.4.0-14.el7.centos.7.noarch
+ipa-common-4.4.0-14.el7.centos.7.noarch has installed conflicts freeipa-common: ipa-common-4.4.0-14.el7.centos.7.noarch
+  Installing : libmpc-1.0.1-3.el7.x86_64                                    1/6 
+  Installing : cpp-4.8.5-11.el7.x86_64                                      2/6 
+  Installing : gcc-4.8.5-11.el7.x86_64                                      3/6 
+  Installing : kernel-devel-3.10.0-514.21.1.el7.x86_64                      4/6 
+  Installing : dkms-2.3-4.20170313git974d838.el7.noarch                     5/6 
+  Installing : patch-2.7.1-8.el7.x86_64                                     6/6 
+  Verifying  : kernel-devel-3.10.0-514.21.1.el7.x86_64                      1/6 
+  Verifying  : libmpc-1.0.1-3.el7.x86_64                                    2/6 
+  Verifying  : patch-2.7.1-8.el7.x86_64                                     3/6 
+  Verifying  : gcc-4.8.5-11.el7.x86_64                                      4/6 
+  Verifying  : dkms-2.3-4.20170313git974d838.el7.noarch                     5/6 
+  Verifying  : cpp-4.8.5-11.el7.x86_64                                      6/6 
+
+Installed:
+  dkms.noarch 0:2.3-4.20170313git974d838.el7     gcc.x86_64 0:4.8.5-11.el7     
+  kernel-devel.x86_64 0:3.10.0-514.21.1.el7      patch.x86_64 0:2.7.1-8.el7    
+
+Dependency Installed:
+  cpp.x86_64 0:4.8.5-11.el7             libmpc.x86_64 0:1.0.1-3.el7            
+
+Complete!
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# yum install VirtualBox-5.1
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: mirror.clarkson.edu
+ * epel: mirror.us.leaseweb.net
+ * extras: mirror.cc.columbia.edu
+ * updates: mirror.cc.columbia.edu
+Resolving Dependencies
+--> Running transaction check
+---> Package VirtualBox-5.1.x86_64 0:5.1.22_115126_el7-1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package             Arch        Version                  Repository       Size
+================================================================================
+Installing:
+ VirtualBox-5.1      x86_64      5.1.22_115126_el7-1      virtualbox       75 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 75 M
+Installed size: 169 M
+Is this ok [y/d/N]: y
+Downloading packages:
+warning: /var/cache/yum/x86_64/7/virtualbox/packages/VirtualBox-5.1-5.1.22_115126_el7-1.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 98ab5139: NOKEY
+Public key for VirtualBox-5.1-5.1.22_115126_el7-1.x86_64.rpm is not installed
+VirtualBox-5.1-5.1.22_115126_el7-1.x86_64.rpm              |  75 MB   00:26     
+Retrieving key from https://www.virtualbox.org/download/oracle_vbox.asc
+Importing GPG key 0x98AB5139:
+ Userid     : "Oracle Corporation (VirtualBox archive signing key) <info@virtualbox.org>"
+ Fingerprint: 7b0f ab3a 13b9 0743 5925 d9c9 5442 2a4b 98ab 5139
+ From       : https://www.virtualbox.org/download/oracle_vbox.asc
+Is this ok [y/N]: y
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : VirtualBox-5.1-5.1.22_115126_el7-1.x86_64                    1/1 
+
+Creating group 'vboxusers'. VM users must be member of that group!
+
+  Verifying  : VirtualBox-5.1-5.1.22_115126_el7-1.x86_64                    1/1 
+
+Installed:
+  VirtualBox-5.1.x86_64 0:5.1.22_115126_el7-1                                   
+
+Complete!
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# /usr/lib/virtualbox/vboxdrv.sh setup
+vboxdrv.sh: Stopping VirtualBox services.
+vboxdrv.sh: Building VirtualBox kernel modules.
+vboxdrv.sh: Starting VirtualBox services.
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# 
+[root@DE2c ~]# usermod -a -G vboxusers scott
+[root@DE2c ~]# 
+
+
+to lauch use:
+
+[scott@DE2c ~]$ 
+[scott@DE2c ~]$ 
+[scott@DE2c ~]$ VirtualBox
+
+

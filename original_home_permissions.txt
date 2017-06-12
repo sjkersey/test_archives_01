@@ -1,0 +1,35 @@
+changed group from scott to jenkins to allow jenkins to run scripts in scott's home dir:\
+[scott@DE2c home]$ sudo chown -R :jenkins ./scott
+
+
+
+[scott@DE2c ~]$ ls -al
+total 56
+drwx------. 14 scott jenkins 4096 May 31 15:47 .
+drwxr-xr-x.  3 root  root      19 May 29 15:48 ..
+-rw-------.  1 scott jenkins  747 Jun  1 15:35 .bash_history
+-rw-r--r--.  1 scott jenkins   18 Aug  2  2016 .bash_logout
+-rw-r--r--.  1 scott jenkins  193 Aug  2  2016 .bash_profile
+-rw-r--r--.  1 scott jenkins  231 Aug  2  2016 .bashrc
+drwx------. 11 scott jenkins  206 May 29 15:56 .cache
+drwxr-xr-x. 17 scott jenkins 4096 May 30 13:37 .config
+drwxr-xr-x.  2 scott jenkins    6 May 29 15:53 Desktop
+drwxr-xr-x.  2 scott jenkins    6 May 29 15:53 Documents
+drwxr-xr-x.  2 scott jenkins    6 May 29 15:53 Downloads
+-rw-------.  1 scott jenkins   16 May 29 15:53 .esd_auth
+-rw-------.  1 scott jenkins  624 May 30 11:21 .ICEauthority
+-rw-rw-r--.  1 scott jenkins 8276 May 31 12:17 jenkins_install_log.txt
+-rw-rw-r--.  1 scott jenkins  130 May 31 15:47 Jenkins_triggers.log
+drwx------.  3 scott jenkins   19 May 29 15:53 .local
+drwxr-xr-x.  5 scott jenkins   54 May 29 15:56 .mozilla
+drwxr-xr-x.  2 scott jenkins    6 May 29 15:53 Music
+drwxr-xr-x.  2 scott jenkins    6 May 29 15:53 Pictures
+drwxr-xr-x.  2 scott jenkins    6 May 29 15:53 Public
+drwxr-xr-x.  2 scott jenkins    6 May 29 15:53 Templates
+-rwxrwxrwx.  1 scott jenkins  153 May 31 15:47 test_Jenkins_trigger.sh
+drwxr-xr-x.  2 scott jenkins    6 May 29 15:53 Videos
+-rw-------.  1 scott jenkins 1549 May 31 15:47 .viminfo
+
+also needed to allow jenkins group to read write execute :
+[scott@DE2c ~]$ chmod -R g+rwx .
+

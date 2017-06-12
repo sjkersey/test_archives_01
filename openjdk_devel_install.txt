@@ -1,0 +1,57 @@
+see 
+https://stackoverflow.com/questions/5407703/javac-command-not-found
+http://openjdk.java.net/install/
+(this intstalls the Oracle supported open source version, not the Oracle closed source version)
+
+{
+for the closed source version see https://www.unixmen.com/install-oracle-java-jdk-8-centos-76-56-4/
+}
+
+[scott@DE2c java-1.8.0]$ sudo yum install java-devel
+[sudo] password for scott: 
+Loaded plugins: fastestmirror, langpacks
+Loading mirror speeds from cached hostfile
+ * base: centos.mirrors.wvstateu.edu
+ * epel: mirror.cogentco.com
+ * extras: repo1.ash.innoscale.net
+ * updates: mirror.math.princeton.edu
+Resolving Dependencies
+--> Running transaction check
+---> Package java-1.8.0-openjdk-devel.x86_64 1:1.8.0.131-3.b12.el7_3 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                    Arch     Version                    Repository
+                                                                           Size
+================================================================================
+Installing:
+ java-1.8.0-openjdk-devel   x86_64   1:1.8.0.131-3.b12.el7_3    updates   9.7 M
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 9.7 M
+Installed size: 40 M
+Is this ok [y/d/N]: y
+Downloading packages:
+java-1.8.0-openjdk-devel-1.8.0.131-3.b12.el7_3.x86_64.rpm  | 9.7 MB   00:02     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 1:java-1.8.0-openjdk-devel-1.8.0.131-3.b12.el7_3.x86_64      1/1 
+  Verifying  : 1:java-1.8.0-openjdk-devel-1.8.0.131-3.b12.el7_3.x86_64      1/1 
+
+Installed:
+  java-1.8.0-openjdk-devel.x86_64 1:1.8.0.131-3.b12.el7_3                       
+
+Complete!
+[scott@DE2c java-1.8.0]$ 
+
+[scott@DE2c ~]$ date
+Thu Jun  8 11:59:36 EDT 2017
+
+
