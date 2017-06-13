@@ -2326,3 +2326,163 @@ UHD supports all Ettus Research USRP™ hardware, including all motherboards and
 Google: "update GNURadio with PyBOMBS"
 https://lists.gnu.org/archive/html/discuss-gnuradio/2014-10/msg00552.html
 
+Google: "PyBOMBS update"
+from
+http://gnuradio.4.n7.nabble.com/pybombs-prefix-update-td63055.html
+run 
+[scott@DE2c ~]$ pybombs update uhd
+PyBOMBS - INFO - PyBOMBS Version 2.3.0
+PyBOMBS.install_manager - INFO - Phase 1: Creating install tree and installing binary packages:
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+Install tree:
+|
+\- uhd
+PyBOMBS.install_manager - INFO - Phase 2: Recursively installing source packages to prefix:
+PyBOMBS.install_manager - INFO - Updating package: uhd
+Updating: (100%) [============================================================]
+Updating: (100%) [============================================================]
+Updating: (100%) [============================================================]
+Updating: (100%) [============================================================]
+Building:    (100%) [=========================================================]
+Installing:  (100%) [=========================================================]
+PyBOMBS.install_manager - INFO - Update successful.
+
+
+-to get name of packages, go to src dir:
+[scott@DE2c ~]$ ls
+Desktop                       original_home_permissions.txt
+dev                           Pictures
+Documents                     prefix
+Downloads                     share
+drives_before_adding_2nd.txt  Templates
+jenkins_install_log.txt       Videos
+Music                         virtualbox_install_log.txt
+openjdk_devel_install.txt     VirtualBox VMs
+[scott@DE2c ~]$ cd prefix/
+[scott@DE2c prefix]$ ls
+bin  etc  include  lib  lib64  libexec  setup_env.sh  share  src
+[scott@DE2c prefix]$ cd src
+[scott@DE2c src]$ ls
+apache-thrift  automake  gnuradio  pyqwt5  uhd
+[scott@DE2c src]$ cd ~
+
+-then run update on the gnuradio package:
+
+[scott@DE2c ~]$ pybombs update gnuradio
+PyBOMBS - INFO - PyBOMBS Version 2.3.0
+PyBOMBS.install_manager - INFO - Phase 1: Creating install tree and installing binary packages:
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+Install tree:
+|
+\- gnuradio
+PyBOMBS.install_manager - INFO - Phase 2: Recursively installing source packages to prefix:
+PyBOMBS.install_manager - INFO - Updating package: gnuradio
+Updating: (100%) [============================================================]
+Updating: (100%) [============================================================]
+Updating: (100%) [============================================================]
+Updating: (100%) [============================================================]
+Building:    (100%) [=========================================================]
+Installing:  (100%) [=========================================================]
+PyBOMBS.install_manager - INFO - Update successful.
+[scott@DE2c ~]$ 
+
+
+-note make sure build is set to true in ~/prefix/.pybombs/config.yml when updating
+...
+  gnuradio:
+    forcebuild: true
+...
+
+
+--update 3 packages at same time from home dir:
+[scott@DE2c ~]$ pybombs update gnuradio uhd pyqwt5
+PyBOMBS - INFO - PyBOMBS Version 2.3.0
+PyBOMBS.install_manager - INFO - Phase 1: Creating install tree and installing binary packages:
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+Install tree:
+|
+\- gnuradio
+   |
+   +- uhd
+   |
+   \- pyqwt5
+PyBOMBS.install_manager - INFO - Phase 2: Recursively installing source packages to prefix:
+PyBOMBS.install_manager - INFO - Updating package: pyqwt5
+02671 kB / 02671 kB (100%)
+Building:    (100%) [=========================================================]
+Installing:  (100%) [=========================================================]
+PyBOMBS.install_manager - INFO - Update successful.
+PyBOMBS.install_manager - INFO - Updating package: uhd
+Updating: (100%) [============================================================]
+Updating: (100%) [============================================================]
+Updating: (100%) [============================================================]
+Updating: (100%) [============================================================]
+Building:    (100%) [=========================================================]
+Installing:  (100%) [=========================================================]
+PyBOMBS.install_manager - INFO - Update successful.
+PyBOMBS.install_manager - INFO - Updating package: gnuradio
+Updating: (100%) [============================================================]
+Updating: (100%) [============================================================]
+Updating: (100%) [============================================================]
+Updating: (100%) [============================================================]
+Building:    (100%) [=========================================================]
+Installing:  (100%) [=========================================================]
+PyBOMBS.install_manager - INFO - Update successful.
+
+
+
+
+
+--when updating from dir ~/for_jenkins
+got this error:
+
+[scott@DE2c for_jenkins]$ pybombs update gnuradio uhd pyqwt5
+PyBOMBS - INFO - PyBOMBS Version 2.3.0
+PyBOMBS.install_manager - INFO - Phase 1: Creating install tree and installing binary packages:
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+Install tree:
+|
+\- gnuradio
+   |
+   +- uhd
+   |
+   \- pyqwt5
+PyBOMBS.install_manager - INFO - Phase 2: Recursively installing source packages to prefix:
+PyBOMBS.install_manager - INFO - Updating package: pyqwt5
+02671 kB / 02671 kB (100%)
+PyBOMBS.Fetcher - ERROR - Unexpected error while fetching wget+http://sourceforge.net/projects/pyqwt/files/pyqwt5/PyQwt-5.2.0/PyQwt-5.2.0.tar.gz.
+PyBOMBS.Fetcher - ERROR - Destination path 'pyqwt5/PyQwt-5.2.0' already exists
+PyBOMBS.Packager.source - ERROR - Problem occurred while building package pyqwt5:
+Unable to update recipe pyqwt5
+PyBOMBS.install_manager - ERROR - Error updating package pyqwt5. Aborting.
+[scott@DE2c for_jenkins]$ 
+
+-this is fixed by manually removing the directory (but must do this everytime, must be a bug in its update script!):
+
+[scott@DE2c ~]$ cd prefix/src/pyqwt5/
+[scott@DE2c pyqwt5]$ ls
+ANNOUNCEMENT-5.2.0  COPYING.PyQwt  PyQwt-5.2.0       qt4examples  setup.py
+configure           GNUmakefile    PyQwt-5.2.0_old2  qt4lib       sip
+COPYING             include-5.2.0  pyqwt-5.2.patch   qwt-5.2      sphinx
+COPYING.GSE         MANIFEST.in    qt3examples       README       support
+COPYING.INTES       PKG-INFO       qt3lib            setup.cfg    test
+[scott@DE2c pyqwt5]$ rm -rf PyQwt-5.2.0/
+[scott@DE2c pyqwt5]$ rm -rf PyQwt-5.2.0_old2/
+
+[scott@DE2c pyqwt5]$ cd ~
+[scott@DE2c ~]$ pybombs update pyqwt5 
+PyBOMBS - INFO - PyBOMBS Version 2.3.0
+PyBOMBS.install_manager - INFO - Phase 1: Creating install tree and installing binary packages:
+Install tree:
+|
+\- pyqwt5
+PyBOMBS.install_manager - INFO - Phase 2: Recursively installing source packages to prefix:
+PyBOMBS.install_manager - INFO - Updating package: pyqwt5
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+02671 kB / 02671 kB (100%)
+Building:    (100%) [=========================================================]
+Installing:  (100%) [=========================================================]
+PyBOMBS.install_manager - INFO - Update successful.
+[scott@DE2c ~]$ 
+
+
