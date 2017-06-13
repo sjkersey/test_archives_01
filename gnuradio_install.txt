@@ -2286,4 +2286,43 @@ power management:
 
 [scott@DE2c ~]$ 
 
+--now set environmental variables with:
+source ~/prefix/setup_env.sh
+
+--finally to run GNURadio:
+[scott@DE2c prefix]$ pwd
+/home/scott/prefix
+[scott@DE2c prefix]$ gnuradio-companion 
+<<< Welcome to GNU Radio Companion 3.7.12git-126-g37d373ac >>>
+
+Block paths:
+	/home/scott/prefix/share/gnuradio/grc/blocks
+<string>:1: ImportWarning: Not importing directory '/home/scott/prefix/lib/python2.7/site-packages/PyQt4': missing __init__.py
+
+(a GUI opens)
+(can be in any directory to run above, GUI will still open):
+
+[scott@DE2c ~]$ gnuradio-companion 
+<<< Welcome to GNU Radio Companion 3.7.12git-126-g37d373ac >>>
+
+Block paths:
+	/home/scott/prefix/share/gnuradio/grc/blocks
+<string>:1: ImportWarning: Not importing directory '/home/scott/prefix/lib/python2.7/site-packages/PyQt4': missing __init__.py
+
+
+
+--good link and info for UHD module:
+(got from ~/prefixes/.pybombs/inventory.yaml file)
+https://github.com/EttusResearch/uhd
+(has link to RedHawk SDR also)
+
+USRP Hardware Driver (UHD™) Software
+UHD is the free & open-source software driver and API for the Universal Software Radio Peripheral (USRP™) SDR platform, created and sold by Ettus Research.
+
+UHD supports all Ettus Research USRP™ hardware, including all motherboards and daughterboards, and the combinations thereof.
+
+
+--update GNURadio
+Google: "update GNURadio with PyBOMBS"
+https://lists.gnu.org/archive/html/discuss-gnuradio/2014-10/msg00552.html
 
