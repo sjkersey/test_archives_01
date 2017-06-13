@@ -1,3 +1,6 @@
+for installing gnuradio with PyBOMBS examples see
+https://github.com/gnuradio/pybombs/blob/master/README.md
+
 [scott@DE2c ~]$ man pip
 
 [scott@DE2c ~]$ 
