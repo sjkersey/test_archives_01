@@ -186,4 +186,24 @@ to see Jenkins workspace's:
 /var/lib/jenkins/workspace/test_git_01
 
 
+--to let Jenkins update gnuradio installed in /home/scott:
+Google: "how to run a shell script as another user"
+https://stackoverflow.com/questions/6905697/how-to-run-script-as-another-user-without-password
+-better:
+Google: "askpass"
+https://stackoverflow.com/questions/21659637/how-to-fix-sudo-no-tty-present-and-no-askpass-program-specified-error
+
+
+visudo
+then add following line
+
+jenkins ALL=(scott) NOPASSWD: /home/scott/for_jenkins/run_as_jenkins_gnuradio.sh, /home/scott/for_jenkins/test_Jenkins_trigger_gnuradio.sh
+
+-or just use (so you wont have to keep editing visudo when you add new scripts)
+jenkins ALL=(ALL) NOPASSWD: ALL
+
+
+
+
+
 
