@@ -80,4 +80,20 @@ $ chmod 700 dir/* && ls -l dir/* /tmp/file3
 lrwxrwxrwx 1 user group 10 2011-06-27 22:02 dir/file3 -> /tmp/file3
 
 
+-or can make a directory just for jenkins in your home dir:
+-to allow jenkins to get to its directory in your home dir:
+[scott@DE2c ~]$ sudo chown :jenkins .
+
+-then set group recursively to jenkins:
+[scott@DE2c ~]$ sudo chown -R :jenkins for_jenkins/
+
+-good explanation of shell variabiles and running shell scrips as source
+instead of spawning new shells:
+Google: "variables shell script"
+https://www.shellscript.sh/variables1.html
+http://www.dreamsyssoft.com/unix-shell-scripting/variables-tutorial.php  (no space between name
+and equal sign and variable value)
+
+
+
 
