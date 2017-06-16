@@ -1,4 +1,5 @@
-
+Google: 'installing 2nd hard drive centos 7'
+http://www.techotopia.com/index.php/Adding_a_New_Disk_Drive_to_a_CentOS_System
 
 [scott@DE2c ~]$ ls /dev/sd*
 /dev/sda   /dev/sda2  /dev/sdb1  /dev/sdc  /dev/sde
@@ -17,6 +18,13 @@ sdb           8:16   0  37.3G  0 disk
 sr0          11:0    1  1024M  0 rom  
 [scott@DE2c ~]$ ls /dev/hd*
 ls: cannot access /dev/hd*: No such file or directory
+
+-can also use
+[scott@DE2c ~]$ sudo fdisk -l
+
+
+-now remove old partitions and make a new partion:
+
 [scott@DE2c ~]$ fdisk /dev/sdb
 fdisk: cannot open /dev/sdb: Permission denied
 [scott@DE2c ~]$ sudo fdisk /dev/sdb
