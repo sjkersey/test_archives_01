@@ -295,8 +295,17 @@ need to add following line to /etc/fstab (as root user)
 
 LABEL=/userdata01	/secondHDD	ext3	defaults	1 2
 
--investigate what the 1 2 is:
+-investigate what the 1 2 levels are (dump and fsck levels. respectively):
 google '/etc/fstab 1 2'
 https://wiki.archlinux.org/index.php/fstab
+   -> for dump, zero for full (not partial) file system backup per https://linux.die.net/man/8/dump
+    (so try setting it to 1 as in the main example)
+
+-better: google: 'fsck levels in etc fstab'
+https://unix.stackexchange.com/questions/34300/what-is-in-fsck-section-in-fstab?rq=1
+(states fsck should be 1 for root and 2 for all others, and 0 for no check, so we set it to 2
+as in the main example)
+
+
 
 
