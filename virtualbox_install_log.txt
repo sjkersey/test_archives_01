@@ -1940,4 +1940,11 @@ click New
 then under storage, you have to set or add a CD to point to the iso file.
 
 
+-to be able to ssh into the VM, 
+see
+Google: 'how to ssh to linux virtualbox'
+
+https://blog.basefarm.com/blog/how-to-ssh-into-a-virtualbox-linux-guest-from-your-host-machine/
+
+
 
