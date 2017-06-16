@@ -307,5 +307,73 @@ https://unix.stackexchange.com/questions/34300/what-is-in-fsck-section-in-fstab?
 as in the main example)
 
 
+-to find disk labels:
+
+Google: 'how to find disk label in linux'
+https://askubuntu.com/questions/527790/list-all-partition-labels
+
+[scott@DE2c /]$ sudo blkid -o list
+device     fs_type label    mount point    UUID
+-------------------------------------------------------------------------------
+/dev/mapper/cl-root
+           xfs              /              d68a1df9-6eb8-4f6b-94bf-a5a5225f0705
+/dev/sda2  LVM2_member      (in use)       JDPHMw-TMkl-5Fq8-ClcD-6WjI-Zxpm-s8jJtc
+/dev/sda1  xfs              /boot          f1093a57-7af7-4938-9567-96b4028bf8c9
+/dev/mapper/cl-swap
+           swap             <swap>         cdb41ed9-d072-420c-a90a-30d12ef7edf3
+/dev/sdb1  ext3    /userdata01 /secondHDD  89265c76-67d0-481a-b897-f2685bdca337
+/dev/mapper/cl-home
+           xfs              /home          5db7dc0f-1d24-4ffd-b7ad-9e0c60c38771
+[scott@DE2c /]$ 
+
+
+-or use
+Google: 'find disk labels centos'
+https://www.centos.org/forums/viewtopic.php?t=11986
+
+[scott@DE2c /]$ sudo e2label /dev/sdb1
+/userdata01
+
+
+-setup a directory on the 2nd (non-OS) Hard drive for VM use (so OS and VM's can read/write simotaneously to improve VM speed):
+
+[scott@DE2c /]$ cd secondHDD/
+[scott@DE2c secondHDD]$ sudo mkdir scottVMs
+[scott@DE2c secondHDD]$ sudo chown scott:scott scottVMs/
+[scott@DE2c secondHDD]$ ls -al
+total 28
+drwxr-xr-x.  4 root  root   4096 Jun 16 17:52 .
+dr-xr-xr-x. 18 root  root    259 Jun 16 17:27 ..
+drwx------.  2 root  root  16384 Jun 16 13:31 lost+found
+drwxr-xr-x.  2 scott scott  4096 Jun 16 17:52 scottVMs
+-rw-r--r--.  1 root  root     65 Jun 16 16:02 testfile.txt
+[scott@DE2c secondHDD]$ cd scottVMs/
+
+-now make a directory for Oracle Virtualbox VM's (and/or other vendors like VMWare VM's) so it will be obvious which vendor format the VM is using for future migrations / installations etc.
+
+[scott@DE2c scottVMs]$ mkdir VirtualboxVMs
+
+
+--Move VM to new Hard drive
+
+Google: 'move oracle virtualbox vm to another drive'
+http://www.techrepublic.com/article/how-to-move-virtualbox-vms-from-one-drive-to-another/
+
+to move the Virtualbox vdi file, only move that file and not all the other files in the users default VirtualBox VM directory
+(dont move all the other files in its directory, as they will be deleted when you delete the old VM in the GUI)
+(or just remove the vdi file then delete all the other files and then delete the VM from inside 
+VirtualBox GUI, and then create a new VM and point it to the moved VDI file)
+
+Failed to save the settings of the virtual machine CentOS7 to /home/scott/VirtualBox VMs/CentOS7/CentOS7.vbox.
+
+Runtime error opening '/home/scott/VirtualBox VMs/CentOS7/CentOS7.vbox-tmp' for overwriting: -102(File not found.).
+
+/home/vbox/vbox-5.1.22/src/VBox/Main/src-server/MachineImpl.cpp[10029] (nsresult Machine::i_saveSettings(bool*, int)).
+
+Result Code: NS_ERROR_FAILURE (0x80004005)
+Component: SessionMachine
+Interface: IMachine {b2547866-a0a1-4391-8b86-6952d82efaa0}
+
+
 
 
