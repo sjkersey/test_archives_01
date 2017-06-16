@@ -1935,4 +1935,9 @@ to lauch use:
 [scott@DE2c ~]$ 
 [scott@DE2c ~]$ VirtualBox
 
+-to create a CentOS7 VM:
+click New
+then under storage, you have to set or add a CD to point to the iso file.
+
+
 
