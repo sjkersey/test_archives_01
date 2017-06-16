@@ -1,0 +1,183 @@
+[scott@DE2c ~]$ ls /dev/sd*
+/dev/sda   /dev/sda2  /dev/sdb1  /dev/sdc  /dev/sde
+/dev/sda1  /dev/sdb   /dev/sdb2  /dev/sdd  /dev/sdf
+
+
+
+
+note, CENTOS 7 would not boot (gave 'dracut-initqueue[288]: Warning: dracut-initqueue timeout -starting timeout scripts [ <countup timer in seconds>]' error codes) with an old 40GB Secondary HDD which already had CENTOS7 installed on it
+so the Linux OS/boot partitions on the 2nd HDD may have confused the bootup of the primary CENTOS7 HDD; so to work around we did SATA drive hot swap:  
+
+Google: 'can you hotswap SATA'
+https://superuser.com/questions/925847/desmistifiying-sata-hotplug
+https://serverfault.com/questions/690609/in-which-order-do-i-plug-the-sata-power-and-data-cables-for-hotplug
+
+
+--CENTOS 7 booted up no problems with another Secondary SSD (formatted with NTSF from a Windows10 Pro installation) from power on
+
+[scott@DE2c ~]$ lsblk
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda           8:0    0 931.5G  0 disk 
+├─sda1        8:1    0     1G  0 part /boot
+└─sda2        8:2    0 930.5G  0 part 
+  ├─cl-root 253:0    0    50G  0 lvm  /
+  ├─cl-swap 253:1    0   7.8G  0 lvm  [SWAP]
+  └─cl-home 253:2    0 872.8G  0 lvm  /home
+sdb           8:16   0 223.6G  0 disk 
+├─sdb1        8:17   0   500M  0 part 
+└─sdb2        8:18   0 223.1G  0 part 
+sr0          11:0    1  1024M  0 rom  
+[scott@DE2c ~]$ sudo fdisk -l
+[sudo] password for scott: 
+
+Disk /dev/sdb: 240.1 GB, 240057409536 bytes, 468862128 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0xc44ecc22
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1   *        2048     1026047      512000    7  HPFS/NTFS/exFAT
+/dev/sdb2         1026048   468858879   233916416    7  HPFS/NTFS/exFAT
+
+Disk /dev/sda: 1000.2 GB, 1000204886016 bytes, 1953525168 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x00026237
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2099199     1048576   83  Linux
+/dev/sda2         2099200  1953523711   975712256   8e  Linux LVM
+
+Disk /dev/mapper/cl-root: 53.7 GB, 53687091200 bytes, 104857600 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/cl-swap: 8321 MB, 8321499136 bytes, 16252928 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/cl-home: 937.1 GB, 937112371200 bytes, 1830297600 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+[scott@DE2c ~]$ 
+
+
+--then hot swapped (unplugged) the secondary SSD:
+unplugged SATA data cable first, then the SATA (not molex) power cable:
+(the sdb drive was no longer listed:)
+
+[scott@DE2c ~]$ lsblk
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda           8:0    0 931.5G  0 disk 
+├─sda1        8:1    0     1G  0 part /boot
+└─sda2        8:2    0 930.5G  0 part 
+  ├─cl-root 253:0    0    50G  0 lvm  /
+  ├─cl-swap 253:1    0   7.8G  0 lvm  [SWAP]
+  └─cl-home 253:2    0 872.8G  0 lvm  /home
+sr0          11:0    1  1024M  0 rom  
+[scott@DE2c ~]$ sudo fdisk -l
+[sudo] password for scott: 
+
+Disk /dev/sda: 1000.2 GB, 1000204886016 bytes, 1953525168 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x00026237
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2099199     1048576   83  Linux
+/dev/sda2         2099200  1953523711   975712256   8e  Linux LVM
+
+Disk /dev/mapper/cl-root: 53.7 GB, 53687091200 bytes, 104857600 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/cl-swap: 8321 MB, 8321499136 bytes, 16252928 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/cl-home: 937.1 GB, 937112371200 bytes, 1830297600 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+[scott@DE2c ~]$
+
+
+
+--then hot swapped (plugged in) a secondary HDD (that had CENTOS 7 OS already installed)
+using same data cable as the SSD:
+-plugged SATA (not molex)power cable first, then SATA data cable
+
+
+[scott@DE2c ~]$ lsblk
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda           8:0    0 931.5G  0 disk 
+├─sda1        8:1    0     1G  0 part /boot
+└─sda2        8:2    0 930.5G  0 part 
+  ├─cl-root 253:0    0    50G  0 lvm  /
+  ├─cl-swap 253:1    0   7.8G  0 lvm  [SWAP]
+  └─cl-home 253:2    0 872.8G  0 lvm  /home
+sdb           8:16   0  37.3G  0 disk 
+├─sdb1        8:17   0     1G  0 part 
+└─sdb2        8:18   0  36.3G  0 part 
+sr0          11:0    1  1024M  0 rom  
+[scott@DE2c ~]$ sudo fdisk -l
+[sudo] password for scott: 
+
+Disk /dev/sda: 1000.2 GB, 1000204886016 bytes, 1953525168 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x00026237
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048     2099199     1048576   83  Linux
+/dev/sda2         2099200  1953523711   975712256   8e  Linux LVM
+
+Disk /dev/mapper/cl-root: 53.7 GB, 53687091200 bytes, 104857600 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/cl-swap: 8321 MB, 8321499136 bytes, 16252928 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/mapper/cl-home: 937.1 GB, 937112371200 bytes, 1830297600 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+
+
+Disk /dev/sdb: 40.0 GB, 40020664320 bytes, 78165360 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000a6df8
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1   *        2048     2099199     1048576   83  Linux
+/dev/sdb2         2099200    78163967    38032384   8e  Linux LVM
+[scott@DE2c ~]$ 
+
