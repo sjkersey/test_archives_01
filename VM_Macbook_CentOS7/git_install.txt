@@ -1,0 +1,289 @@
+[scott@localhost ~]$ cd dev
+[scott@localhost dev]$ ls
+[scott@localhost dev]$ git
+bash: git: command not found...
+[scott@localhost dev]$ su -
+Password: 
+Last login: Tue May 30 12:15:03 EDT 2017 on pts/0
+[root@localhost ~]# 
+[root@localhost ~]# 
+[root@localhost ~]# yum install git
+Loaded plugins: fastestmirror, langpacks
+Repodata is over 2 weeks old. Install yum-cron? Or run: yum makecache fast
+base                                                                   | 3.6 kB  00:00:00     
+extras                                                                 | 3.4 kB  00:00:00     
+updates                                                                | 3.4 kB  00:00:00     
+(1/2): extras/7/x86_64/primary_db                                      | 168 kB  00:00:00     
+(2/2): updates/7/x86_64/primary_db                                     | 5.7 MB  00:00:02     
+Loading mirror speeds from cached hostfile
+ * base: repos-va.psychz.net
+ * extras: mirror.umd.edu
+ * updates: mirrors.centos.webair.com
+Resolving Dependencies
+--> Running transaction check
+---> Package git.x86_64 0:1.8.3.1-6.el7_2.1 will be installed
+--> Processing Dependency: perl-Git = 1.8.3.1-6.el7_2.1 for package: git-1.8.3.1-6.el7_2.1.x86_64
+--> Processing Dependency: perl(Term::ReadKey) for package: git-1.8.3.1-6.el7_2.1.x86_64
+--> Processing Dependency: perl(Git) for package: git-1.8.3.1-6.el7_2.1.x86_64
+--> Processing Dependency: perl(Error) for package: git-1.8.3.1-6.el7_2.1.x86_64
+--> Running transaction check
+---> Package perl-Error.noarch 1:0.17020-2.el7 will be installed
+---> Package perl-Git.noarch 0:1.8.3.1-6.el7_2.1 will be installed
+---> Package perl-TermReadKey.x86_64 0:2.30-20.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+==============================================================================================
+ Package                    Arch             Version                     Repository      Size
+==============================================================================================
+Installing:
+ git                        x86_64           1.8.3.1-6.el7_2.1           base           4.4 M
+Installing for dependencies:
+ perl-Error                 noarch           1:0.17020-2.el7             base            32 k
+ perl-Git                   noarch           1.8.3.1-6.el7_2.1           base            53 k
+ perl-TermReadKey           x86_64           2.30-20.el7                 base            31 k
+
+Transaction Summary
+==============================================================================================
+Install  1 Package (+3 Dependent packages)
+
+Total download size: 4.5 M
+Installed size: 22 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/4): git-1.8.3.1-6.el7_2.1.x86_64.rpm                                | 4.4 MB  00:00:01     
+(2/4): perl-Error-0.17020-2.el7.noarch.rpm                             |  32 kB  00:00:03     
+(3/4): perl-Git-1.8.3.1-6.el7_2.1.noarch.rpm                           |  53 kB  00:00:03     
+(4/4): perl-TermReadKey-2.30-20.el7.x86_64.rpm                         |  31 kB  00:00:04     
+----------------------------------------------------------------------------------------------
+Total                                                         1.0 MB/s | 4.5 MB  00:00:04     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 1:perl-Error-0.17020-2.el7.noarch                                          1/4 
+  Installing : perl-TermReadKey-2.30-20.el7.x86_64                                        2/4 
+  Installing : git-1.8.3.1-6.el7_2.1.x86_64                                               3/4 
+  Installing : perl-Git-1.8.3.1-6.el7_2.1.noarch                                          4/4 
+  Verifying  : perl-Git-1.8.3.1-6.el7_2.1.noarch                                          1/4 
+  Verifying  : perl-TermReadKey-2.30-20.el7.x86_64                                        2/4 
+  Verifying  : 1:perl-Error-0.17020-2.el7.noarch                                          3/4 
+  Verifying  : git-1.8.3.1-6.el7_2.1.x86_64                                               4/4 
+
+Installed:
+  git.x86_64 0:1.8.3.1-6.el7_2.1                                                              
+
+Dependency Installed:
+  perl-Error.noarch 1:0.17020-2.el7              perl-Git.noarch 0:1.8.3.1-6.el7_2.1         
+  perl-TermReadKey.x86_64 0:2.30-20.el7         
+
+Complete!
+[root@localhost ~]# date
+Mon Jun 19 17:28:12 EDT 2017
+
+
+
+to clone and update local repos:
+
+[scott@localhost ~]$ cd dev
+[scott@localhost dev]$ ls
+[scott@localhost dev]$ git clone https://github.com/sjkersey/test_archives_01.git
+Cloning into 'test_archives_01'...
+remote: Counting objects: 64, done.
+remote: Compressing objects: 100% (47/47), done.
+remote: Total 64 (delta 30), reused 46 (delta 15), pack-reused 0
+Unpacking objects: 100% (64/64), done.
+[scott@localhost dev]$ ls
+test_archives_01
+[scott@localhost dev]$ ls -la
+total 8
+drwxrwxr-x.  3 scott scott   30 Jun 19 17:32 .
+drwx------. 23 scott scott 4096 Jun 19 17:32 ..
+drwxrwxr-x.  3 scott scott 4096 Jun 19 17:32 test_archives_01
+[scott@localhost dev]$ mkdir junit_tests
+[scott@localhost dev]$ ls
+junit_tests  test_archives_01
+[scott@localhost dev]$ cd junit_tests/
+[scott@localhost junit_tests]$ ls
+[scott@localhost junit_tests]$ git clone https://github.com/sjkersey/test_Junit_01.git
+Cloning into 'test_Junit_01'...
+remote: Counting objects: 92, done.
+remote: Compressing objects: 100% (61/61), done.
+remote: Total 92 (delta 20), reused 74 (delta 14), pack-reused 0
+Unpacking objects: 100% (92/92), done.
+[scott@localhost junit_tests]$ ls
+test_Junit_01
+[scott@localhost junit_tests]$ cd test_Junit_01/
+[scott@localhost test_Junit_01]$ ls
+class  lib  logs  README.md  src  test_build.sh
+[scott@localhost test_Junit_01]$ ls -al
+total 8
+drwxrwxr-x. 7 scott scott  103 Jun 19 17:36 .
+drwxrwxr-x. 3 scott scott   27 Jun 19 17:36 ..
+drwxrwxr-x. 4 scott scott   38 Jun 19 17:36 class
+drwxrwxr-x. 8 scott scott  163 Jun 19 17:36 .git
+drwxrwxr-x. 2 scott scott   28 Jun 19 17:36 lib
+drwxrwxr-x. 2 scott scott   32 Jun 19 17:36 logs
+-rw-rw-r--. 1 scott scott  682 Jun 19 17:36 README.md
+drwxrwxr-x. 4 scott scott   66 Jun 19 17:36 src
+-rwxrwxr-x. 1 scott scott 1301 Jun 19 17:36 test_build.sh
+
+
+-after cloning repo, a change was made on another computer and pushed to the
+repo, now we want the new changes on this computer:
+
+
+[scott@localhost test_Junit_01]$ git fetch origin
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/sjkersey/test_Junit_01
+   e5cf177..acdf93b  master     -> origin/master
+[scott@localhost test_Junit_01]$ git merge origin/master master
+Updating e5cf177..acdf93b
+Fast-forward
+
+
+
+--if there are conflicts (different versions on same row in file(s)), do the following to resolve:
+
+
+[scott@localhost test_Junit_01]$ git fetch origin
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/sjkersey/test_Junit_01
+   acdf93b..b69370c  master     -> origin/master
+[scott@localhost test_Junit_01]$ git merge origin/master master
+Updating acdf93b..b69370c
+error: Your local changes to the following files would be overwritten by merge:
+	test_build.sh
+Please, commit your changes or stash them before you can merge.
+Aborting
+[scott@localhost test_Junit_01]$ git commit -a
+[master 12f3c24] merge test from 2nd computer
+ Committer: Scott <scott@localhost.localdomain>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+[scott@localhost test_Junit_01]$ git config --global user.email sjkersey@aol.com
+[scott@localhost test_Junit_01]$ git config --global user.name Scott K
+[scott@localhost test_Junit_01]$ git commit --amend --reset-author
+[master b6c2315] merge test from 2nd computer also reset author
+ 1 file changed, 1 insertion(+)
+[scott@localhost test_Junit_01]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': sjkersey@aol.com
+Password for 'https://sjkersey@aol.com@github.com': 
+To https://github.com/sjkersey/test_Junit_01.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/sjkersey/test_Junit_01.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first merge the remote changes (e.g.,
+hint: 'git pull') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+[scott@localhost test_Junit_01]$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 3 (delta 2), reused 3 (delta 2), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/sjkersey/test_Junit_01
+   b69370c..0c61314  master     -> origin/master
+Auto-merging test_build.sh
+CONFLICT (content): Merge conflict in test_build.sh
+Automatic merge failed; fix conflicts and then commit the result.
+[scott@localhost test_Junit_01]$ git status
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 2 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# You have unmerged paths.
+#   (fix conflicts and run "git commit")
+#
+# Unmerged paths:
+#   (use "git add <file>..." to mark resolution)
+#
+#	both modified:      test_build.sh
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+
+--now edit the file and remove the conflicht markers >>> ==== <<<< and 
+fix the file with the final corrections
+
+
+[scott@localhost test_Junit_01]$ vim test_build.sh 
+
+-now add the file
+
+[scott@localhost test_Junit_01]$ git add .
+[scott@localhost test_Junit_01]$ git commit -m "Resolved merge conflict by combining both versions"
+[master afd99a3] Resolved merge conflict by combining both versions
+[scott@localhost test_Junit_01]$ git merge
+fatal: No commit specified and merge.defaultToUpstream not set.
+
+--now do a git push
+
+[scott@localhost test_Junit_01]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': sjkersey@aol.com
+Password for 'https://sjkersey@aol.com@github.com': 
+Counting objects: 10, done.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 617 bytes | 0 bytes/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
+To https://github.com/sjkersey/test_Junit_01.git
+   0c61314..afd99a3  master -> master
+[scott@localhost test_Junit_01]$ 
+ test_build.sh | 1 +
+ 1 file changed, 1 insertion(+)
+[scott@localhost test_Junit_01]$ 
+
+
+-now the other computers can do 
+get fetch origin 
+-then 
+get merge origin/master master
+
+to update to the final version 
+
