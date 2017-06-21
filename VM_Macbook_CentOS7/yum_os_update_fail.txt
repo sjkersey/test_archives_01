@@ -1,0 +1,143 @@
+(note: had to reboot system after adding scott to wheel group with
+usermod -aG wheel scott
+for sudo priveleges to take effect?! (maybe wheel group was not created yet?)
+
+
+[scott@localhost ~]$ sudo whoami
+[sudo] password for scott: 
+root
+[scott@localhost ~]$ sudo yum install epel-release
+Loaded plugins: fastestmirror, langpacks
+Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=7&arch=x86_64&repo=os&infra=stock error was
+14: curl#6 - "Could not resolve host: mirrorlist.centos.org; Unknown error"
+http://repos.lax.quadranet.com/centos/7.3.1611/os/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: repos.lax.quadranet.com; Unknown error"
+Trying other mirror.
+http://mirrors.centos.webair.com/centos/7.3.1611/os/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirrors.centos.webair.com; Unknown error"
+Trying other mirror.
+http://mirror.linux.duke.edu/pub/centos/7.3.1611/os/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirror.linux.duke.edu; Unknown error"
+Trying other mirror.
+http://mirrors.sonic.net/centos/7.3.1611/os/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirrors.sonic.net; Unknown error"
+Trying other mirror.
+http://mirrors.ocf.berkeley.edu/centos/7.3.1611/os/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirrors.ocf.berkeley.edu; Unknown error"
+Trying other mirror.
+http://centos.mia.host-engine.com/7.3.1611/os/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: centos.mia.host-engine.com; Unknown error"
+Trying other mirror.
+http://ftpmirror.your.org/pub/centos/7.3.1611/os/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: ftpmirror.your.org; Unknown error"
+Trying other mirror.
+http://ftp.usf.edu/pub/centos/7.3.1611/os/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: ftp.usf.edu; Unknown error"
+Trying other mirror.
+http://repo1.sea.innoscale.net/centos/7.3.1611/os/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: repo1.sea.innoscale.net; Unknown error"
+Trying other mirror.
+http://mirror.trouble-free.net/centos/7.3.1611/os/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirror.trouble-free.net; Unknown error"
+Trying other mirror.
+Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=7&arch=x86_64&repo=extras&infra=stock error was
+14: curl#6 - "Could not resolve host: mirrorlist.centos.org; Unknown error"
+http://repos-va.psychz.net/centos/7.3.1611/extras/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: repos-va.psychz.net; Unknown error"
+Trying other mirror.
+http://mirror.pac-12.org/7.3.1611/extras/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirror.pac-12.org; Unknown error"
+Trying other mirror.
+http://linux.cc.lehigh.edu/centos/7.3.1611/extras/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: linux.cc.lehigh.edu; Unknown error"
+Trying other mirror.
+http://mirrors.maine.edu/CentOS/7.3.1611/extras/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirrors.maine.edu; Unknown error"
+Trying other mirror.
+http://mirror.hmc.edu/centos/7.3.1611/extras/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirror.hmc.edu; Unknown error"
+Trying other mirror.
+http://mirror.netdepot.com/centos/7.3.1611/extras/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirror.netdepot.com; Unknown error"
+Trying other mirror.
+http://mirrors.greenmountainaccess.net/centos/7.3.1611/extras/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirrors.greenmountainaccess.net; Unknown error"
+Trying other mirror.
+http://repos.lax.quadranet.com/centos/7.3.1611/extras/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: repos.lax.quadranet.com; Unknown error"
+Trying other mirror.
+http://mirrors.centos.webair.com/centos/7.3.1611/extras/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirrors.centos.webair.com; Unknown error"
+Trying other mirror.
+http://mirrors.ocf.berkeley.edu/centos/7.3.1611/extras/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirrors.ocf.berkeley.edu; Unknown error"
+Trying other mirror.
+Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=7&arch=x86_64&repo=updates&infra=stock error was
+14: curl#6 - "Could not resolve host: mirrorlist.centos.org; Unknown error"
+http://centos.host-engine.com/7.3.1611/updates/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: centos.host-engine.com; Unknown error"
+Trying other mirror.
+http://mirror.metrocast.net/centos/7.3.1611/updates/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirror.metrocast.net; Unknown error"
+Trying other mirror.
+http://repos.mia.quadranet.com/centos/7.3.1611/updates/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: repos.mia.quadranet.com; Unknown error"
+Trying other mirror.
+http://mirror.team-cymru.org/CentOS/7.3.1611/updates/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirror.team-cymru.org; Unknown error"
+Trying other mirror.
+http://centos.vwtonline.net/centos/7.3.1611/updates/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: centos.vwtonline.net; Unknown error"
+Trying other mirror.
+http://repos.dfw.quadranet.com/centos/7.3.1611/updates/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: repos.dfw.quadranet.com; Unknown error"
+Trying other mirror.
+http://mirror.sjc02.svwh.net/centos/7.3.1611/updates/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirror.sjc02.svwh.net; Unknown error"
+Trying other mirror.
+http://pubmirrors.dal.corespace.com/centos/7.3.1611/updates/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: pubmirrors.dal.corespace.com; Unknown error"
+Trying other mirror.
+http://mirror.linux.duke.edu/pub/centos/7.3.1611/updates/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: mirror.linux.duke.edu; Unknown error"
+Trying other mirror.
+http://centos.mia.host-engine.com/7.3.1611/updates/x86_64/repodata/repomd.xml: [Errno 14] curl#6 - "Could not resolve host: centos.mia.host-engine.com; Unknown error"
+Trying other mirror.
+Loading mirror speeds from cached hostfile
+ * base: mirror.linux.duke.edu
+ * extras: repos-va.psychz.net
+ * updates: mirror.linux.duke.edu
+Resolving Dependencies
+--> Running transaction check
+---> Package epel-release.noarch 0:7-9 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=======================================================================================
+ Package                  Arch               Version          Repository          Size
+=======================================================================================
+Installing:
+ epel-release             noarch             7-9              extras              14 k
+
+Transaction Summary
+=======================================================================================
+Install  1 Package
+
+Total download size: 14 k
+Installed size: 24 k
+Is this ok [y/d/N]: y
+Downloading packages:
+epel-release-7-9.noarch.rpm    FAILED                                          
+http://repos-va.psychz.net/centos/7.3.1611/extras/x86_64/Packages/epel-release-7-9.noarch.rpm: [Errno 14] curl#6 - "Could not resolve host: repos-va.psychz.net; Unknown error"
+Trying other mirror.
+epel-release-7-9.noarch.rpm    FAILED                                          
+http://mirror.pac-12.org/7.3.1611/extras/x86_64/Packages/epel-release-7-9.noarch.rpm: [Errno 14] curl#6 - "Could not resolve host: mirror.pac-12.org; Unknown error"
+Trying other mirror.
+epel-release-7-9.noarch.rpm    FAILED                                          
+http://linux.cc.lehigh.edu/centos/7.3.1611/extras/x86_64/Packages/epel-release-7-9.noarch.rpm: [Errno 14] curl#6 - "Could not resolve host: linux.cc.lehigh.edu; Unknown error"
+Trying other mirror.
+epel-release-7-9.noarch.rpm    FAILED                                          
+http://mirrors.maine.edu/CentOS/7.3.1611/extras/x86_64/Packages/epel-release-7-9.noarch.rpm: [Errno 14] curl#6 - "Could not resolve host: mirrors.maine.edu; Unknown error"
+Trying other mirror.
+epel-release-7-9.noarch.rpm    FAILED                                          
+http://mirror.hmc.edu/centos/7.3.1611/extras/x86_64/Packages/epel-release-7-9.noarch.rpm: [Errno 14] curl#6 - "Could not resolve host: mirror.hmc.edu; Unknown error"
+Trying other mirror.
+epel-release-7-9.noarch.rpm    FAILED                                          
+http://mirror.netdepot.com/centos/7.3.1611/extras/x86_64/Packages/epel-release-7-9.noarch.rpm: [Errno 14] curl#6 - "Could not resolve host: mirror.netdepot.com; Unknown error"
+Trying other mirror.
+epel-release-7-9.noarch.rpm    FAILED                                          
+http://mirrors.greenmountainaccess.net/centos/7.3.1611/extras/x86_64/Packages/epel-release-7-9.noarch.rpm: [Errno 14] curl#6 - "Could not resolve host: mirrors.greenmountainaccess.net; Unknown error"
+Trying other mirror.
+epel-release-7-9.noarch.rpm    FAILED                                          
+http://repos.lax.quadranet.com/centos/7.3.1611/extras/x86_64/Packages/epel-release-7-9.noarch.rpm: [Errno 14] curl#6 - "Could not resolve host: repos.lax.quadranet.com; Unknown error"
+Trying other mirror.
+epel-release-7-9.noarch.rpm    FAILED                                          
+http://mirrors.centos.webair.com/centos/7.3.1611/extras/x86_64/Packages/epel-release-7-9.noarch.rpm: [Errno 14] curl#6 - "Could not resolve host: mirrors.centos.webair.com; Unknown error"
+Trying other mirror.
+epel-release-7-9.noarch.rpm    FAILED                                          
+http://mirrors.ocf.berkeley.edu/centos/7.3.1611/extras/x86_64/Packages/epel-release-7-9.noarch.rpm: [Errno 14] curl#6 - "Could not resolve host: mirrors.ocf.berkeley.edu; Unknown error"
+Trying other mirror.
+
+
+Error downloading packages:
+  epel-release-7-9.noarch: [Errno 256] No more mirrors to try.
+
+[scott@localhost ~]$ java -version
+openjdk version "1.8.0_102"
+OpenJDK Runtime Environment (build 1.8.0_102-b14)
+OpenJDK 64-Bit Server VM (build 25.102-b14, mixed mode)
+[scott@localhost ~]$ date
+Tue May 30 12:23:33 EDT 2017
+

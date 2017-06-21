@@ -1,0 +1,126 @@
+[root@localhost scott]# date
+Tue May 23 17:59:36 PDT 2017
+[root@localhost scott]# diskutil list
+bash: diskutil: command not found...
+[root@localhost scott]# df
+Filesystem     1K-blocks      Used Available Use% Mounted on
+/dev/sda3       18555904   5047424  13508480  28% /
+devtmpfs          485292         0    485292   0% /dev
+tmpfs             499968       192    499776   1% /dev/shm
+tmpfs             499968      7324    492644   2% /run
+tmpfs             499968         0    499968   0% /sys/fs/cgroup
+/dev/sda1         303780    154556    149224  51% /boot
+tmpfs              99996        28     99968   1% /run/user/1000
+.host:/        243924992 124718816 119206176  52% /mnt/hgfs
+tmpfs              99996         0     99996   0% /run/user/0
+[root@localhost scott]# 
+[root@localhost scott]# 
+[root@localhost scott]# fdisk -l
+
+Disk /dev/sda: 21.5 GB, 21474836480 bytes, 41943040 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000e4b3a
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048      616447      307200   83  Linux
+/dev/sda2          616448     4810751     2097152   82  Linux swap / Solaris
+/dev/sda3         4810752    41943039    18566144   83  Linux
+
+Disk /dev/sdb: 15.7 GB, 15664676864 bytes, 30595072 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x00000000
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               2    30595071    15297535    7  HPFS/NTFS/exFAT
+[root@localhost scott]# 
+You have new mail in /var/spool/mail/root
+[root@localhost scott]# 
+[root@localhost scott]# fdisk -l
+
+Disk /dev/sda: 21.5 GB, 21474836480 bytes, 41943040 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000e4b3a
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048      616447      307200   83  Linux
+/dev/sda2          616448     4810751     2097152   82  Linux swap / Solaris
+/dev/sda3         4810752    41943039    18566144   83  Linux
+
+Disk /dev/sdb: 15.7 GB, 15664676864 bytes, 30595072 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x00000000
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdb1               2    30595071    15297535    7  HPFS/NTFS/exFAT
+[root@localhost scott]# pwd
+/home/scott
+[root@localhost scott]# cd /mnt/hgfs/Downloads/
+[root@localhost Downloads]# ls
+CentOS-6.9-x86_64-bin-DVD1.iso  CentOS-7-x86_64-Everything-1611.iso  UnityDownloadAssistant-5.5.1f1.dmg
+CentOS-6.9-x86_64-bin-DVD2.iso  readme_warning_6-5                   VMware-Fusion-8.1.1-3771013.dmg
+
+command to make usb install drive from *.iso file:
+
+**************************
+
+[root@localhost Downloads]# dd if=CentOS-7-x86_64-Everything-1611.iso of=/dev/sdb
+16173056+0 records in
+16173056+0 records out
+8280604672 bytes (8.3 GB) copied, 3121.59 s, 2.7 MB/s
+
+***********************
+
+[root@localhost Downloads]# mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=485292k,nr_inodes=121323,mode=755)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,seclabel)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,seclabel,mode=755)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,seclabel,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpuacct,cpu)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_prio,net_cls)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+/dev/sda3 on / type xfs (rw,relatime,seclabel,attr2,inode64,noquota)
+selinuxfs on /sys/fs/selinux type selinuxfs (rw,relatime)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=31,pgrp=1,timeout=300,minproto=5,maxproto=5,direct)
+mqueue on /dev/mqueue type mqueue (rw,relatime,seclabel)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,seclabel)
+sunrpc on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw,relatime)
+nfsd on /proc/fs/nfsd type nfsd (rw,relatime)
+/dev/sda1 on /boot type xfs (rw,relatime,seclabel,attr2,inode64,noquota)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=99996k,mode=700,uid=1000,gid=1000)
+gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+.host:/ on /mnt/hgfs type vmhgfs (rw,relatime)
+You have new mail in /var/spool/mail/root
+[root@localhost Downloads]# 
+
+
+--all above does not work, per google searches, the Linux tools generally to not work to make a Linux USB install (as of June 2017), better to use Windows tools to make the Linux USB install!
+(best way is to just make a CENTOS7.3 install DVD from iso file (worked on 1st try on Macbook Pro with connected DVD drive)
+

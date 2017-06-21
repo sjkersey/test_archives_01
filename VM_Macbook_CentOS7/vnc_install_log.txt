@@ -1,0 +1,121 @@
+
+calhost ~]$ su -
+Password: 
+Last login: Tue May 23 20:48:32 EDT 2017 on pts/0
+[root@localhost ~]# yum install vnc
+Loaded plugins: fastestmirror, langpacks
+base                                                     | 3.6 kB     00:00     
+extras                                                   | 3.4 kB     00:00     
+updates                                                  | 3.4 kB     00:00     
+Loading mirror speeds from cached hostfile
+ * base: repos.lax.quadranet.com
+ * extras: repos-va.psychz.net
+ * updates: centos.host-engine.com
+Resolving Dependencies
+--> Running transaction check
+---> Package tigervnc.x86_64 0:1.3.1-9.el7 will be installed
+--> Processing Dependency: tigervnc-icons for package: tigervnc-1.3.1-9.el7.x86_64
+--> Processing Dependency: libfltk_images.so.1.3()(64bit) for package: tigervnc-1.3.1-9.el7.x86_64
+--> Processing Dependency: libfltk.so.1.3()(64bit) for package: tigervnc-1.3.1-9.el7.x86_64
+--> Running transaction check
+---> Package fltk.x86_64 0:1.3.0-13.el7 will be installed
+---> Package tigervnc-icons.noarch 0:1.3.1-9.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch           Version               Repository    Size
+================================================================================
+Installing:
+ tigervnc               x86_64         1.3.1-9.el7           base         211 k
+Installing for dependencies:
+ fltk                   x86_64         1.3.0-13.el7          base         654 k
+ tigervnc-icons         noarch         1.3.1-9.el7           base          36 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+2 Dependent packages)
+
+Total download size: 900 k
+Installed size: 2.1 M
+Is this ok [y/d/N]: y
+Downloading packages:
+warning: /var/cache/yum/x86_64/7/base/packages/tigervnc-icons-1.3.1-9.el7.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+Public key for tigervnc-icons-1.3.1-9.el7.noarch.rpm is not installed
+(1/3): tigervnc-icons-1.3.1-9.el7.noarch.rpm               |  36 kB   00:01     
+(2/3): fltk-1.3.0-13.el7.x86_64.rpm                        | 654 kB   00:01     
+(3/3): tigervnc-1.3.1-9.el7.x86_64.rpm                     | 211 kB   00:02     
+--------------------------------------------------------------------------------
+Total                                              347 kB/s | 900 kB  00:02     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Importing GPG key 0xF4A80EB5:
+ Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>"
+ Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+ Package    : centos-release-7-3.1611.el7.centos.x86_64 (@anaconda)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Is this ok [y/N]: y
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : tigervnc-icons-1.3.1-9.el7.noarch                            1/3 
+  Installing : fltk-1.3.0-13.el7.x86_64                                     2/3 
+  Installing : tigervnc-1.3.1-9.el7.x86_64                                  3/3 
+  Verifying  : fltk-1.3.0-13.el7.x86_64                                     1/3 
+  Verifying  : tigervnc-1.3.1-9.el7.x86_64                                  2/3 
+  Verifying  : tigervnc-icons-1.3.1-9.el7.noarch                            3/3 
+
+Installed:
+  tigervnc.x86_64 0:1.3.1-9.el7                                                 
+
+Dependency Installed:
+  fltk.x86_64 0:1.3.0-13.el7         tigervnc-icons.noarch 0:1.3.1-9.el7        
+
+Complete!
+[root@localhost ~]# date
+Wed May 24 16:56:25 EDT 2017
+
+
+see http://www.techotopia.com/index.php/Remote_Access_to_the_CentOS_Desktop
+--now example connections:
+
+-to connect to default desktop 0 (which is shown on actual monitor) on server computer:
+on server open tcp and udp ports 5900 (System->Administration->Security Level and Firewall) (or use iptables command?)
+
+-nonsecure, type on  client (can use this if on internal secure network):
+vncviewer 10.19.100.197:0
+or just
+vncviewer
+or
+vncviewer :0
+
+then type IP address in pop up window (this opens desktop 0 on remote server)
+
+
+-for secure, first make a secure on  client:
+[scott@localhost ~]$ ssh -L 5900:localhost:5900 10.19.100.197
+
+
+then type on  client
+[scott@localhost ~]$ vncviewer localhost:5900
+
+-note any user sitting in front of the remote server can see what you are doing on screen
+so to make a private desktop "1" on remote server type (on remote server)
+vncserver :1
+
+then to unsecurly access it remotely, type on  client
+vncviewer 10.19.100.197:1
+or 
+vncviewer :1
+(which will prompt for IP address)
+
+
+-to securly access desktop 1, open tcp and udp port 5901 on server (System->Administration->Security Level and Firewall) 
+
+type on  client
+[scott@localhost ~]$ ssh -L 5901:localhost:5901 10.19.100.197
+
+then in another terminal window on  client type
+[scott@localhost ~]$ vncviewer localhost:5901
+
