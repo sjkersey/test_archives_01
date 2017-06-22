@@ -1,0 +1,6 @@
+
+https://stackoverflow.com/questions/2235276/how-to-run-junit-test-cases-from-the-command-line
+https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core/1.3
+
+-nice Junit, Findbugs, code coverage with Jenkins examples:
+http://www.yolinux.com/TUTORIALS/Jenkins-Java-builds.html
