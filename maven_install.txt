@@ -1,3 +1,10 @@
+see
+google 'maven install centos'
+https://maven.apache.org/install.html
+https://maven.apache.org/download.cgi
+
+https://tecadmin.net/install-apache-maven-on-centos/#
+
 ~]$ cd /opt
 [scott@DE2c opt]$ ls
 google  rh
