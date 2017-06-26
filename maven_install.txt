@@ -1,0 +1,111 @@
+~]$ cd /opt
+[scott@DE2c opt]$ ls
+google  rh
+[scott@DE2c opt]$ ls -al
+total 0
+drwxr-xr-x.  4 root root  30 Jun 15 14:48 .
+dr-xr-xr-x. 18 root root 259 Jun 16 17:27 ..
+drwxr-xr-x.  3 root root  20 Jun 15 14:48 google
+drwxr-xr-x.  2 root root   6 Mar 26  2015 rh
+[scott@DE2c opt]$ cd google/
+[scott@DE2c google]$ ls
+chrome
+[scott@DE2c google]$ cd ..
+[scott@DE2c opt]$ ls
+google  rh
+[scott@DE2c opt]$ wget http://apache.mirrors.lucidnetworks.net/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
+--2017-06-26 13:29:14--  http://apache.mirrors.lucidnetworks.net/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
+Resolving apache.mirrors.lucidnetworks.net (apache.mirrors.lucidnetworks.net)... 108.166.161.136
+Connecting to apache.mirrors.lucidnetworks.net (apache.mirrors.lucidnetworks.net)|108.166.161.136|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 8534562 (8.1M) [application/x-gzip]
+apache-maven-3.5.0-bin.tar.gz: Permission denied
+
+Cannot write to ‘apache-maven-3.5.0-bin.tar.gz’ (Permission denied).
+
+
+[scott@DE2c opt]$ sudo wget http://apache.mirrors.lucidnetworks.net/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
+[sudo] password for scott: 
+--2017-06-26 13:29:41--  http://apache.mirrors.lucidnetworks.net/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz
+Resolving apache.mirrors.lucidnetworks.net (apache.mirrors.lucidnetworks.net)... 108.166.161.136
+Connecting to apache.mirrors.lucidnetworks.net (apache.mirrors.lucidnetworks.net)|108.166.161.136|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 8534562 (8.1M) [application/x-gzip]
+Saving to: ‘apache-maven-3.5.0-bin.tar.gz’
+
+100%[======================================>] 8,534,562   1.14MB/s   in 8.4s   
+
+2017-06-26 13:29:49 (988 KB/s) - ‘apache-maven-3.5.0-bin.tar.gz’ saved [8534562/8534562]
+
+[scott@DE2c opt]$ ls
+apache-maven-3.5.0-bin.tar.gz  google  rh
+[scott@DE2c opt]$ man tar
+[scott@DE2c opt]$ sudo tar xzf apache-maven-3.5.0-bin.tar.gz 
+[scott@DE2c opt]$ ls
+apache-maven-3.5.0  apache-maven-3.5.0-bin.tar.gz  google  rh
+[scott@DE2c opt]$ ls -al
+total 8336
+drwxr-xr-x.  5 root root      93 Jun 26 13:31 .
+dr-xr-xr-x. 18 root root     259 Jun 16 17:27 ..
+drwxr-xr-x.  6 root root      99 Jun 26 13:31 apache-maven-3.5.0
+-rw-r--r--.  1 root root 8534562 Apr  7 04:29 apache-maven-3.5.0-bin.tar.gz
+drwxr-xr-x.  3 root root      20 Jun 15 14:48 google
+drwxr-xr-x.  2 root root       6 Mar 26  2015 rh
+[scott@DE2c opt]$ man ln
+[scott@DE2c opt]$ sudo ln -s apache-maven-3.5.0 maven
+[scott@DE2c opt]$ ls -al
+total 8336
+drwxr-xr-x.  5 root root     106 Jun 26 13:32 .
+dr-xr-xr-x. 18 root root     259 Jun 16 17:27 ..
+drwxr-xr-x.  6 root root      99 Jun 26 13:31 apache-maven-3.5.0
+-rw-r--r--.  1 root root 8534562 Apr  7 04:29 apache-maven-3.5.0-bin.tar.gz
+drwxr-xr-x.  3 root root      20 Jun 15 14:48 google
+lrwxrwxrwx.  1 root root      18 Jun 26 13:32 maven -> apache-maven-3.5.0
+drwxr-xr-x.  2 root root       6 Mar 26  2015 rh
+[scott@DE2c opt]$ cd maven
+[scott@DE2c maven]$ pwd
+/opt/maven
+[scott@DE2c maven]$ ls
+bin  boot  conf  lib  LICENSE  NOTICE  README.txt
+[scott@DE2c maven]$ ls -al
+total 36
+drwxr-xr-x. 6 root root     99 Jun 26 13:31 .
+drwxr-xr-x. 5 root root    106 Jun 26 13:32 ..
+drwxr-xr-x. 2 root root     97 Jun 26 13:31 bin
+drwxr-xr-x. 2 root root     42 Jun 26 13:31 boot
+drwxr-xr-x. 3  501 games    63 Apr  3 15:36 conf
+drwxr-xr-x. 4  501 games  4096 Jun 26 13:31 lib
+-rw-r--r--. 1  501 games 20934 Apr  3 15:41 LICENSE
+-rw-r--r--. 1  501 games   182 Apr  3 15:40 NOTICE
+-rw-r--r--. 1  501 games  2544 Apr  3 15:36 README.txt
+[scott@DE2c maven]$ cd ..
+[scott@DE2c opt]$ ls
+apache-maven-3.5.0  apache-maven-3.5.0-bin.tar.gz  google  maven  rh
+[scott@DE2c opt]$
+
+
+
+etc]$ cd profile.d/
+[scott@DE2c profile.d]$ ls
+256term.csh                   colorls.csh  PackageKit.sh          vim.csh
+256term.sh                    colorls.sh   qt.csh                 vim.sh
+abrt-console-notification.sh  lang.csh     qt-graphicssystem.csh  vte.sh
+bash_completion.sh            lang.sh      qt-graphicssystem.sh   which2.csh
+colorgrep.csh                 less.csh     qt.sh                  which2.sh
+colorgrep.sh                  less.sh      set_Java.sh
+[scott@DE2c profile.d]$ pwd
+/etc/profile.d
+[scott@DE2c profile.d]$ sudo vi /etc/profile.d/maven.sh
+[sudo] password for scott: 
+[scott@DE2c profile.d]$ sudo vi -R lang.sh
+[scott@DE2c profile.d]$ sudo vi -R set_Java.sh
+[scott@DE2c profile.d]$ source /etc/profile.d/maven.sh
+[scott@DE2c profile.d]$ mvn -version
+Apache Maven 3.5.0 (ff8f5e7444045639af65f6095c62210b5713f426; 2017-04-03T15:39:06-04:00)
+Maven home: /opt/maven
+Java version: 1.8.0_131, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.131-3.b12.el7_3.x86_64/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "3.10.0-514.21.1.el7.x86_64", arch: "amd64", family: "unix"
+[scott@DE2c profile.d]$ 
+
