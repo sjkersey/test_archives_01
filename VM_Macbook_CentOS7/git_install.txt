@@ -148,6 +148,9 @@ Fast-forward
 
 
 --if there are conflicts (different versions on same row in file(s)), do the following to resolve:
+Google "git merge on command line"
+see https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/
+https://www.atlassian.com/git/tutorials/git-merge
 
 
 [scott@localhost test_Junit_01]$ git fetch origin

@@ -1,0 +1,28 @@
+
+https://stackoverflow.com/questions/2235276/how-to-run-junit-test-cases-from-the-command-line
+https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core/1.3
+
+-nice Junit, JavaDoc, Java Warnings, Findbugs, JaCoCo code coverage plugins for Jenkins with examples:
+Google: 'Junit, Findbugs Jenkins'
+http://www.yolinux.com/TUTORIALS/Jenkins-Java-builds.html
+Google 'install findbugs in jenkins'
+http://macgyverdev.blogspot.com/2014/01/setup-jenkins-project-from-git.html
+
+-Java (and other languages) build tools:
+Google 'maven vs ant vs make'
+https://technologyconversations.com/2014/06/18/build-tools/
+    |
+    |-> nice coding conventions: 
+         from build.gradle link, then click on github project java8exercises:
+
+ 	https://github.com/vfarcic/java-8-exercises/blob/master/src/main/java/com/technologyconversations/java8exercises/streams/ToUpperCase.java
+
+-Google 'maven vs make'
+http://javarevisited.blogspot.com/2015/01/difference-between-maven-ant-jenkins-and-hudson.html
+
+-Good info on shell Scripting
+Google 'install make centos 7'
+https://www.cyberciti.biz/faq/centos-rhel-7-redhat-linux-install-gcc-compiler-development-tools/
+   |
+   | link at top "Linux Shell Scripting Tutorial"
+  https://bash.cyberciti.biz/guide/Main_Page
