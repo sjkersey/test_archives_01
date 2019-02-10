@@ -1,1 +1,56 @@
 testing moving github local dir to verify wont break link to remote
+
+
+//had to do a 'git pull origin master' before committing new changes (this file)
+//since the remote had newer files than local:
+
+[scott@localhost VM_Macbook_CentOS7]$ touch testmovedirectory.txt
+[scott@localhost VM_Macbook_CentOS7]$ vim testmovedirectory.txt 
+[scott@localhost VM_Macbook_CentOS7]$ git add -A
+[scott@localhost VM_Macbook_CentOS7]$ git commit -m "testing moving a local directory to verify wont break link to remote repo"
+[master 77fa4f0] testing moving a local directory to verify wont break link to remote repo
+ 1 file changed, 1 insertion(+)
+ create mode 100644 VM_Macbook_CentOS7/testmovedirectory.txt
+[scott@localhost VM_Macbook_CentOS7]$ git push -u origin master
+Username for 'https://github.com': sjkersey@aol.com
+Password for 'https://sjkersey@aol.com@github.com': 
+To https://github.com/sjkersey/test_archives_01.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/sjkersey/test_archives_01.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first merge the remote changes (e.g.,
+hint: 'git pull') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+[scott@localhost VM_Macbook_CentOS7]$ pwd
+/home/scott/dev/github_repos/test_archives_01/VM_Macbook_CentOS7
+[scott@localhost VM_Macbook_CentOS7]$ 
+[scott@localhost VM_Macbook_CentOS7]$ 
+[scott@localhost VM_Macbook_CentOS7]$ git pull origin master
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 19 (delta 3), reused 3 (delta 3), pack-reused 16
+Unpacking objects: 100% (19/19), done.
+From https://github.com/sjkersey/test_archives_01
+ * branch            master     -> FETCH_HEAD
+Merge made by the 'recursive' strategy.
+ Junit_setup.txt                    |  28 +++++++++
+ VM_Macbook_CentOS7/git_install.txt |   3 +
+ maven_install.txt                  | 118 +++++++++++++++++++++++++++++++++++++
+ 3 files changed, 149 insertions(+)
+ create mode 100644 Junit_setup.txt
+ create mode 100644 maven_install.txt
+[scott@localhost VM_Macbook_CentOS7]$ 
+[scott@localhost VM_Macbook_CentOS7]$ 
+[scott@localhost VM_Macbook_CentOS7]$ git push -u origin master
+Username for 'https://github.com': sjkersey@aol.com
+Password for 'https://sjkersey@aol.com@github.com': 
+Counting objects: 11, done.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 814 bytes | 0 bytes/s, done.
+Total 7 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
+To https://github.com/sjkersey/test_archives_01.git
+   19be1dd..ba35b7b  master -> master
+Branch master set up to track remote branch master from origin.
+
